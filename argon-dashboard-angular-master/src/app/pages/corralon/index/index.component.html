@@ -1,0 +1,37 @@
+<section>
+
+    <div class="d-flex justify-content-between">
+      <h4>List corralon</h4>
+      <a routerLink="/corralon/create" class="btn btn-success">Create New corralon</a>
+    </div>
+
+    <br>
+    
+    <table class="table ">
+      <tr>
+        <th>ID_Vehiculo</th>
+        <th>Fecha de entrada</th>
+        <th>Pensión</th>
+        <th>Días de pensión</th>
+        <th>Status de entrega</th>
+        <th>Fecha de entrega</th>
+        <th>Otro asunto</th>
+        <th></th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let corralon of corralons">
+        <td>{{ corralon.id_vehiculo }}</td>
+        <td>{{ corralon.fecha_entrada }}</td>
+        <td>{{ corralon.pension_c }}</td>
+        <td>{{ corralon.dias_pension }}</td>
+        <td>{{ corralon.status_entrega }}</td>
+        <td>{{ corralon.fecha_entrega }}</td>
+        <td>{{ corralon.otro_asunto }}</td>
+        <td>
+          <a href="#" [routerLink]="['/corralon/', 'edit', corralon.id  ]" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deleteCorralon(corralon.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </section>
+
