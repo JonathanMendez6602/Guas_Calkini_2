@@ -177,187 +177,30 @@
 
   <div class="form-group row">
     <div class="col-md-6 ">
-      <label for="title">Aseguradora:</label>
+      <label for="title">Cliente:</label>
       <input
-        formControlName="aseguradora"
-        id="aseguradora"
+        formControlName="nombre"
+        id="nombre"
         type="text"
         class="form-control">
-      <div *ngIf="f.aseguradora.touched && f.aseguradora.invalid" class="alert alert-danger">
-          <div *ngIf="f.aseguradora.errors.required">*Aseguradora is required.</div>
-          <div *ngIf="f.aseguradora.errors.pattern">*The Aseguradora must only contain letters.</div>
+      <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+          <div *ngIf="f.nombre.errors.required">*Cliente is required.</div>
+          <div *ngIf="f.nombre.errors.pattern">*The Cliente must only contain letters.</div>
       </div>
     </div>
 </div>
 
 <div class="form-group row">
   <div class="col-md-6 ">
-    <label for="title">Nombre Aseguradora:</label>
+    <label for="title">Sucursal:</label>
     <input
-      formControlName="nombre_aseguradora"
-      id="nombre_aseguradora"
+      formControlName="sucursal"
+      id="sucursal"
       type="text"
       class="form-control">
-    <div *ngIf="f.nombre_aseguradora.touched && f.nombre_aseguradora.invalid" class="alert alert-danger">
-        <div *ngIf="f.nombre_aseguradora.errors.required">*Nombre Aseguradora is required.</div>
-        <div *ngIf="f.nombre_aseguradora.errors.pattern">*The Nombre Aseguradora must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">Particular:</label>
-    <input
-      formControlName="particular"
-      id="particular"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.particular.touched && f.particular.invalid" class="alert alert-danger">
-        <div *ngIf="f.particular.errors.required">*Particular is required.</div>
-        <div *ngIf="f.particular.errors.pattern">*The particular must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">Nombre Particular:</label>
-    <input
-      formControlName="nombre_particular"
-      id="nombre_particular"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.nombre_particular.touched && f.nombre_particular.invalid" class="alert alert-danger">
-        <div *ngIf="f.nombre_particular.errors.required">*Nombre Particular is required.</div>
-        <div *ngIf="f.nombre_particular.errors.pattern">*The Nombre Particular must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">Apellido Materno:</label>
-    <input
-      formControlName="apellido_materno"
-      id="apellido_materno"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.apellido_materno.touched && f.apellido_materno.invalid" class="alert alert-danger">
-        <div *ngIf="f.apellido_materno.errors.required">*Apellido Materno is required.</div>
-        <div *ngIf="f.apellido_materno.errors.pattern">*The Apellido Materno must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">Apellido Paterno:</label>
-    <input
-      formControlName="apellido_paterno"
-      id="apellido_paterno"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.apellido_paterno.touched && f.apellido_paterno.invalid" class="alert alert-danger">
-        <div *ngIf="f.apellido_paterno.errors.required">*Apellido Paterno is required.</div>
-        <div *ngIf="f.apellido_paterno.errors.pattern">*The apellido_paterno must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">corralon:</label>
-    <input
-      formControlName="corralon"
-      id="corralon"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.corralon.touched && f.corralon.invalid" class="alert alert-danger">
-        <div *ngIf="f.corralon.errors.required">*corralon is required.</div>
-        <div *ngIf="f.corralon.errors.pattern">*The corralon must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">Fecha Entrada:</label>
-    <input
-      formControlName="fecha_entrada"
-      id="fecha_entrada"
-      type="date"
-      class="form-control">
-  </div> 
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">Pension C:</label>
-    <input
-      formControlName="pension_c"
-      id="pension_c"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.pension_c.touched && f.pension_c.invalid" class="alert alert-danger">
-        <div *ngIf="f.pension_c.errors.required">*pension_c is required.</div>
-        <div *ngIf="f.pension_c.errors.pattern">*The pension_c must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">dias_pension:</label>
-    <input
-      formControlName="dias_pension"
-      id="dias_pension"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.dias_pension.touched && f.dias_pension.invalid" class="alert alert-danger">
-        <div *ngIf="f.dias_pension.errors.required">*dias_pension is required.</div>
-        <div *ngIf="f.dias_pension.errors.pattern">*The dias_pension must only contain numbers.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">status_entrega:</label>
-    <input
-      formControlName="status_entrega"
-      id="status_entrega"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
-        <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
-        <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
-    </div>
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">fecha_entrega:</label>
-    <input
-      formControlName="fecha_entrega"
-      id="fecha_entrega"
-      type="date"
-      class="form-control">
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-md-6 ">
-    <label for="title">otro_asunto:</label>
-    <input
-      formControlName="otro_asunto"
-      id="otro_asunto"
-      type="text"
-      class="form-control">
-    <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
-        <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
-        <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
+    <div *ngIf="f.sucursal.touched && f.sucursal.invalid" class="alert alert-danger">
+        <div *ngIf="f.sucursal.errors.required">*Sucursal is required.</div>
+        <div *ngIf="f.sucursal.errors.pattern">*The Sucursal must only contain letters.</div>
     </div>
   </div>
 </div>
