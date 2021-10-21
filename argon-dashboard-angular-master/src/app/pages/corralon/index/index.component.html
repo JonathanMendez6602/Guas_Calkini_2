@@ -9,6 +9,7 @@
     
     <table class="table ">
       <tr>
+        <th>ID</th>
         <th>ID_Vehiculo</th>
         <th>Fecha de entrada</th>
         <th>Pensión</th>
@@ -20,6 +21,7 @@
         <th width="220px">Action</th>
       </tr>
       <tr *ngFor="let corralon of corralons">
+        <td>{{ corralon.id }}</td>
         <td>{{ corralon.id_vehiculo }}</td>
         <td>{{ corralon.fecha_entrada }}</td>
         <td>{{ corralon.pension_c }}</td>
