@@ -21,7 +21,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'tables', component: TablesComponent },
     { path: 'vehiculo/index', component: IndexComponent },
     { path: 'vehiculo/create', component: CreateComponent },
-    { path: 'vehiculo/edit', component: EditComponent },
+    { path: 'vehiculo/edit/:idVehiculo', component: EditComponent },
 
     { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
     { path: 'vehiculo/createCorralon', component: CreateCorralonComponent },
