@@ -17,6 +17,7 @@ class Corralon extends Model
       'dias_pension',
       'status_entrega',
       'fecha_entrega',
-      'otro_asunto'
-    }
+      'otro_asunto',
+      'id_vehiculo'
+    ];
 }

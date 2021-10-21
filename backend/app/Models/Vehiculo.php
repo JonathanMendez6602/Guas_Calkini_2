@@ -23,19 +23,7 @@ class Vehiculo extends Model
       'tipo_servicio',
       'lugar_siniestro',
       'descripcion',
-      'aseguradora',
-      'nombre_aseguradora',
-      'particular',
-      'nombre_particular',
-      'apellido_materno',
-      'apellido_paterno',
-      'corralon',
-      'fecha_entrada',
-      'pension_c',
-      'dias_pension',
-      'status_entrega',
-      'fecha_entrega',
-      'otro_asunto'
-
+      'nombre',
+      'sucursal'
     ];
 }
