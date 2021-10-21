@@ -45,6 +45,15 @@
   <div class="container-fluid">
     <div class="header-body">
       <br><br><br><br>
+<<<<<<< HEAD
+        <!-- Page content -->
+        <div class="container-fluid mt--7">
+        <!-- Table -->
+        <div class="d-flex justify-content-between">
+            <div _ngcontent-c6="" type="button" a routerLink="/vehiculo/create">
+              <i _ngcontent-c6="" class="ni ni-settings text-green"></i>
+              <span _ngcontent-c6="" a routerLink="/vehiculo/create">Nuevo Servicio</span>
+=======
 <!-- Page content -->
 <div class="container-fluid mt--7">
 <!-- Table -->
@@ -89,19 +98,60 @@
           <td>
   
             <!--<a href="#" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]" class="btn btn-primary">Edit</a>-->
-            <div _ngcontent-c6="" a routerLink="['/vehiculo/', 'edit', vehiculo.id  ]">
+            <div _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">
               <i _ngcontent-c6="" class="ni ni-settings-gear-65"></i>
-              <span _ngcontent-c6="" a routerLink="['/vehiculo/', 'edit', vehiculo.id  ]"> Editar</span>
+              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"> Editar</span>
+>>>>>>> refs/remotes/origin/main
             </div>
-            <!--<button type="button" (click)="deleteVehiculo(vehiculo.id)" class="btn btn-danger">Delete</button>-->
-  
-          </td>
-        </tr>
-      </table>
         </div>
-      </div>
-    </div>
-<!-- Page content -->
+        <br>
+        <div class="row">
+          <div class="col">
+            <div class="card shadow">
+              <div class="card-header bg-lighter">
+                <h3 class="mb-0">Lista de Servicios</h3>
+              </div>
+              <!--pegando-->
+              <table class="table bg-lighter">
+                <tr>
+                  <th>ID</th>
+                  <th>Modelo</th>
+                  <th>Marca</th>
+                  <th>Foto Vehiculo</th>
+                  <th>Color</th>
+                  <th>Placas</th>
+                  <th>Inventario</th>
+                  <th>Foto Inventario</th>
+                  <th>Llaves</th>
+                  <!--<th width="220px">Acciones</th>-->
+                </tr>
+                <tr *ngFor="let vehiculo of vehiculos">
+          
+                  <td>{{ vehiculo.id }}</td>
+                  <td>{{ vehiculo.modelo }}</td>
+                  <td>{{ vehiculo.marca }}</td>
+                  <td>{{ vehiculo.foto_vehiculo }}</td>
+                  <td>{{ vehiculo.color }}</td>
+                  <td>{{ vehiculo.placas }}</td>
+                  <td>{{ vehiculo.inventario }}</td>
+                  <td>{{ vehiculo.foto_inventario }}</td>
+                  <td>{{ vehiculo.llaves }}</td>
+                  <td>
+          
+                    <!--<a href="#" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]" class="btn btn-primary">Edit</a>-->
+                    <div _ngcontent-c6="" type="button" a routerLink="['/vehiculo/', 'edit', vehiculo.id  ]">
+                      <i _ngcontent-c6="" class="ni ni-settings-gear-65"></i>
+                      <span _ngcontent-c6="" a routerLink="['/vehiculo/', 'edit', vehiculo.id  ]"> Editar</span>
+                    </div>
+                    <!--<button type="button" (click)="deleteVehiculo(vehiculo.id)" class="btn btn-danger">Delete</button>-->
+          
+                  </td>
+                </tr>
+              </table>
+                </div>
+              </div>
+            </div>
+          <!-- Page content -->
     </div>
   </div>
 </div>
