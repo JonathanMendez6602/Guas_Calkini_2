@@ -1,16 +1,30 @@
-<section>
+<div class="header bg-white pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <br><br>
+        
+<!-- Page content -->
+<div class="container-fluid mt--7">
 
-    <div class="d-flex justify-content-between">
-      <h4>List corralon</h4>
-      <a routerLink="/corralon/createCorralon" class="btn btn-success">Create New corralon</a>
-    </div>
+  <div _ngcontent-c6="" type="button" a routerLink="/corralon/createCorralon"></div>
+  <i _ngcontent-c6="" class="ni ni-collection text-blue"></i>
+  <span _ngcontent-c6="" a routerLink="/corralon/createCorralon"> Agregar </span>
+  
+  <div class="d-flex justify-content-between">
 
-    <br>
-    
+
+<!-- Table -->
+<div class="row">
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-header bg-transparent">
+        <h3 class="mb-0">Lista del corralon</h3>
+      </div>
+
     <table class="table ">
       <tr>
         <th>ID</th>
-        <th>ID_Vehiculo</th>
+        <th>ID Vehiculo</th>
         <th>Fecha de entrada</th>
         <th>Pensión</th>
         <th>Días de pensión</th>
@@ -18,7 +32,7 @@
         <th>Fecha de entrega</th>
         <th>Otro asunto</th>
         <th></th>
-        <th width="220px">Action</th>
+        <th width="200px">Acción</th>
       </tr>
       <tr *ngFor="let corralon of corralons">
         <td>{{ corralon.id }}</td>
@@ -35,6 +49,11 @@
         </td>
       </tr>
     </table>
- </section>
-
+  </div>
+</div>
+</div>
+<!-- Page content -->
+</div>
+</div>
+</div>
 
