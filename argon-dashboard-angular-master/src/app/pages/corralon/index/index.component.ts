@@ -23,7 +23,7 @@ export class IndexComponent implements OnInit {
 
   deleteCorralon(id){
     this.corralonService.delete(id).subscribe(res => {
-         this.corralons = this.corralons.filter(item => item.id_vehiculo !== id);
+         this.corralons = this.corralons.filter(item => item.id !== id);
          console.log('Corralon deleted successfully!');
     })
   }
