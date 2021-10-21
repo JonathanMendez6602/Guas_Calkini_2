@@ -49,17 +49,20 @@
 <div class="container-fluid mt--7">
 <!-- Table -->
 <div class="d-flex justify-content-between">
-  <a routerLink="/vehiculo/create" class="btn btn-info">Agregar Nuevo Servicio</a>
+  <div _ngcontent-c6="" a routerLink="/vehiculo/create">
+    <i _ngcontent-c6="" class="ni ni-settings"></i>
+    <span _ngcontent-c6="" a routerLink="/vehiculo/create">  Nuevo Servicio</span>
+  </div>
 </div>
 
 <div class="row">
   <div class="col">
     <div class="card shadow">
-      <div class="card-header bg-transparent">
+      <div class="card-header bg-lighter">
         <h3 class="mb-0">Lista de Servicios</h3>
       </div>
       <!--pegando-->
-      <table class="table ">
+      <table class="table bg-lighter">
         <tr>
           <th>ID</th>
           <th>Modelo</th>
@@ -85,8 +88,12 @@
           <td>{{ vehiculo.llaves }}</td>
           <td>
   
-            <a href="#" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]" class="btn btn-primary">Edit</a>
-            <button type="button" (click)="deleteVehiculo(vehiculo.id)" class="btn btn-danger">Delete</button>
+            <!--<a href="#" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]" class="btn btn-primary">Edit</a>-->
+            <div _ngcontent-c6="" a routerLink="['/vehiculo/', 'edit', vehiculo.id  ]">
+              <i _ngcontent-c6="" class="ni ni-settings-gear-65"></i>
+              <span _ngcontent-c6="" a routerLink="['/vehiculo/', 'edit', vehiculo.id  ]"> Editar</span>
+            </div>
+            <!--<button type="button" (click)="deleteVehiculo(vehiculo.id)" class="btn btn-danger">Delete</button>-->
   
           </td>
         </tr>
