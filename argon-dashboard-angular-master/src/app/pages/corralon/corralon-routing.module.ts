@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { IndexComponent } from './index/index.component';
-import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import { IndexCorralonComponent } from './index-corralon/index-corralon.component';
+import { CreateCorralonComponent } from './create-corralon/create-corralon.component';
+import { EditCorralonComponent } from './edit-corralon/edit-corralon.component';
+
 
 const routes: Routes = [
-  { path: 'corralon', redirectTo: 'corralon/index', pathMatch: 'full'},
-  { path: 'corralon/index', component: IndexComponent },
-  { path: 'corralon/create', component: CreateComponent },
-  { path: 'person/edit/:idCorralon', component: EditComponent } 
+  { path: 'corralon', redirectTo: 'corralon/indexCorralon', pathMatch: 'full'},
+  { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
+  { path: 'corralon/createCorralon', component: CreateCorralonComponent },
+  { path: 'corralon/editCorralon/:idCorralon', component: EditCorralonComponent }
 ];
 
 @NgModule({
