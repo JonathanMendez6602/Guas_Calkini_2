@@ -1,6 +1,4 @@
-<section>
-
-
+<!--<section>
   <br><br><br>
     <div class="d-flex justify-content-between">
       <h4>List vehiculo</h4>
@@ -41,5 +39,62 @@
         </td>
       </tr>
     </table>
- </section>
+ </section>-->
 
+ <div class="header bg-white pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <br><br><br><br>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+<!-- Table -->
+<div class="d-flex justify-content-between">
+  <a routerLink="/vehiculo/create" class="btn btn-info">Agregar Nuevo Servicio</a>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-header bg-transparent">
+        <h3 class="mb-0">Lista de Servicios</h3>
+      </div>
+      <!--pegando-->
+      <table class="table ">
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Foto Vehiculo</th>
+          <th>Color</th>
+          <th>Placas</th>
+          <th>Inventario</th>
+          <th>Foto Inventario</th>
+          <th>Llaves</th>
+          <th width="220px">Acciones</th>
+        </tr>
+        <tr *ngFor="let vehiculo of vehiculos">
+  
+          <td>{{ vehiculo.id }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.foto_vehiculo }}</td>
+          <td>{{ vehiculo.color }}</td>
+          <td>{{ vehiculo.placas }}</td>
+          <td>{{ vehiculo.inventario }}</td>
+          <td>{{ vehiculo.foto_inventario }}</td>
+          <td>{{ vehiculo.llaves }}</td>
+          <td>
+  
+            <a href="#" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]" class="btn btn-primary">Edit</a>
+            <button type="button" (click)="deleteVehiculo(vehiculo.id)" class="btn btn-danger">Delete</button>
+  
+          </td>
+        </tr>
+      </table>
+        </div>
+      </div>
+    </div>
+<!-- Page content -->
+    </div>
+  </div>
+</div>
