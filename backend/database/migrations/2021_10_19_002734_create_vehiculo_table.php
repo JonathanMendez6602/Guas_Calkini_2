@@ -28,22 +28,10 @@ class CreateVehiculoTable extends Migration
             $table->string('tipo_servicio');
             $table->string('lugar_siniestro');
             $table->string('descripcion');
-            //Aseguradora
-            $table->string('aseguradora');
-            $table->string('nombre_aseguradora');
-            //Particular
-            $table->string('particular');
-            $table->string('nombre_particular');
-            $table->string('apellido_materno');
-            $table->string('apellido_paterno');
-            //Corralon:
-            $table->string('corralon');
-            $table->date('fecha_entrada');
-            $table->string('pension_c');
-            $table->bigInteger('dias_pension');
-            $table->string('status_entrega');
-            $table->date('fecha_entrega');
-            $table->string('otro_asunto');
+            //Cliente
+            $table->string('nombre');
+            //Sucursal
+            $table->string('sucursal');
             $table->timestamps();
         });
     }
