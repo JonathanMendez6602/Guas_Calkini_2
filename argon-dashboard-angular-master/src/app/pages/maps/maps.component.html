@@ -1,0 +1,61 @@
+<div class="header bg-gradient-info pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <br><br><br><br>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+<!-- Table -->
+<div class="row">
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-header bg-transparent">
+        <h3 class="mb-0">Lista de Corralon</h3>
+      </div>
+      <!--pegando-->
+      <table class="table text-black font-open-sans-bold mb-7 ">
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Color</th>
+          <th>Placas</th>
+          <th>Fecha Entrada</th>
+          
+        </tr>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.id }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.color }}</td>
+          <td>{{ vehiculo.placas }}</td>
+          <td>{{ vehiculo.fecha_entrada }}</td>
+          
+        </tr>
+        <tr>
+          <th>Pension Corralon</th>
+          <th>Dias Pension</th>
+          <th>Status</th>
+          <th>Fecha Entrega</th>
+          <th>Otro Asunto</th>
+          <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let vehiculo of vehiculos">
+  
+          <td>{{ vehiculo.pension_c }}</td>
+            <td>{{ vehiculo.dias_pension }}</td>
+            <td>{{ vehiculo.status_entrega }}</td>
+            <td>{{ vehiculo.fecha_entrega }}</td>
+            <td>{{ vehiculo.otro_asunto }}</td>
+            <td>
+              <button type="button" (click)="deletePerson(person.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+      </table>
+        </div>
+      </div>
+    </div>
+<!-- Page content -->
+    </div>
+  </div>
+</div>
+

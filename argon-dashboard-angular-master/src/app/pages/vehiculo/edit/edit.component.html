@@ -1,0 +1,142 @@
+<div>
+
+    <div class="d-flex justify-content-between">
+      <h4>Form customer</h4>
+      <a href="#" routerLink="/vehiculo/index" class="btn btn-primaryt">Back</a>
+    </div>
+  
+    <hr/>
+  
+      <form [formGroup]="form" (ngSubmit)="submit()">
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="title">Marca:</label>
+                <input
+                  formControlName="marca"
+                  [(ngModel)]="vehiculo.modelo"
+                  id="marca"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.marca.touched && f.marca.invalid" class="alert alert-danger">
+                    <div *ngIf="f.marca.errors.required">*Marca is required.</div>
+                    <div *ngIf="f.marca.errors.pattern">*The marca must only contain letters.</div>
+                </div>
+              </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Modelo:</label>
+              <input
+                formControlName="modelo"
+                [(ngModel)]="vehiculo.marca"
+                id="modelo"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
+                  <div *ngIf="f.modelo.errors.required">*Modelo is required.</div>
+                  <div *ngIf="f.modelo.errors.pattern">*The modelo must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Foto Vehiculo:</label>
+              <input
+                formControlName="foto_vehiculo"
+                [(ngModel)]="vehiculo.foto_vehiculo"
+                id="foto_vehiculo"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.foto_vehiculo.touched && f.foto_vehiculo.invalid" class="alert alert-danger">
+                  <div *ngIf="f.foto_vehiculo.required">*Foto vehiculo is required.</div>
+                  <div *ngIf="f.foto_vehiculo.pattern">*The Foto vehiculo must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Color:</label>
+              <input
+                formControlName="color"
+                [(ngModel)]="vehiculo.color"
+                id="color"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.color.touched && f.color.invalid" class="alert alert-danger">
+                  <div *ngIf="f.color.errors.required">*Color is required.</div>
+                  <div *ngIf="f.color.errors.pattern">*The color must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Placas:</label>
+              <input
+                formControlName="placas"
+                [(ngModel)]="vehiculo.placas"
+                id="placas"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.placas.touched && f.placas.invalid" class="alert alert-danger">
+                  <div *ngIf="f.placas.errors.required">*Placas is required.</div>
+                  <div *ngIf="f.placas.errors.pattern">*The placas must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Inventario:</label>
+              <input
+                formControlName="inventario"
+                [(ngModel)]="vehiculo.inventario"
+                id="inventario"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.inventario.touched && f.inventario.invalid" class="alert alert-danger">
+                  <div *ngIf="f.inventario.errors.required">*Inventario is required.</div>
+                  <div *ngIf="f.inventario.errors.pattern">*The inventario must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Foto Inventario:</label>
+              <input
+                formControlName="foto_inventario"
+                [(ngModel)]="vehiculo.foto_inventario"
+                id="foto_inventario"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.foto_inventario.touched && f.foto_inventario.invalid" class="alert alert-danger">
+                  <div *ngIf="f.foto_inventario.errors.required">*Foto inventario is required.</div>
+                  <div *ngIf="f.foto_inventario.errors.pattern">*The foto inventario must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Llaves:</label>
+              <input
+                formControlName="llaves"
+                [(ngModel)]="vehiculo.llaves"
+                id="llaves"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.llaves.touched && f.llaves.invalid" class="alert alert-danger">
+                  <div *ngIf="f.llaves.errors.required">*Llaves is required.</div>
+                  <div *ngIf="f.llaves.errors.pattern">*The llaves must only contain letters.</div>
+              </div>
+            </div>
+        </div>
+  
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+      </form>
+  </div>

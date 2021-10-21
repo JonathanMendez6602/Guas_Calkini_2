@@ -1,0 +1,74 @@
+<div class="header bg-gradient-info pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+     <!--pegando diseño-->
+     <br><br><br><br>
+     <!-- Page content -->
+     <div class="container-fluid mt--7">
+     <!-- Table -->
+     <div class="row">
+       <div class="col">
+         <div class="card shadow">
+           <div class="card-header bg-transparent">
+             <h3 class="mb-0">Lista de Corralon</h3>
+           </div>
+           <!--pegando-->
+           <table class="table text-black font-open-sans-bold mb-7 ">
+             <tr>
+               <th>ID</th>
+               <th>Modelo</th>
+               <th>Marca</th>
+               <th>Foto Vehiculo</th>
+               <th>Color</th>
+               
+             </tr>
+             <tr *ngFor="let vehiculo of vehiculos">
+              <td>{{ vehiculo.id }}</td>
+              <td>{{ vehiculo.modelo }}</td>
+              <td>{{ vehiculo.marca }}</td>
+              <td>{{ vehiculo.foto_vehiculo }}</td>
+              <td>{{ vehiculo.color }}</td>
+               
+             </tr>
+             <tr>
+              <th>Placas</th>
+              <th>Inventario</th>
+              <th>Foto Inventario</th>
+              <th>Tipo servicio</th>
+              <th>Lugar siniestro</th>
+              
+             </tr>
+             <tr *ngFor="let vehiculo of vehiculos">
+       
+              <td>{{ vehiculo.placas }}</td>
+              <td>{{ vehiculo.inventario }}</td>
+              <td>{{ vehiculo.foto_inventario }}</td>
+              <td>{{ vehiculo.tipo_servicio }}</td>
+              <td>{{ vehiculo.lugar_siniestro }}</td>
+              
+             </tr>
+             <tr>
+              <th>descripcion</th>
+              <th>Nombre Aseguradora</th>
+              <th>Nombre Particular</th>
+              <th>Nombre Paterno</th>
+              <th>Nombre Materno</th>
+  
+            </tr>
+            <tr *ngFor="let vehiculo of vehiculos">
+              
+              <td>{{ vehiculo.descripcion }}</td>
+              <td>{{ vehiculo.nombre_aseguradora }}</td>
+              <td>{{ vehiculo.nombre_particular }}</td>
+              <td>{{ vehiculo.apellido_paterno }}</td>
+              <td>{{ vehiculo.apellido_materno }}</td>
+  
+            </tr>
+           </table>
+             </div>
+           </div>
+         </div>
+    </div>
+  </div>
+</div>
