@@ -19,5 +19,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'vehiculo/index',          component: IndexComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'vehiculo/create',           component: CreateComponent },
-    { path: 'vehiculo/edit',           component: EditComponent }
+    { path: 'vehiculo/edit/:idVehiculo', component: EditComponent }
 ];
