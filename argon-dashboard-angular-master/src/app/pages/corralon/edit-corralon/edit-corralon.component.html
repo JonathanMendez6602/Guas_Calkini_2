@@ -1,1 +1,55 @@
-<p>edit-corralon works!</p>
+<div>
+
+    <div class="d-flex justify-content-between">
+      <h4>Form customer</h4>
+      <a href="#" routerLink="/corralon/indexCorralon" class="btn btn-primaryt">Back</a>
+    </div>
+  
+    <hr/>
+  
+      <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group row">
+            <div class="col-md-6 ">
+                <label for="title">status_entrega:</label>
+                <input
+                formControlName="status_entrega"
+                id="status_entrega"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
+                    <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
+                    <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
+                </div>
+            </div>
+            </div>
+        
+            <div class="form-group row">
+            <div class="col-md-6 ">
+                <label for="title">fecha_entrega:</label>
+                <input
+                formControlName="fecha_entrega"
+                id="fecha_entrega"
+                type="date"
+                class="form-control">
+            </div>
+            </div>
+        
+            <div class="form-group row">
+            <div class="col-md-6 ">
+                <label for="title">otro_asunto:</label>
+                <input
+                formControlName="otro_asunto"
+                id="otro_asunto"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
+                    <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
+                    <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
+                </div>
+            </div>
+            </div>
+  
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+      </form>
+  </div>

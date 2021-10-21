@@ -37,7 +37,7 @@ export class CreateCorralonComponent implements OnInit {
     console.log(this.form.value);
     this.corralonService.create(this.form.value).subscribe(res => {
          console.log('Corralon created successfully!');
-         this.router.navigateByUrl('corralon/index-corralon');
+         this.router.navigateByUrl('corralon/index');
     })
   }
 
