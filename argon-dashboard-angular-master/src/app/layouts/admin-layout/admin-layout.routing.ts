@@ -10,6 +10,8 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { IndexComponent } from '../../pages/vehiculo/index/index.component';
 import { CreateComponent } from '../../pages/vehiculo/create/create.component';
 import { EditComponent } from '../../pages/vehiculo/edit/edit.component';
+import { ViewComponent } from '../../pages/vehiculo/view/view.component';
+
 
 import { IndexCorralonComponent } from 'src/app/pages/corralon/index-corralon/index-corralon.component';
 import { CreateCorralonComponent } from 'src/app/pages/corralon/create-corralon/create-corralon.component';
@@ -22,6 +24,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'vehiculo/index', component: IndexComponent },
     { path: 'vehiculo/create', component: CreateComponent },
     { path: 'vehiculo/edit/:idVehiculo', component: EditComponent },
+    { path: 'vehiculo/view/:idVehiculo', component: ViewComponent },
 
     { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
     { path: 'corralon/createCorralon', component: CreateCorralonComponent },

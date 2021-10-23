@@ -1,0 +1,25 @@
+<p>view works!</p>
+
+
+<table class="table bg-lighter">
+    <tr>
+      <th>ID</th>
+    </tr>
+    <tr *ngFor="let vehiculo of vehiculos">
+      <td>{{ vehiculo.id }}</td>
+    </tr>
+    <br>
+    <tr>
+      <th>Marca</th>
+    </tr>
+    <tr *ngFor="let vehiculo of vehiculos">
+      <td>{{ vehiculo.marca }}</td>
+    </tr>
+    <br>
+    <tr>
+      <th>Modelo</th>
+    </tr>
+    <tr *ngFor="let vehiculo of vehiculos">
+      <td>{{ vehiculo.modelo }}</td>
+    </tr>
+</table>
