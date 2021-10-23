@@ -13,7 +13,6 @@ import { Vehiculo } from '../vehiculo';
 export class ViewComponent implements OnInit {
   id: number;
   vehiculo: Vehiculo;
-  form: FormGroup;
   constructor(
     public vehiculoService: VehiculoService,
     private route: ActivatedRoute,
@@ -24,7 +23,10 @@ export class ViewComponent implements OnInit {
     this.id = this.route.snapshot.params['idVehiculo'];
     this.vehiculoService.find(this.id).subscribe((data: Vehiculo)=>{
       this.vehiculo = data;
+      console.log(this.vehiculo);
     });
   }
 
+
+  
 }

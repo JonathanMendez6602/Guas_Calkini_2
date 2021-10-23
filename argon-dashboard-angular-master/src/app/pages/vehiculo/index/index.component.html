@@ -44,7 +44,7 @@
         </tr>
         <tr *ngFor="let vehiculo of vehiculos">
   
-          <td>{{ vehiculo.id }}</td>
+          <td>{{vehiculo.id}}</td>
           <td>{{ vehiculo.marca }}</td>
           <td>{{ vehiculo.modelo }}</td>
           <td>{{ vehiculo.foto_vehiculo }}</td>
@@ -57,9 +57,9 @@
 
             <div _ngcontent-c6="" type="button">
 
-              <i _ngcontent-c6="" class="ni ni-zoom-split-in" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"></i>
+              <i _ngcontent-c6="" class="ni ni-zoom-split-in" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]"></i>
 
-              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">&nbsp;Ver</span>
+              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]">&nbsp;Ver</span>
               &nbsp;
               <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"></i>
 
