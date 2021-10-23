@@ -1,3 +1,9 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua_1.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-info opacity-8"></span>
+  <!-- Header container -->
+</div>
+
 <div class="header bg-white pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
@@ -8,17 +14,18 @@
 
   <div class="d-flex justify-content-between">
 
-    <div _ngcontent-c6="" type="button" a routerLink="/vehiculo/create">
+    <div _ngcontent-c6="">
 
-      <i _ngcontent-c6="" class="ni ni-settings text-green"></i>
+      <i _ngcontent-c6="" class="ni ni-settings text-green" type="button" a routerLink="/vehiculo/create"></i>
 
-      <span _ngcontent-c6="" a routerLink="/vehiculo/create">Nuevo Servicio</span>
+      <span _ngcontent-c6="" type="button" a routerLink="/vehiculo/create">&nbsp;Nuevo Servicio</span>
+      <br><br>
 
 <!-- Table -->
 <div class="row">
   <div class="col">
     <div class="card shadow">
-      <div class="card-header bg-transparent">
+      <div class="card-header bg-lighter">
         <h3 class="mb-0">Lista de Servicios</h3>
       </div>
 
@@ -48,13 +55,25 @@
           <td>{{ vehiculo.llaves }}</td>
           <td>
 
-            <div _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">
+            <div _ngcontent-c6="" type="button">
+
+              <i _ngcontent-c6="" class="ni ni-zoom-split-in" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"></i>
+
+              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">&nbsp;Ver</span>
+              &nbsp;
+              <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"></i>
+
+              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">&nbsp;Editar</span>
+
+            </div>
+
+            <!--<div _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">
 
               <i _ngcontent-c6="" class="ni ni-settings-gear-65"></i>
 
               <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"> Editar</span>
 
-            </div>
+            </div>-->
 
       </table>
 
