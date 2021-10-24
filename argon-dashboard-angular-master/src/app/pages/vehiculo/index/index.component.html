@@ -35,26 +35,18 @@
           <th>ID</th>
           <th>Marca</th>
           <th>Modelo</th>
-          <th>Foto Vehiculo</th>
-          <th>Color</th>
           <th>Placas</th>
-          <th>Inventario</th>
-          <th>Foto Inventario</th>
-          <th>Llaves</th>
+          <th>Descripcion</th>
+          <th>Actions</th>
         </tr>
         <tr *ngFor="let vehiculo of vehiculos">
   
           <td>{{vehiculo.id}}</td>
           <td>{{ vehiculo.marca }}</td>
           <td>{{ vehiculo.modelo }}</td>
-          <td>{{ vehiculo.foto_vehiculo }}</td>
-          <td>{{ vehiculo.color }}</td>
           <td>{{ vehiculo.placas }}</td>
-          <td>{{ vehiculo.inventario }}</td>
-          <td>{{ vehiculo.foto_inventario }}</td>
-          <td>{{ vehiculo.llaves }}</td>
+          <td>{{ vehiculo.descripcion }}</td>
           <td>
-
             <div _ngcontent-c6="" type="button">
 
               <i _ngcontent-c6="" class="ni ni-zoom-split-in" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]"></i>
@@ -66,7 +58,7 @@
               <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">&nbsp;Editar</span>
 
             </div>
-
+          </td>
             <!--<div _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">
 
               <i _ngcontent-c6="" class="ni ni-settings-gear-65"></i>
@@ -74,7 +66,7 @@
               <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"> Editar</span>
 
             </div>-->
-
+        </tr>
       </table>
 
         </div>

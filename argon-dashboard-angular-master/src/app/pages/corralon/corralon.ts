@@ -6,7 +6,7 @@ export interface Corralon {
     pension_c: string;
     dias_pension: number;
     status_entrega: string;
-    fecha_entrega: Data;
+    fecha_entrega: Date;
     otro_asunto: string;
     id_vehiculo: number;
 }
