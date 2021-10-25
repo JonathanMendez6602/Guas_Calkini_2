@@ -16,22 +16,22 @@
 <!-- Table -->
 <div class="row">
   <div class="col">
-    <div class="card shadow">
+    <div class="card shadow"  class="table-responsive text-nowrap">
+      
       <div class="card-header bg-transparent">
         <h3 class="mb-0">Lista del corralon</h3>
       </div>
 
-    <table class="table ">
+    <table class="table">
       <tr>
-        <th>ID</th>
-        <th>ID Vehiculo</th>
-        <th>Fecha de entrada</th>
-        <th>Pensión</th>
-        <th>Días de pensión</th>
-        <th>Status de entrega</th>
-        <th>Fecha de entrega</th>
-        <th>Otro asunto</th>
-        <th></th>
+        <th scope="col">ID</th>
+        <th scope="col">ID Vehiculo</th>
+        <th scope="col">Fecha de entrada</th>
+        <th scope="col">Pensión</th>
+        <th scope="col">Días de pensión</th>
+        <th scope="col">Status de entrega</th>
+        <th scope="col">Fecha de entrega</th>
+        <th scope="col">Otro asunto</th>
         <th width="200px">Acción</th>
       </tr>
       <tr *ngFor="let corralon of corralons">
