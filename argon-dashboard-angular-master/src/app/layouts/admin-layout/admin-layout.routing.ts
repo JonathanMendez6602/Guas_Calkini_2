@@ -28,5 +28,5 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
     { path: 'corralon/createCorralon', component: CreateCorralonComponent },
-    { path: 'corralon/editCorralon', component: EditCorralonComponent }
+    { path: 'corralon/editCorralon/:idCorralon', component: EditCorralonComponent }
 ];

@@ -11,7 +11,7 @@
   
     <hr/>
   
-    <form (ngSubmit)="submit()">
+    <form [formGroup]="form" (ngSubmit)="submit()">
 
 
       
@@ -110,7 +110,7 @@
                 <div *ngIf="f.id_vehiculo.errors.pattern">*The otro_asunto must only contain numbers.</div>
             </div>
         </div>
-        </div>
+    </div>
     
             <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
         </form>

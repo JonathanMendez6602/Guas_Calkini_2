@@ -21,7 +21,7 @@ class CreateCorralonTable extends Migration
             $table->string('status_entrega');
             $table->date('fecha_entrega');
             $table->string('otro_asunto');
-            $table->string('id_vehiculo');
+            $table->bigInteger('id_vehiculo');
             $table->timestamps();
         });
     }

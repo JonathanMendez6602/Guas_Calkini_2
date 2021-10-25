@@ -13,7 +13,7 @@ class CorralonController extends Controller
 {
     //
     public function getAll(){
-        $data = Vehiculo::where('corralon','=','si')->get();
+        $data = Corralon::get();
         return response()->json($data, 200);
       }
   
@@ -31,14 +31,9 @@ class CorralonController extends Controller
             'success' => true
         ], 200);
       }
-
-      public function getAllCorralon(){
-          $data = Vehiculo::get();
-          return response()->json($data,200);
-      }
   
       public function delete($id){
-        $res = Vehiculo::find($id)->delete();
+        $res = Corralon::find($id)->delete();
         return response()->json([
             'message' => "Successfully deleted",
             'success' => true
@@ -46,7 +41,7 @@ class CorralonController extends Controller
       }
   
       public function get($id){
-        $data = Vehiculo::find($id);
+        $data = Corralon::find($id);
         return response()->json($data, 200);
       }
   
@@ -58,7 +53,7 @@ class CorralonController extends Controller
         $data['fecha_entrega'] = $request['fecha_entrega'];
         $data['otro_asunto'] = $request['otro_asunto'];
         $data['id_vehiculo'] = $request['id_vehiculo'];
-        Vehiculo::find($id)->update($data);
+        Corralon::find($id)->update($data);
         return response()->json([
             'message' => "Successfully updated",
             'success' => true

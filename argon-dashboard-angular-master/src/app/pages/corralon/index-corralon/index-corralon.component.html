@@ -44,7 +44,9 @@
         <td>{{ corralon.fecha_entrega }}</td>
         <td>{{ corralon.otro_asunto }}</td>
         <td>
-          <a href="#" [routerLink]="['/corralon/', 'edit', corralon.id  ]" class="btn btn-primary">Edit</a>
+          <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]"></i>
+
+              <span _ngcontent-c6="" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]">&nbsp;Editar</span>
           <button type="button" (click)="deleteCorralon(corralon.id)" class="btn btn-danger">Delete</button>
         </td>
       </tr>

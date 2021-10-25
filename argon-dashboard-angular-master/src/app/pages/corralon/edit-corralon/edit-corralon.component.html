@@ -11,44 +11,107 @@
   
         <div class="form-group row">
             <div class="col-md-6 ">
-                <label for="title">status_entrega:</label>
+                <label for="title">Fecha de entrada:</label>
                 <input
-                formControlName="status_entrega"
-                id="status_entrega"
-                type="text"
-                class="form-control">
-                <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
-                    <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
-                    <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
-                </div>
-            </div>
-            </div>
-        
-            <div class="form-group row">
-            <div class="col-md-6 ">
-                <label for="title">fecha_entrega:</label>
-                <input
-                formControlName="fecha_entrega"
-                id="fecha_entrega"
+                formControlName="fecha_entrada"
+                [(ngModel)]="corralon.fecha_entrada"
+                id="fecha_entrada"
                 type="date"
                 class="form-control">
+            </div> 
             </div>
+    
+        <div class="form-group row">
+        <div class="col-md-6 ">
+            <label for="title">Pensión:</label>
+            <input
+            formControlName="pension_c"
+            [(ngModel)]="corralon.pension_c"
+            id="pension_c"
+            type="text"
+            class="form-control">
+            <div *ngIf="f.pension_c.touched && f.pension_c.invalid" class="alert alert-danger">
+                <div *ngIf="f.pension_c.errors.required">*pension_c is required.</div>
+                <div *ngIf="f.pension_c.errors.pattern">*The pension_c must only contain letters.</div>
             </div>
-        
-            <div class="form-group row">
+        </div>
+        </div>
+    
+        <div class="form-group row">
+        <div class="col-md-6 ">
+            <label for="title">Dias pensión:</label>
+            <input
+            formControlName="dias_pension"
+            [(ngModel)]="corralon.dias_pension"
+            id="dias_pension"
+            type="text"
+            class="form-control">
+            <div *ngIf="f.dias_pension.touched && f.dias_pension.invalid" class="alert alert-danger">
+                <div *ngIf="f.dias_pension.errors.required">*dias_pension is required.</div>
+                <div *ngIf="f.dias_pension.errors.pattern">*The dias_pension must only contain numbers.</div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="form-group row">
+        <div class="col-md-6 ">
+            <label for="title">Estado de entrega:</label>
+            <input
+            formControlName="status_entrega"
+            [(ngModel)]="corralon.status_entrega"
+            id="status_entrega"
+            type="text"
+            class="form-control">
+            <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
+                <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
+                <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="form-group row">
+        <div class="col-md-6 ">
+            <label for="title">Fecha de entrega:</label>
+            <input
+            formControlName="fecha_entrega"
+            [(ngModel)]="corralon.fecha_entrega"
+            id="fecha_entrega"
+            type="date"
+            class="form-control">
+        </div>
+        </div>
+    
+        <div class="form-group row">
+        <div class="col-md-6 ">
+            <label for="title">Otro asunto:</label>
+            <input
+            formControlName="otro_asunto"
+            [(ngModel)]="corralon.otro_asunto"
+            id="otro_asunto"
+            type="text"
+            class="form-control">
+            <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
+                <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
+                <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="form-group row">
             <div class="col-md-6 ">
-                <label for="title">otro_asunto:</label>
+                <label for="title">ID vehiculo:</label>
                 <input
-                formControlName="otro_asunto"
-                id="otro_asunto"
+                formControlName="id_vehiculo"
+                [(ngModel)]="corralon.id_vehiculo"
+                id="id_vehiculo"
                 type="text"
                 class="form-control">
-                <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
-                    <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
-                    <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
+                <div *ngIf="f.id_vehiculo.touched && f.id_vehiculo.invalid" class="alert alert-danger">
+                    <div *ngIf="f.id_vehiculo.errors.required">*otro_asunto is required.</div>
+                    <div *ngIf="f.id_vehiculo.errors.pattern">*The otro_asunto must only contain numbers.</div>
                 </div>
             </div>
-            </div>
+        </div>
   
           <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
       </form>

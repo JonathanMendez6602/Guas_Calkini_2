@@ -47,7 +47,7 @@ export class EditCorralonComponent implements OnInit {
     console.log(this.form.value);
     this.corralonService.update(this.id, this.form.value).subscribe(res => {
       console.log('Corralon update successfully');
-      this.router.navigateByUrl('corralon/index');
+      this.router.navigateByUrl('corralon/indexCorralon');
     })
   }
 

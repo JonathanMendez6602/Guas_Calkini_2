@@ -33,21 +33,21 @@ export class CorralonService {
   }
  
   find(id): Observable<Corralon> {
-    return this.httpClient.get<Corralon>(this.apiURL + id)
+    return this.httpClient.get<Corralon>(this.apiURL +"/"+ id)
     .pipe(
       catchError(this.errorHandler)
     )
   }
  
   update(id, corralon): Observable<Corralon> {
-    return this.httpClient.put<Corralon>(this.apiURL + id, JSON.stringify(corralon), this.httpOptions)
+    return this.httpClient.put<Corralon>(this.apiURL +'/'+ id, JSON.stringify(corralon), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
   }
  
   delete(id){
-    return this.httpClient.delete<Corralon>(this.apiURL + id, this.httpOptions)
+    return this.httpClient.delete<Corralon>(this.apiURL +'/'+ id, this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )
