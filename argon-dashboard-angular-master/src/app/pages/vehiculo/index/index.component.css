@@ -3,6 +3,8 @@ table {
     border: white 2px solid;
   }
 td {
+    text-align: center;
+    font-size: 2em;
     border: black 2px solid;
 }
 tr {
@@ -10,4 +12,7 @@ tr {
 }
 th {
     border: black 2px solid;
+}
+h3 {
+    text-align: center;
 }

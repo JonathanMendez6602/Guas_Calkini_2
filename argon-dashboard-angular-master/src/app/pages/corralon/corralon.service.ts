@@ -5,6 +5,7 @@ import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Corralon } from './corralon';
+import { Vehiculo } from './vehiculo';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { Corralon } from './corralon';
 export class CorralonService {
  
   private apiURL = "http://127.0.0.1:8000/api/corralon";
+  private URLMostrar = "http://127.0.0.1:8000/api/vehiculo/corralon";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -23,6 +25,10 @@ export class CorralonService {
     .pipe(
       catchError(this.errorHandler)
     )
+  }
+
+  getAllMostrar(): Observable<Vehiculo[]>{
+    return this.httpClient.get<Vehiculo[]>(this.URLMostrar)
   }
 
   create(corralon): Observable<Corralon> {

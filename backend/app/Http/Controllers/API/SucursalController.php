@@ -25,7 +25,7 @@ class SucursalController extends Controller
         ], 200);
       }
 
-      public function getAllCorralon(){
+      public function getAllSucursal(){
           $data = Sucursal::get();
           return response()->json($data,200);
       }

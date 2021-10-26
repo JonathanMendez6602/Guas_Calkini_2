@@ -27,36 +27,22 @@
           <h3 class="mb-0">Lista del corralon</h3>
         </div>
   
-      <table class="table">
-        <tr>
-          <th scope="col">ID Vehiculo</th>
-          <th scope="col">Fecha de entrada</th>
-          <th scope="col">Pensión</th>
-          <th scope="col">Días de pensión</th>
-          
-          <th scope="col">Fecha de entrega</th>
-          
-          <th width="200px">Acción</th>
-        </tr>
-        <tr *ngFor="let corralon of corralons">
-         
-          <td>{{ corralon.id_vehiculo }}</td>
-          <td>{{ corralon.fecha_entrada }}</td>
-          <td>{{ corralon.pension_c }}</td>
-          <td>{{ corralon.dias_pension }}</td>
-        
-          <td>{{ corralon.fecha_entrega }}</td>
-          
-          <td>
-            <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]"></i>
-  
-                <span _ngcontent-c6="" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]">&nbsp;Editar</span>
-  
-                <button type="button" rel="tooltip" (click)="deleteCorralon(corralon.id)" class="btn btn-danger btn-sm btn-icon">
-                  <i class="tim-icons icon-simple-remove"></i>
-                </button>
-            
-          </td>
+        <table class="table bg-lighter border-1px-solid-white">
+          <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Placas</th>
+            <th>Descripcion</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngFor="let vehiculo of vehiculos">
+    
+            <td>{{vehiculo.id}}</td>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+            <td>{{ vehiculo.placas }}</td>
+            <td>{{ vehiculo.descripcion }}</td>
         </tr>
       </table>
     </div>

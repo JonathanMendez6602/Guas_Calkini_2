@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CorralonService } from '../corralon.service';
 import { Corralon } from '../corralon';
-
+import { Vehiculo } from '../vehiculo';
 
 
 @Component({
@@ -12,12 +12,13 @@ import { Corralon } from '../corralon';
 export class AgregarCorralonComponent implements OnInit {
 
   corralons: Corralon[]=[];
+  vehiculos: Vehiculo[] = [];
   constructor(public corralonService: CorralonService) { }
 
   ngOnInit(): void {
-    this.corralonService.getAll().subscribe((data: Corralon[])=>{
-      this.corralons = data;
-      console.log(this.corralons);
+    this.corralonService.getAllMostrar().subscribe((data: Vehiculo[])=>{
+      this.vehiculos = data;
+      console.log(this.vehiculos);
     })
   }
 
