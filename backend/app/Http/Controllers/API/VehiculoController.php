@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Vehiculo;
 use App\Models\Corralon;
+use App\Models\Sucursal;
 use Log;
 
 class VehiculoController extends Controller
@@ -19,6 +20,10 @@ class VehiculoController extends Controller
     return response()->json($data, 200);
   }
 
+  public function getAllSucursal(){
+    $data = Sucursal::get();
+    return response()->json($data, 200);
+  }
 
   public function getAllCorralon()
   {

@@ -4,6 +4,7 @@ import { VehiculoService } from '../vehiculo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Vehiculo } from '../vehiculo';
+import { Sucursal } from '../sucursal';
 
 @Component({
   selector: 'app-edit',
@@ -15,6 +16,7 @@ export class EditComponent implements OnInit {
   id: number;
   vehiculo: Vehiculo;
   form: FormGroup;
+  sucursales: Sucursal[] = [];
 
   constructor(
     public vehiculoService: VehiculoService,
@@ -23,9 +25,16 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
+    this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
+    
     this.id = this.route.snapshot.params['idVehiculo'];
     this.vehiculoService.find(this.id).subscribe((data: Vehiculo)=>{
       this.vehiculo = data;
+      console.log(this.vehiculo.sucursal);
     });
 
     this.form = new FormGroup({

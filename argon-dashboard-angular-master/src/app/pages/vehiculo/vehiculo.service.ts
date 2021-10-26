@@ -5,6 +5,7 @@ import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Vehiculo } from './vehiculo';
+import { Sucursal } from './sucursal';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,13 @@ export class VehiculoService {
      catchError(this.errorHandler)
    )
  }
+
+  getAllSucursal(): Observable<Sucursal[]>{
+    return this.httpClient.get<Sucursal[]>(this.apiURL+"/" +"sucursal")
+    .pipe(
+    catchError(this.errorHandler)
+    )
+  }
 
  create(vehiculo): Observable<Vehiculo> {
    return this.httpClient.post<Vehiculo>(this.apiURL, JSON.stringify(vehiculo), this.httpOptions)
