@@ -32,6 +32,7 @@ class CreateVehiculoTable extends Migration
             $table->string('nombre');
             //Sucursal
             $table->string('sucursal');
+            $table->boolean('corralon');
             $table->timestamps();
         });
     }

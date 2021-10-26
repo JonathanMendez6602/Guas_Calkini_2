@@ -31,11 +31,11 @@ Route::prefix('person')->group(function () {
 
 Route::prefix('vehiculo')->group(function () {
     Route::get('/',[ VehiculoController::class, 'getAll']);
+    Route::get('/corralon',[VehiculoController::class,'getAllCorralon']);
     Route::post('/',[ VehiculoController::class, 'create']);
     Route::delete('/{id}',[ VehiculoController::class, 'delete']);
     Route::get('/{id}',[ VehiculoController::class, 'get']);
     Route::put('/{id}',[ VehiculoController::class, 'update']);
-    Route::get('/corralon',[VehiculoController::class,'getAllCorralon']);
 });
 
 Route::prefix('corralon')->group(function () {

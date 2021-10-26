@@ -24,6 +24,7 @@ class Vehiculo extends Model
       'lugar_siniestro',
       'descripcion',
       'nombre',
-      'sucursal'
+      'sucursal',
+      'corralon'
     ];
 }
