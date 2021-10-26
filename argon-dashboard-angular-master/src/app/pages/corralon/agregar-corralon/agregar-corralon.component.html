@@ -1,1 +1,69 @@
-<p>agregar-corralon works!</p>
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua_1.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+
+    <span class="mask bg-gradient-info opacity-8"></span>
+    <!-- Header container -->
+  </div>
+  
+  <div class="header bg-white pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+          
+        <br><br>
+ 
+    <div _ngcontent-c6="" type="button" a routerLink="/corralon/createCorralon"></div>
+    <i _ngcontent-c6="" class="ni ni-collection text-blue"></i>
+    <span _ngcontent-c6="" type="button" a routerLink="/corralon/createCorralon"> Agregar Nvo</span>
+    <a href="#" routerLink="/corralon/indexCorralon" class="btn btn-primaryt">Regresar</a>
+    <div class="d-flex justify-content-between">
+  
+  
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow"  class="table-responsive text-nowrap">
+        
+        <div class="card-header bg-transparent">
+          <h3 class="mb-0">Lista del corralon</h3>
+        </div>
+  
+      <table class="table">
+        <tr>
+          <th scope="col">ID Vehiculo</th>
+          <th scope="col">Fecha de entrada</th>
+          <th scope="col">Pensión</th>
+          <th scope="col">Días de pensión</th>
+          
+          <th scope="col">Fecha de entrega</th>
+          
+          <th width="200px">Acción</th>
+        </tr>
+        <tr *ngFor="let corralon of corralons">
+         
+          <td>{{ corralon.id_vehiculo }}</td>
+          <td>{{ corralon.fecha_entrada }}</td>
+          <td>{{ corralon.pension_c }}</td>
+          <td>{{ corralon.dias_pension }}</td>
+        
+          <td>{{ corralon.fecha_entrega }}</td>
+          
+          <td>
+            <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]"></i>
+  
+                <span _ngcontent-c6="" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]">&nbsp;Editar</span>
+  
+                <button type="button" rel="tooltip" (click)="deleteCorralon(corralon.id)" class="btn btn-danger btn-sm btn-icon">
+                  <i class="tim-icons icon-simple-remove"></i>
+                </button>
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  </div>
+  <!-- Page content -->
+  </div>
+  </div>
+  </div>
+  
