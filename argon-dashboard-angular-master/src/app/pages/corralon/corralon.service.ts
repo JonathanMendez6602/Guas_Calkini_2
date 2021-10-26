@@ -10,7 +10,7 @@ import { Corralon } from './corralon';
   providedIn: 'root'
 })
 export class CorralonService {
-
+ 
   private apiURL = "http://127.0.0.1:8000/api/corralon";
   httpOptions = {
     headers: new HttpHeaders({

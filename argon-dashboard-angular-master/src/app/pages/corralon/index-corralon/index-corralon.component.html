@@ -31,25 +31,29 @@
         <th scope="col">Fecha de entrada</th>
         <th scope="col">Pensión</th>
         <th scope="col">Días de pensión</th>
-        <th scope="col">Status de entrega</th>
+        
         <th scope="col">Fecha de entrega</th>
-        <th scope="col">Otro asunto</th>
+        
         <th width="200px">Acción</th>
       </tr>
       <tr *ngFor="let corralon of corralons">
-        <td>{{ corralon.id }}</td>
+       
         <td>{{ corralon.id_vehiculo }}</td>
         <td>{{ corralon.fecha_entrada }}</td>
         <td>{{ corralon.pension_c }}</td>
         <td>{{ corralon.dias_pension }}</td>
-        <td>{{ corralon.status_entrega }}</td>
+      
         <td>{{ corralon.fecha_entrega }}</td>
-        <td>{{ corralon.otro_asunto }}</td>
+        
         <td>
           <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]"></i>
 
-              <span _ngcontent-c6="" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]">&nbsp;Editar</span>
-          <button type="button" (click)="deleteCorralon(corralon.id)" class="btn btn-danger">Delete</button>
+              <span _ngcontent-c6="" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]">&nbsp;Editar</span>
+
+              <button type="button" rel="tooltip" (click)="deleteCorralon(corralon.id)" class="btn btn-danger btn-sm btn-icon">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+          
         </td>
       </tr>
     </table>
