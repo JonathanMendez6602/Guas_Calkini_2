@@ -16,6 +16,7 @@ import { ViewComponent } from '../../pages/vehiculo/view/view.component';
 import { IndexCorralonComponent } from 'src/app/pages/corralon/index-corralon/index-corralon.component';
 import { CreateCorralonComponent } from 'src/app/pages/corralon/create-corralon/create-corralon.component';
 import { EditCorralonComponent } from 'src/app/pages/corralon/edit-corralon/edit-corralon.component';
+import { AgregarCorralonComponent } from 'src/app/pages/corralon/agregar-corralon/agregar-corralon.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
@@ -28,5 +29,6 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
     { path: 'corralon/createCorralon', component: CreateCorralonComponent },
-    { path: 'corralon/editCorralon/:idCorralon', component: EditCorralonComponent }
+    { path: 'corralon/editCorralon/:idCorralon', component: EditCorralonComponent },
+    { path: 'corralon/agregarCorralon', component: AgregarCorralonComponent}
 ];
