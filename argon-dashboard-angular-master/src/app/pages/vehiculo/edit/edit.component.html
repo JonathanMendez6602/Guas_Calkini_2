@@ -154,17 +154,19 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-llaves">Llaves</label>
-                    <input
-                      formControlName="llaves"
-                      [(ngModel)]="vehiculo.llaves"
-                      id="llaves"
-                      type="text"
+                    <select 
                       class="form-control form-control-alternative" 
-                      placeholder="Especifique si dejo las llaves o no">
-                    <div *ngIf="f.llaves.touched && f.llaves.invalid" class="alert alert-danger">
-                        <div *ngIf="f.llaves.errors.required">*Llaves is required.</div>
-                        <div *ngIf="f.llaves.errors.pattern">*The llaves must only contain letters.</div>
-                    </div>
+                      formControlName="llaves"
+                      [(ngModel)]="vehiculo.llaves" 
+                      id="llaves" 
+                      aria-describedby="llavesFeedback" required>
+                        <option selected disabled value="">Seleccione una opción</option>
+                        <option>Si</option>
+                        <option>No</option>
+                    </select>
+                      <div id="llavesFeedback" class="invalid-feedback">
+                        Llaves is required.
+                      </div>
                   </div>
                 </div>
               </div>
@@ -245,17 +247,18 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-sucursal">Sucursal</label>
-                      <input
-                        formControlName="sucursal"
-                        [(ngModel)]="vehiculo.sucursal"
-                        id="sucursal"
-                        type="text"
-                        class="form-control form-control-alternative" 
-                        placeholder="Ej: Calkiní">
-                      <div *ngIf="f.sucursal.touched && f.sucursal.invalid" class="alert alert-danger">
-                          <div *ngIf="f.sucursal.errors.required">*Sucursal is required.</div>
-                          <div *ngIf="f.sucursal.errors.pattern">*The Sucursal must only contain letters.
-                      </div>
+                    <select 
+                      class="form-control form-control-alternative" 
+                      formControlName="sucursal"
+                      id="sucursal" 
+                      aria-describedby="sucursalFeedback" required>
+                      <option selected disabled value="">Seleccione una opción</option>
+                      <option *ngFor="let sucursal of sucursales">
+                      {{sucursal.sucursal}}
+                      </option>
+                    </select>
+                    <div id="sucursalFeedback" class="invalid-feedback">
+                      Sucursal is required.
                     </div>
                   </div>
                 </div>

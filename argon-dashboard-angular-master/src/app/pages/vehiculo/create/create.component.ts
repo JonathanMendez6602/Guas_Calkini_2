@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VehiculoService } from '../vehiculo.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Sucursal } from '../sucursal';
 
 @Component({
   selector: 'app-create',
@@ -11,6 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class CreateComponent implements OnInit {
 
   form: FormGroup;
+  sucursales: Sucursal[] = [];
 
   constructor(
     public vehiculoService: VehiculoService,
@@ -18,6 +20,11 @@ export class CreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
 
     this.form = new FormGroup({
       marca:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),

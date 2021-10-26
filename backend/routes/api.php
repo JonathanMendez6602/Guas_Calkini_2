@@ -31,6 +31,7 @@ Route::prefix('person')->group(function () {
 
 Route::prefix('vehiculo')->group(function () {
     Route::get('/',[ VehiculoController::class, 'getAll']);
+    Route::get('/sucursal',[ VehiculoController::class, 'getAllSucursal']);
     Route::get('/corralon',[VehiculoController::class,'getAllCorralon']);
     Route::post('/',[ VehiculoController::class, 'create']);
     Route::delete('/{id}',[ VehiculoController::class, 'delete']);
