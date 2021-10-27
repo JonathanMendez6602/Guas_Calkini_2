@@ -1,11 +1,11 @@
-<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua_1.jpg); background-size: cover; background-position: center top;">
+<div class="header pb-5 pt-5 pt-lg-5 d-flex align-items-center" style="min-height: 20px; background-image: url(assets/img/theme/Corralon.jpg); background-size: cover; background-position: center top;">
     <!-- Mask -->
 
     <span class="mask bg-gradient-info opacity-8"></span>
     <!-- Header container -->
   </div>
   
-  <div class="header bg-white pb-8 pt-5 pt-md-8">
+  <div class="header bg-white pb-8 pt-5 pt-md-0">
     <div class="container-fluid">
       <div class="header-body">
           
@@ -30,19 +30,39 @@
         <table class="table bg-lighter border-1px-solid-white">
           <tr>
             <th>ID</th>
-            <th>Marca</th>
             <th>Modelo</th>
+            <th>Marca</th>
+            <th>Foto vehiculo</th>
+            <th>Color</th>
             <th>Placas</th>
+            <th>Inventario</th>
+            <th>Foto</th>
+            <th>llaves</th>
+            <th>Tipo Servicio</th>
+            <th>Lugar siniestro</th>
             <th>Descripcion</th>
+            <th>Nombre</th>
+            <th>Sucursal</th>
+            <th>Corralon</th>
             <th>Actions</th>
           </tr>
           <tr *ngFor="let vehiculo of vehiculos">
     
             <td>{{vehiculo.id}}</td>
-            <td>{{ vehiculo.marca }}</td>
             <td>{{ vehiculo.modelo }}</td>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.foto_vehiculo }}</td>
+            <td>{{ vehiculo.color }}</td>
             <td>{{ vehiculo.placas }}</td>
+            <td>{{ vehiculo.inventario }}</td>
+            <td>{{ vehiculo.foto_inventario }}</td>
+            <td>{{ vehiculo.llaves }}</td>
+            <td>{{ vehiculo.tipo_servicio }}</td>
+            <td>{{ vehiculo.lugar_siniestro }}</td>
             <td>{{ vehiculo.descripcion }}</td>
+            <td>{{ vehiculo.nombre }}</td>
+            <td>{{ vehiculo.sucursal }}</td>
+            <td>{{ vehiculo.corralon }}</td>
         </tr>
       </table>
     </div>
