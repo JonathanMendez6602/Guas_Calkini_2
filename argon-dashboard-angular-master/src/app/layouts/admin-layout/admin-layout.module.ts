@@ -21,13 +21,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
   ],
   declarations: [
     DashboardComponent,
     UserProfileComponent,
     TablesComponent,
-    MapsComponent
+    MapsComponent,
   ]
 })
 

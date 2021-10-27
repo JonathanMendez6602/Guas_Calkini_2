@@ -8,6 +8,7 @@ import { EditCorralonComponent } from './edit-corralon/edit-corralon.component';
 import { CreateCorralonComponent } from './create-corralon/create-corralon.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgregarCorralonComponent } from './agregar-corralon/agregar-corralon.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { AgregarCorralonComponent } from './agregar-corralon/agregar-corralon.co
     IndexCorralonComponent,
     EditCorralonComponent,
     CreateCorralonComponent,
-    AgregarCorralonComponent
+    AgregarCorralonComponent,
+    FilterPipe
+
   ],
   imports: [
     FormsModule,

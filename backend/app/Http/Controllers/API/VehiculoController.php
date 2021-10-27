@@ -27,7 +27,6 @@ class VehiculoController extends Controller
 
   public function getAllCorralon()
   {
-   
     $data = Vehiculo::where('corralon', 0)->get();
     return response()->json($data, 200);
   }

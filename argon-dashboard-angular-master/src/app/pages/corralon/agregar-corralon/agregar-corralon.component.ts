@@ -13,6 +13,7 @@ export class AgregarCorralonComponent implements OnInit {
 
   corralons: Corralon[]=[];
   vehiculos: Vehiculo[] = [];
+  filterModelo = "";
   constructor(public corralonService: CorralonService) { }
 
   ngOnInit(): void {
