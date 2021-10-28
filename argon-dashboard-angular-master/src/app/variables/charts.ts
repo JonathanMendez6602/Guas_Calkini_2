@@ -288,14 +288,14 @@ export const chartExample1 = {
     scales: {
       yAxes: [{
         gridLines: {
-          color: colors.gray[900],
-          zeroLineColor: colors.gray[900],
+          color: colors.gray[500],
+          zeroLineColor: colors.gray[100],
           drawOnChartArea: false
         },
         ticks: {
           callback: function(value) {
             if (!(value % 10)) {
-              return '$' + value + 'k';
+              return '' + value + '';
             }
           }
         }
@@ -305,8 +305,8 @@ export const chartExample1 = {
   data: {
     labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [{
-      label: 'Performance',
-      data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+      label: 'Vehículos',
+      data: [20, 25, 20, 30, 25, 40, 30, 50, 60]
     }]
   }
 }
