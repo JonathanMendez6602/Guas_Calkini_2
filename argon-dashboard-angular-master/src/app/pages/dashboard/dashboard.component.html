@@ -13,8 +13,8 @@
         <div class="card-header bg-transparent">
           <div class="row align-items-center">
             <div class="col">
-              <h6 class="text-uppercase text-muted ls-1 mb-1">Vehículos</h6>
-              <h2 class="mb-0">Vehículos ingresados al corralon por mes</h2>
+              <h6 class="text-uppercase text-muted ls-1 mb-1">Servicios</h6>
+              <h2 class="mb-0">Servicios realizados</h2>
             </div>
           </div>
         </div>
@@ -35,22 +35,28 @@
         <div class="card-header bg-transparent">
           <div class="row align-items-center">
             <div class="col">
-              <h6 class="text-uppercase text-light ls-1 mb-1">Corralones</h6>
-              <h2 class="text-white mb-4">Creciemiento de los corralones</h2>
-              <h5 class="text-white mb-0">Vehículos</h5>
+              <h6 class="text-uppercase text-light ls-1 mb-1">Corralon</h6>
+              <h2 class="text-white mb-4">Crecimiento del corralon</h2>
+              <h5 class="text-white mb-0">Servicios</h5>
             </div>
             <div class="col">
               <ul class="nav nav-pills justify-content-end">
                 <li class="nav-item mr-0 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
-                    <span class="d-none d-md-block">Mes</span>
+                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false;clicked2=false">
+                    <span class="d-none d-md-block">Calkiní</span>
                     <span class="d-md-none">M</span>
                   </a>
                 </li>
                 <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">Semana</span>
+                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true;clicked2=false">
+                    <span class="d-none d-md-block">Hopelchen</span>
                     <span class="d-md-none">W</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[2];updateOptions()">
+                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked2===true}" data-toggle="tab" (click)="clicked=false;clicked1=false;clicked2=true">
+                    <span class="d-none d-md-block">Xpujil</span>
+                    <span class="d-md-none">X</span>
                   </a>
                 </li>
               </ul>
