@@ -21,12 +21,14 @@ export class DashboardComponent implements OnInit {
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
+  public clicked2: boolean = false;
 
   ngOnInit() {
 
     this.datasets = [
       [0, 20, 10, 30, 15, 40, 20, 60, 60],
-      [0, 20, 5, 25, 10, 30, 15, 40, 40]
+      [0, 20, 5, 25, 10, 30, 15, 40, 40],
+      [10, 30, 35, 45, 50, 50, 55, 50, 50]
     ];
     this.data = this.datasets[0];
 

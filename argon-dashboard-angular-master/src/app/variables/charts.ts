@@ -303,10 +303,10 @@ export const chartExample1 = {
     }
   },
   data: {
-    labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    labels: ['Mayo', 'Junio', 'Julio', 'Agosto', 'Sepiembre', 'Octubre', 'Noviembre', 'Diciembre'],
     datasets: [{
       label: 'Vehículos',
-      data: [20, 25, 20, 30, 25, 40, 30, 50, 60]
+      data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
     }]
   }
 }
@@ -343,12 +343,12 @@ export const chartExample2 = {
     }
   },
   data: {
-    labels: ["Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    labels: ["Calkiní", "Hopelchen", "Xpujil"],
     datasets: [
       {
         label: "Sales",
-        data: [10, 20, 30, 27, 37, 29],
-        maxBarThickness: 10
+        data: [25, 20, 30],
+        maxBarThickness: 30
       }
     ]
   }
