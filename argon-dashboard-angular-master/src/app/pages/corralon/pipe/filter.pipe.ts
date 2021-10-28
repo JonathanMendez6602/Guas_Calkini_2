@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
 
     for( const vehiculo of value ){
       val1: false;
-      if((vehiculo.modelo.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (vehiculo.marca.toLowerCase().indexOf(arg.toLowerCase()) > -1)){
+      if((vehiculo.modelo.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (vehiculo.marca.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (vehiculo.color.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (vehiculo.placas.toLowerCase().indexOf(arg.toLowerCase()) > -1) ){
         console.log("Marca");
         resultVehiculo.push(vehiculo);
         val1: true;
