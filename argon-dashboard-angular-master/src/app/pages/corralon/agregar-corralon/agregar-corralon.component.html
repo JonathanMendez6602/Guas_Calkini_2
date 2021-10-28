@@ -9,12 +9,6 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/corralon/createCorralon">
-            <span class="btn-inner--icon"><i class="ni ni-collection"></i></span>
-            <span class="btn-inner--text">Agregar Nuevo</span>
-          </button>
-        </div>
-        <div class="card-header border-0">
           <h3>SERVICIOS DISPONIBLES</h3>
         </div>
         <div class="table-responsive">
@@ -76,7 +70,7 @@
                 <td>{{ vehiculo.color }}</td>
                 <td>{{ vehiculo.placas }}</td>
                 <td>
-                  <button class="btn btn-icon btn-3 btn-success btn-sm" type="button" a routerLink="/corralon/createCorralon">
+                  <button class="btn btn-icon btn-3 btn-success btn-sm" type="button" [routerLink]="['/corralon/', 'createCorralon', vehiculo.id  ]">
                     <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                     <span class="btn-inner--text">Agregar</span>
                   </button>

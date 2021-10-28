@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CorralonService } from '../corralon.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { Vehiculo } from '../vehiculo';
 
 @Component({
   selector: 'app-create',
@@ -10,13 +12,24 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreateCorralonComponent implements OnInit {
   form: FormGroup;
+  id: number;
+  vehiculo: Vehiculo;
 
   constructor(
     public corralonService: CorralonService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['idVehiculo'];
+    
+    this.corralonService.findID(this.id).subscribe((data: Vehiculo)=>{
+
+      this.vehiculo = data;
+      console.log(this.vehiculo.sucursal);
+      console.log(this.vehiculo.id);
+    });
     this.form = new FormGroup({
       fecha_entrada: new FormControl(''),
       pension_c: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),

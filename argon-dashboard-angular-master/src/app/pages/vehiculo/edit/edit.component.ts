@@ -35,6 +35,7 @@ export class EditComponent implements OnInit {
     this.vehiculoService.find(this.id).subscribe((data: Vehiculo)=>{
       this.vehiculo = data;
       console.log(this.vehiculo.sucursal);
+      console.log(this.vehiculo.id);
     });
 
     this.form = new FormGroup({
