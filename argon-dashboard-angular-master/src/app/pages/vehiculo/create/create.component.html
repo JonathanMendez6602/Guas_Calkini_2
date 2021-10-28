@@ -44,7 +44,6 @@
                       class="form-control form-control-alternative" 
                       placeholder="Ej: Año 2001">
                     <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
-                        <div *ngIf="f.modelo.errors.required">*Modelo is required.</div>
                         <div *ngIf="f.modelo.errors.pattern">*The modelo must only contain letters.</div>
                     </div>
                   </div>
@@ -143,6 +142,7 @@
                       class="form-control form-control-alternative" 
                       formControlName="llaves" 
                       id="llaves" 
+                      type="text"
                       aria-describedby="llavesFeedback" required>
                         <option selected disabled value="">Seleccione una opción</option>
                         <option>Si</option>

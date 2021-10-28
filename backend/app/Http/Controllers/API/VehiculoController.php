@@ -33,7 +33,11 @@ class VehiculoController extends Controller
 
   public function create(Request $request)
   {
-    $data['modelo'] = $request['modelo'];
+    if(($request['modelo']=="")){
+      $data['modelo'] = "";
+    }else{
+      $data['modelo'] = $request['modelo'];
+    }
     $data['marca'] = $request['marca'];
     $data['foto_vehiculo'] = $request['foto_vehiculo'];
     $data['color'] = $request['color'];
@@ -41,7 +45,6 @@ class VehiculoController extends Controller
     $data['inventario'] = $request['inventario'];
     $data['foto_inventario'] = $request['foto_inventario'];
     $data['llaves'] = $request['llaves'];
-    $data['id'] = $request['id'];
     $data['tipo_servicio'] = $request['tipo_servicio'];
     $data['lugar_siniestro'] = $request['lugar_siniestro'];
     $data['descripcion'] = $request['descripcion'];

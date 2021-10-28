@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PersonController;
 use App\Http\Controllers\API\VehiculoController;
 use App\Http\Controllers\API\CorralonController;
+use App\Http\Controllers\API\AseguradoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,13 @@ Route::prefix('corralon')->group(function () {
     Route::delete('/{id}',[ CorralonController::class, 'delete']);
     Route::get('/{id}',[ CorralonController::class, 'get']);
     Route::put('/{id}',[ CorralonController::class, 'update']);
+});
+
+Route::prefix('aseguradora')->group(function () {
+    Route::get('/',[ AseguradoraController::class, 'getAll']);
+    Route::post('/',[ AseguradoraController::class, 'create']);
+    Route::delete('/{id}',[ AseguradoraController::class, 'delete']);
+    Route::get('/{id}',[ AseguradoraController::class, 'get']);
+    Route::put('/{id}',[ AseguradoraController::class, 'update']);
 });
 
