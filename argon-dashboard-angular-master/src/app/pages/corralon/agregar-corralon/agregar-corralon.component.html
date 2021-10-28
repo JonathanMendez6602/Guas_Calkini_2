@@ -70,7 +70,7 @@
                 <td>{{ vehiculo.color }}</td>
                 <td>{{ vehiculo.placas }}</td>
                 <td>
-                  <button class="btn btn-icon btn-3 btn-success btn-sm" type="button" a routerLink="/corralon/createCorralon">
+                  <button class="btn btn-icon btn-3 btn-success btn-sm" type="button" [routerLink]="['/corralon/', 'createCorralon', vehiculo.id  ]">
                     <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                     <span class="btn-inner--text">Agregar</span>
                   </button>

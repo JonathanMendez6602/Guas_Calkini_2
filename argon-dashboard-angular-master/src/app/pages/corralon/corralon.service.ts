@@ -13,7 +13,7 @@ import { Vehiculo } from './vehiculo';
 export class CorralonService {
  
   private apiURL = "http://127.0.0.1:8000/api/corralon";
-  private URLMostrar = "http://127.0.0.1:8000/api/vehiculo/corralon";
+  private URLMostrar = "http://127.0.0.1:8000/api/vehiculo";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ export class CorralonService {
   }
 
   getAllMostrar(): Observable<Vehiculo[]>{
-    return this.httpClient.get<Vehiculo[]>(this.URLMostrar)
+    return this.httpClient.get<Vehiculo[]>(this.URLMostrar+"/corralon")
   }
 
   create(corralon): Observable<Corralon> {
@@ -40,6 +40,13 @@ export class CorralonService {
  
   find(id): Observable<Corralon> {
     return this.httpClient.get<Corralon>(this.apiURL +"/"+ id)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  findID(id): Observable<Vehiculo> {
+    return this.httpClient.get<Vehiculo>(this.URLMostrar +"/"+ id)
     .pipe(
       catchError(this.errorHandler)
     )

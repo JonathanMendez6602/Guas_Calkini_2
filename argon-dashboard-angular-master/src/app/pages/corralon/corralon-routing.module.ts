@@ -9,7 +9,7 @@ import { EditCorralonComponent } from './edit-corralon/edit-corralon.component';
 const routes: Routes = [
   { path: 'corralon', redirectTo: 'corralon/indexCorralon', pathMatch: 'full'},
   { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
-  { path: 'corralon/createCorralon', component: CreateCorralonComponent },
+  { path: 'corralon/createCorralon/:idVehiculo', component: CreateCorralonComponent },
   { path: 'corralon/editCorralon/:idCorralon', component: EditCorralonComponent }
 ];
 
