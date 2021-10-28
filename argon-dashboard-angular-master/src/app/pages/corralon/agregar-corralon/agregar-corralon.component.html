@@ -15,7 +15,7 @@
           </button>
         </div>
         <div class="card-header border-0">
-          <h3>LISTA FUERA DE CORRALON</h3>
+          <h3>SERVICIOS DISPONIBLES</h3>
         </div>
         <div class="table-responsive">
           <input type="text" class="form-control" name="filterModelo" placeholder="Buscar..." [(ngModel)]="filterModelo">
@@ -34,14 +34,14 @@
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Modelo</span>
+                      <span class="mb-0 text-sm">Marca</span>
                     </div>
                   </div>
                 </th>
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Marca</span>
+                      <span class="mb-0 text-sm">Modelo</span>
                     </div>
                   </div>
                 </th>
@@ -70,23 +70,15 @@
             </thead>
             <tbody>
               <tr *ngFor="let vehiculo of vehiculos | filter:filterModelo">
-                <td>{{vehiculo.id}}</td>
-                <td>{{ vehiculo.modelo }}</td>
+                <td>{{ vehiculo.id }}</td>
                 <td>{{ vehiculo.marca }}</td>
+                <td>{{ vehiculo.modelo }}</td>
                 <td>{{ vehiculo.color }}</td>
                 <td>{{ vehiculo.placas }}</td>
                 <td>
-                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]">
-                    <span class="btn-inner--icon"><i class="ni ni-zoom-split-in"></i></span>
-                    <span class="btn-inner--text">Ver</span>
-                  </button>
-                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">
-                    <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
-                    <span class="btn-inner--text">Editar</span>
-                  </button>
-                  <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(vehiculo.id)">
-                    <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
-                    <span class="btn-inner--text">Borrar</span>
+                  <button class="btn btn-icon btn-3 btn-success btn-sm" type="button" a routerLink="/corralon/createCorralon">
+                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                    <span class="btn-inner--text">Agregar</span>
                   </button>
                 </td>
               </tr>

@@ -10,12 +10,12 @@
       <div class="card shadow">
         <div class="card-header border-0">
           <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/corralon/agregarCorralon">
-            <span class="btn-inner--icon"><i class="ni ni-collection"></i></span>
-            <span class="btn-inner--text">Vehiculos fuera de corralon</span>
+            <span class="btn-inner--icon"><i class="ni ni-delivery-fast"></i></span>
+            <span class="btn-inner--text">DAR UN SERVICIO DE ALTA</span>
           </button>
         </div>
         <div class="card-header border-0">
-          <h3>LISTA DE CORRALON</h3>
+          <h3>SERVICIOS DENTRO DEL CORRALÓN</h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
@@ -52,7 +52,21 @@
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
+                      <span class="mb-0 text-sm">Estado de entrega</span>
+                    </div>
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
                       <span class="mb-0 text-sm">Fecha de entrega</span>
+                    </div>
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">Otro asunto</span>
                     </div>
                   </div>
                 </th>
@@ -71,16 +85,18 @@
                 <td>{{ corralon.fecha_entrada }}</td>
                 <td>{{ corralon.pension_c }}</td>
                 <td>{{ corralon.dias_pension }}</td>
+                <td>{{ corralon.status_entrega }}</td>
                 <td>{{ corralon.fecha_entrega }}</td>
+                <td>{{ corralon.otro_asunto }}</td>
                 <td>
-                  <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]"></i>
-        
-                      <span _ngcontent-c6="" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id  ]">&nbsp;Editar</span>
-        
-                      <button type="button" rel="tooltip" (click)="deleteCorralon(corralon.id)" class="btn btn-danger btn-sm btn-icon">
-                        <i class="tim-icons icon-simple-remove"></i>
-                      </button>
-                  
+                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id ]">
+                    <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+                    <span class="btn-inner--text">Editar</span>
+                  </button>
+                  <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteCorralon(corralon.id)">
+                    <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                    <span class="btn-inner--text">Borrar</span>
+                  </button>
                 </td>
               </tr>
             </tbody>

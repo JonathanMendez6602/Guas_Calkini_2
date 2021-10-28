@@ -1,118 +1,135 @@
-<div>
-
-    <div class="d-flex justify-content-between">
-      <h4>Form customer</h4>
-      <a href="#" routerLink="/corralon/indexCorralon" class="btn btn-primaryt">Back</a>
-    </div>
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/Corralon.jpg); background-size: cover; background-position: center top;">
+    <span class="mask bg-gradient-info opacity-8"></span>
+</div>
   
-    <hr/>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3>EDITAR SERVICIO EN EL CORRALÓN</h3>
+          </div>
   
-      <form [formGroup]="form" (ngSubmit)="submit()">
-  
-        <div class="form-group row">
-            <div class="col-md-6 ">
-                <label for="title">Fecha de entrada:</label>
-                <input
-                formControlName="fecha_entrada"
-                [(ngModel)]="corralon.fecha_entrada"
-                id="fecha_entrada"
-                type="date"
-                class="form-control">
-            </div> 
-            </div>
-    
-        <div class="form-group row">
-        <div class="col-md-6 ">
-            <label for="title">Pensión:</label>
-            <input
-            formControlName="pension_c"
-            [(ngModel)]="corralon.pension_c"
-            id="pension_c"
-            type="text"
-            class="form-control">
-            <div *ngIf="f.pension_c.touched && f.pension_c.invalid" class="alert alert-danger">
-                <div *ngIf="f.pension_c.errors.required">*pension_c is required.</div>
-                <div *ngIf="f.pension_c.errors.pattern">*The pension_c must only contain letters.</div>
-            </div>
-        </div>
-        </div>
-    
-        <div class="form-group row">
-        <div class="col-md-6 ">
-            <label for="title">Dias pensión:</label>
-            <input
-            formControlName="dias_pension"
-            [(ngModel)]="corralon.dias_pension"
-            id="dias_pension"
-            type="text"
-            class="form-control">
-            <div *ngIf="f.dias_pension.touched && f.dias_pension.invalid" class="alert alert-danger">
-                <div *ngIf="f.dias_pension.errors.required">*dias_pension is required.</div>
-                <div *ngIf="f.dias_pension.errors.pattern">*The dias_pension must only contain numbers.</div>
-            </div>
-        </div>
-        </div>
-    
-        <div class="form-group row">
-        <div class="col-md-6 ">
-            <label for="title">Estado de entrega:</label>
-            <input
-            formControlName="status_entrega"
-            [(ngModel)]="corralon.status_entrega"
-            id="status_entrega"
-            type="text"
-            class="form-control">
-            <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
-                <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
-                <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
-            </div>
-        </div>
-        </div>
-    
-        <div class="form-group row">
-        <div class="col-md-6 ">
-            <label for="title">Fecha de entrega:</label>
-            <input
-            formControlName="fecha_entrega"
-            [(ngModel)]="corralon.fecha_entrega"
-            id="fecha_entrega"
-            type="date"
-            class="form-control">
-        </div>
-        </div>
-    
-        <div class="form-group row">
-        <div class="col-md-6 ">
-            <label for="title">Otro asunto:</label>
-            <input
-            formControlName="otro_asunto"
-            [(ngModel)]="corralon.otro_asunto"
-            id="otro_asunto"
-            type="text"
-            class="form-control">
-            <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
-                <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
-                <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
-            </div>
-        </div>
-        </div>
-    
-        <div class="form-group row">
-            <div class="col-md-6 ">
-                <label for="title">ID vehiculo:</label>
-                <input
-                formControlName="id_vehiculo"
-                [(ngModel)]="corralon.id_vehiculo"
-                id="id_vehiculo"
-                type="text"
-                class="form-control">
-                <div *ngIf="f.id_vehiculo.touched && f.id_vehiculo.invalid" class="alert alert-danger">
-                    <div *ngIf="f.id_vehiculo.errors.required">*otro_asunto is required.</div>
-                    <div *ngIf="f.id_vehiculo.errors.pattern">*The otro_asunto must only contain numbers.</div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <h6 class="heading-small text-muted mb-4">Información del Servicio</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-modelo">Fecha de entrada</label>
+                        <input
+                        formControlName="fecha_entrada"
+                        [(ngModel)]="corralon.fecha_entrada"
+                        id="fecha_entrada"
+                        type="date"
+                        class="form-control form-control-alternative">
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-pension_c">Pensión en el corralón</label>
+                      <input
+                        formControlName="pension_c"
+                        [(ngModel)]="corralon.pension_c"
+                        id="pension_c"
+                        type="text"
+                        class="form-control form-control-alternative">
+                        <div *ngIf="f.pension_c.touched && f.pension_c.invalid" class="alert alert-danger">
+                            <div *ngIf="f.pension_c.errors.required">*pension_c is required.</div>
+                            <div *ngIf="f.pension_c.errors.pattern">*The pension_c must only contain letters.</div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
   
-          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
-      </form>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-dias_pension">Días de pensión</label>
+                      <input
+                        formControlName="dias_pension"
+                        [(ngModel)]="corralon.dias_pension"
+                        id="dias_pension"
+                        type="text"
+                        class="form-control form-control-alternative">
+                        <div *ngIf="f.dias_pension.touched && f.dias_pension.invalid" class="alert alert-danger">
+                            <div *ngIf="f.dias_pension.errors.required">*dias_pension is required.</div>
+                            <div *ngIf="f.dias_pension.errors.pattern">*The dias_pension must only contain numbers.</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-status_entrega">Estado de entrega</label>
+                      <input
+                        formControlName="status_entrega"
+                        [(ngModel)]="corralon.status_entrega"
+                        id="status_entrega"
+                        type="text"
+                        class="form-control form-control-alternative">
+                        <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
+                            <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
+                            <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-fecha_entrega">Fecha de entrega</label>
+                      <input
+                        formControlName="fecha_entrega"
+                        [(ngModel)]="corralon.fecha_entrega"
+                        id="fecha_entrega"
+                        type="date"
+                        class="form-control form-control-alternative">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-otro_asunto">Otro asunto</label>
+                      <input
+                        formControlName="otro_asunto"
+                        [(ngModel)]="corralon.otro_asunto"
+                        id="otro_asunto"
+                        type="text"
+                        class="form-control form-control-alternative">
+                        <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
+                            <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
+                            <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-foto_inventario">ID Vehículo</label>
+                      <input
+                        formControlName="id_vehiculo"
+                        [(ngModel)]="corralon.id_vehiculo"
+                        id="id_vehiculo"
+                        type="text"
+                        class="form-control">
+                        <div *ngIf="f.id_vehiculo.touched && f.id_vehiculo.invalid" class="alert alert-danger">
+                            <div *ngIf="f.id_vehiculo.errors.required">*id_vehiculo is required.</div>
+                            <div *ngIf="f.id_vehiculo.errors.pattern">*id_vehiculo must only contain numbers.</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-info" type="submit" [disabled]="!form.valid">Guardar Cambios</button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
   </div>
