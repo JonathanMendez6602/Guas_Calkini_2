@@ -27,18 +27,23 @@
                         class="form-control form-control-alternative">
                       </div>
                   </div>
+
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-pension_c">Pensión en el corralón</label>
-                      <input
-                        formControlName="pension_c"
-                        id="pension_c"
-                        type="text"
-                        class="form-control form-control-alternative">
-                        <div *ngIf="f.pension_c.touched && f.pension_c.invalid" class="alert alert-danger">
-                            <div *ngIf="f.pension_c.errors.required">*pension_c is required.</div>
-                            <div *ngIf="f.pension_c.errors.pattern">*The pension_c must only contain letters.</div>
-                        </div>
+                      
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="pension_c" 
+                        id="pension_c" 
+                        aria-describedby="pension_cFeedback" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>Si</option>
+                          <option>No</option>
+                      </select>
+                      <div id="pension_cFeedback" class="invalid-feedback">
+                        Pension is required.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -58,18 +63,22 @@
                         </div>
                     </div>
                   </div>
+          
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-status_entrega">Estado de entrega</label>
-                      <input
-                        formControlName="status_entrega"
-                        id="status_entrega"
-                        type="text"
-                        class="form-control form-control-alternative">
-                        <div *ngIf="f.status_entrega.touched && f.status_entrega.invalid" class="alert alert-danger">
-                            <div *ngIf="f.status_entrega.errors.required">*status_entrega is required.</div>
-                            <div *ngIf="f.status_entrega.errors.pattern">*The status_entrega must only contain letters.</div>
-                        </div>
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="status_entrega" 
+                        id="status_entrega" 
+                        aria-describedby="status_entregaFeedback" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>Entregado</option>
+                          <option>No Entregado</option>
+                      </select>
+                      <div id="status_entregaFeedback" class="invalid-feedback">
+                        Status is required.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -101,7 +110,7 @@
                   </div>
                 </div>
   
-                <div class="row" style="display: none">
+                <div class="row" style="display: none"> 
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-foto_inventario">ID Vehículo</label>
