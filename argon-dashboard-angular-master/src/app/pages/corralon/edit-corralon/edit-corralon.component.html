@@ -33,7 +33,7 @@
                     <label class="form-control-label" for="input-pension_c">Pensión en el corralón</label>
 
                     <select class="form-control form-control-alternative" formControlName="pension_c" id="pension_c"
-                      aria-describedby="pension_cFeedback" required>
+                      aria-describedby="pension_cFeedback" required [(ngModel)]="corralon.pension_c">
                       <option selected disabled value="">Seleccione una opción</option>
                       <option>Si</option>
                       <option>No</option>
@@ -64,7 +64,7 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-status_entrega">Estado de entrega</label>
                     <select class="form-control form-control-alternative" formControlName="status_entrega"
-                      id="status_entrega" aria-describedby="status_entregaFeedback" required>
+                      id="status_entrega" aria-describedby="status_entregaFeedback" required [(ngModel)]="corralon.status_entrega" >
                       <option selected disabled value="">Seleccione una opción</option>
                       <option>Entregado</option>
                       <option>No Entregado</option>
