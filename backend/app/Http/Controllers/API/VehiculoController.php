@@ -33,21 +33,34 @@ class VehiculoController extends Controller
 
   public function create(Request $request)
   {
-    if(($request['modelo']=="")){
-      $data['modelo'] = "";
-    }else{
-      $data['modelo'] = $request['modelo'];
-    }
+
+    $data['modelo'] = $request['modelo'];
     $data['marca'] = $request['marca'];
-    $data['foto_vehiculo'] = $request['foto_vehiculo'];
+    if($request['foto_vehiculo']==""){
+      $data['foto_vehiculo'] = "";
+    }else{
+      $data['foto_vehiculo'] = $request['foto_vehiculo'];
+    }
     $data['color'] = $request['color'];
     $data['placas'] = $request['placas'];
-    $data['inventario'] = $request['inventario'];
-    $data['foto_inventario'] = $request['foto_inventario'];
+    if($request['inventario']==""){
+      $data['inventario'] = "";
+    }else{
+      $data['inventario'] = $request['inventario'];
+    }
+    if($request['foto_inventario']==""){
+      $data['foto_inventario'] = "";
+    }else{
+      $data['foto_inventario'] = $request['foto_inventario'];
+    }
     $data['llaves'] = $request['llaves'];
     $data['tipo_servicio'] = $request['tipo_servicio'];
     $data['lugar_siniestro'] = $request['lugar_siniestro'];
-    $data['descripcion'] = $request['descripcion'];
+    if($request['descripcion']==""){
+      $data['descripcion'] = "";
+    }else{
+      $data['descripcion'] = $request['descripcion'];
+    }
     $data['nombre'] = $request['nombre'];
     $data['sucursal'] = $request['sucursal'];
     $data['corralon'] = 0;
@@ -79,16 +92,31 @@ class VehiculoController extends Controller
   {
     $data['modelo'] = $request['modelo'];
     $data['marca'] = $request['marca'];
-    $data['foto_vehiculo'] = $request['foto_vehiculo'];
+    if($request['foto_vehiculo']==""){
+      $data['foto_vehiculo'] = "";
+    }else{
+      $data['foto_vehiculo'] = $request['foto_vehiculo'];
+    }
     $data['color'] = $request['color'];
     $data['placas'] = $request['placas'];
-    $data['inventario'] = $request['inventario'];
-    $data['foto_inventario'] = $request['foto_inventario'];
+    if($request['inventario']==""){
+      $data['inventario'] = "";
+    }else{
+      $data['inventario'] = $request['inventario'];
+    }
+    if($request['foto_inventario']==""){
+      $data['foto_inventario'] = "";
+    }else{
+      $data['foto_inventario'] = $request['foto_inventario'];
+    }
     $data['llaves'] = $request['llaves'];
-    $data['id'] = $request['id'];
     $data['tipo_servicio'] = $request['tipo_servicio'];
     $data['lugar_siniestro'] = $request['lugar_siniestro'];
-    $data['descripcion'] = $request['descripcion'];
+    if($request['descripcion']==""){
+      $data['descripcion'] = "";
+    }else{
+      $data['descripcion'] = $request['descripcion'];
+    }
     $data['nombre'] = $request['nombre'];
     $data['sucursal'] = $request['sucursal'];
     Vehiculo::find($id)->update($data);

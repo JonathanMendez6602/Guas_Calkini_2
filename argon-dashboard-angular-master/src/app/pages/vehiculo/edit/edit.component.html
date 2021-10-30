@@ -65,7 +65,6 @@
                       class="form-control form-control-alternative" 
                       placeholder="Agregue una foto del vehículo si es que tiene">
                     <div *ngIf="f.foto_vehiculo.touched && f.foto_vehiculo.invalid" class="alert alert-danger">
-                        <div *ngIf="f.foto_vehiculo.required">*Foto vehiculo is required.</div>
                         <div *ngIf="f.foto_vehiculo.pattern">*The Foto vehiculo must only contain letters.</div>
                     </div>
                   </div>
@@ -118,7 +117,6 @@
                       class="form-control form-control-alternative" 
                       placeholder="Ej: Stereo, documentos, botellas, accesorios">
                     <div *ngIf="f.inventario.touched && f.inventario.invalid" class="alert alert-danger">
-                        <div *ngIf="f.inventario.errors.required">*Inventario is required.</div>
                         <div *ngIf="f.inventario.errors.pattern">*The inventario must only contain letters.</div>
                     </div>
                   </div>
@@ -137,7 +135,6 @@
                       class="form-control form-control-alternative" 
                       placeholder="Agregue una foto del inventario si es que tiene">
                     <div *ngIf="f.foto_inventario.touched && f.foto_inventario.invalid" class="alert alert-danger">
-                        <div *ngIf="f.foto_inventario.errors.required">*Foto inventario is required.</div>
                         <div *ngIf="f.foto_inventario.errors.pattern">*The foto inventario must only contain letters.</div>
                     </div>
                   </div>
@@ -211,7 +208,6 @@
                       class="form-control form-control-alternative" 
                       placeholder="Descripción a detalle del servicio">
                     <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
-                        <div *ngIf="f.descripcion.errors.required">*Descripcion is required.</div>
                         <div *ngIf="f.descripcion.errors.pattern">*The descripcion must only contain letters.</div>
                     </div>
                   </div>

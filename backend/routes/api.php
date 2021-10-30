@@ -6,6 +6,8 @@ use App\Http\Controllers\API\PersonController;
 use App\Http\Controllers\API\VehiculoController;
 use App\Http\Controllers\API\CorralonController;
 use App\Http\Controllers\API\AseguradoraController;
+use App\Http\Controllers\API\GruaController;
+use App\Http\Controllers\API\ChoferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,5 +56,21 @@ Route::prefix('aseguradora')->group(function () {
     Route::delete('/{id}',[ AseguradoraController::class, 'delete']);
     Route::get('/{id}',[ AseguradoraController::class, 'get']);
     Route::put('/{id}',[ AseguradoraController::class, 'update']);
+});
+
+Route::prefix('grua')->group(function () {
+    Route::get('/',[ GruaController::class, 'getAll']);
+    Route::post('/',[ GruaController::class, 'create']);
+    Route::delete('/{id}',[ GruaController::class, 'delete']);
+    Route::get('/{id}',[ GruaController::class, 'get']);
+    Route::put('/{id}',[ GruaController::class, 'update']);
+});
+
+Route::prefix('chofer')->group(function () {
+    Route::get('/',[ ChoferController::class, 'getAll']);
+    Route::post('/',[ ChoferController::class, 'create']);
+    Route::delete('/{id}',[ ChoferController::class, 'delete']);
+    Route::get('/{id}',[ ChoferController::class, 'get']);
+    Route::put('/{id}',[ ChoferController::class, 'update']);
 });
 
