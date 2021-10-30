@@ -4,11 +4,15 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Requestfilefile;
+use Illuminate\Http\UploadedFileSplFileInfo;
+use Symfony\Component\HttpFoundation\File;
 
 use App\Models\Vehiculo;
 use App\Models\Corralon;
 use App\Models\Sucursal;
 use Log;
+use SebastianBergmann\Environment\Console;
 
 class VehiculoController extends Controller
 {
@@ -39,7 +43,7 @@ class VehiculoController extends Controller
     if($request['foto_vehiculo']==""){
       $data['foto_vehiculo'] = "";
     }else{
-      $data['foto_vehiculo'] = $request['foto_vehiculo'];
+      $data['foto_vehiculo']=$request['foto_vehiculo'];
     }
     $data['color'] = $request['color'];
     $data['placas'] = $request['placas'];

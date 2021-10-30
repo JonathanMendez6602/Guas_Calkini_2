@@ -58,12 +58,8 @@
                     <input
                       formControlName="foto_vehiculo"
                       id="foto_vehiculo"
-                      type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Agregue una foto del vehículo si es que tiene">
-                    <div *ngIf="f.foto_vehiculo.touched && f.foto_vehiculo.invalid" class="alert alert-danger">
-                        <div *ngIf="f.foto_vehiculo.pattern">*The Foto vehiculo must only contain letters.</div>
-                    </div>
+                      type="file"
+                      class="form-control form-control-alternative">
                   </div>
                 </div>
 
