@@ -17,10 +17,10 @@ class CreateGruaTable extends Migration
             $table->id();
             $table->string('marca');
             $table->string('modelo');
-            $table->string('num_serie');
+            $table->bigInteger('num_serie');
             $table->string('placas');
-            $table->string('anio');
-            $table->string('num_motor');
+            $table->bigInteger('anio');
+            $table->bigInteger('num_motor');
             $table->string('tipo_est_o_fed');
             $table->string('doc_tarjcirculacion');
             $table->string('doc_cartaporte');

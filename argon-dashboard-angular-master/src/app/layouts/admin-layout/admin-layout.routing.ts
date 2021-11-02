@@ -18,6 +18,11 @@ import { CreateCorralonComponent } from 'src/app/pages/corralon/create-corralon/
 import { EditCorralonComponent } from 'src/app/pages/corralon/edit-corralon/edit-corralon.component';
 import { AgregarCorralonComponent } from 'src/app/pages/corralon/agregar-corralon/agregar-corralon.component';
 
+import { IndexGruaComponent } from 'src/app/pages/grua/index-grua/index-grua.component';
+import { CreateGruaComponent } from 'src/app/pages/grua/create-grua/create-grua.component';
+import { EditGruaComponent } from 'src/app/pages/grua/edit-grua/edit-grua.component';
+import { ViewGruaComponent } from 'src/app/pages/grua/view-grua/view-grua.component';
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent },
@@ -30,5 +35,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'corralon/indexCorralon', component: IndexCorralonComponent },
     { path: 'corralon/createCorralon/:idVehiculo', component: CreateCorralonComponent },
     { path: 'corralon/editCorralon/:idCorralon', component: EditCorralonComponent },
-    { path: 'corralon/agregarCorralon', component: AgregarCorralonComponent}
+    { path: 'corralon/agregarCorralon', component: AgregarCorralonComponent},
+
+    { path: 'grua/indexGrua', component: IndexGruaComponent },
+    { path: 'grua/createGrua', component: CreateGruaComponent },
+    { path: 'grua/editGrua/:idGrua', component: EditGruaComponent },
+    { path: 'grua/viewGrua/:idGrua', component: ViewGruaComponent }
 ];

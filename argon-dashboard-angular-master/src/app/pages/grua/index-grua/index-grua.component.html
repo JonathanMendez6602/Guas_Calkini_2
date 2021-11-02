@@ -1,0 +1,75 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua_1.jpg); background-size: cover; background-position: center top;">
+    <span class="mask bg-gradient-info opacity-8"></span>
+</div>
+
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <div class="card-header border-0">
+                <h3>LISTA DE Gruas</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-flush">
+                  <thead class="media-body">
+                    <tr>
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">ID</span>
+                          </div>
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">Marca</span>
+                          </div>
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">Modelo</span>
+                          </div>
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">Numero de Serie</span>
+                          </div>
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">Placas</span>
+                          </div>
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm"></span>
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let grua of gruas">
+                      <td>{{grua.id}}</td>
+                      <td>{{ grua.marca }}</td>
+                      <td>{{ grua.modelo }}</td>
+                      <td>{{ grua.num_serie }}</td>
+                      <td>{{ grua.placas }}</td>
+                    </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
