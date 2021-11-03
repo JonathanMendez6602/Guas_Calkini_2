@@ -8,11 +8,11 @@
       <div class="col">
         <div class="card shadow">
           <div class="card-header border-0">
-            <h3>AGREGAR NUEVA GRUA</h3>
+            <h3>AGREGAR NUEVA GRÚA</h3>
           </div>
           <div class="card-body">
             <form [formGroup]="form" (ngSubmit)="submit()">
-              <h6 class="heading-small text-muted mb-4">Información del Vehículo</h6>
+              <h6 class="heading-small text-muted mb-4">Información de la grúa</h6>
               <div class="pl-lg-4">
   
                 <div class="row">
@@ -24,7 +24,7 @@
                                 id="marca"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.marca.touched && f.marca.invalid" class="alert alert-danger">
                                 <div *ngIf="f.marca.errors.required">*Marca is required.</div>
                                 <div *ngIf="f.marca.errors.pattern">*The marca must only contain letters.</div>
@@ -39,7 +39,7 @@
                             id="modelo"
                             type="text"
                             class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
                                 <div *ngIf="f.modelo.errors.required">*Marca is required.</div>
                                 <div *ngIf="f.modelo.errors.pattern">*The marca must only contain string.</div>
@@ -50,13 +50,13 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Numero de Serie</label>
+                            <label class="form-control-label" for="input-marca">Número de Serie</label>
                             <input
                                 formControlName="num_serie"
                                 id="num_serie"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.num_serie.touched && f.num_serie.invalid" class="alert alert-danger">
                                 <div *ngIf="f.num_serie.errors.required">*Marca is required.</div>
                                 <div *ngIf="f.num_serie.errors.pattern">*The marca must only contain numbers.</div>
@@ -71,7 +71,7 @@
                               id="placas"
                               type="text"
                               class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                               <div *ngIf="f.placas.touched && f.placas.invalid" class="alert alert-danger">
                                   <div *ngIf="f.placas.errors.required">*Marca is required.</div>
                                   <div *ngIf="f.placas.errors.pattern">*The marca must only contain string.</div>
@@ -88,7 +88,7 @@
                                 id="anio"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.anio.touched && f.anio.invalid" class="alert alert-danger">
                                 <div *ngIf="f.anio.errors.required">*Año is required.</div>
                                 <div *ngIf="f.anio.errors.pattern">*The año must only contain numbers.</div>
@@ -97,13 +97,13 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Numero de Motor</label>
+                            <label class="form-control-label" for="input-marca">Número de Motor</label>
                             <input
                               formControlName="num_motor"
                               id="num_motor"
                               type="text"
                               class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                               <div *ngIf="f.num_motor.touched && f.num_motor.invalid" class="alert alert-danger">
                                   <div *ngIf="f.num_motor.errors.required">*Marca is required.</div>
                                   <div *ngIf="f.num_motor.errors.pattern">*The marca must only contain numbers.</div>
@@ -114,6 +114,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
+<<<<<<< HEAD
                             <label class="form-control-label" for="input-marca">Tipo Estatal o Federal</label>
                     <select 
                       class="form-control form-control-alternative" 
@@ -128,130 +129,146 @@
                       <div id="tipo_est_o_fedFeedback" class="invalid-feedback">
                         Tipo estatal o federal is required.
                       </div>
+=======
+                            <label class="form-control-label" for="input-marca">Tipo</label>
+                            <select 
+                                class="form-control form-control-alternative" 
+                                formControlName="tipo_est_o_fed" 
+                                id="tipo_est_o_fed" 
+                                type="text"
+                                aria-describedby="tipo_est_o_fedFeedback" required>
+                                <option selected disabled value="">Seleccione una opción</option>
+                                <option>Estatal</option>
+                                <option>Federal</option>
+                            </select>
+                            <div id="tipo_est_o_fedFeedback" class="invalid-feedback">
+                                Tipo estatal o federal is required.
+                            </div>
+>>>>>>> 7cb190854376bf4b1ff945c6e8f7c4160d2357e9
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Tarjeta de Circulacion</label>
+                            <label class="form-control-label" for="input-marca">Tarjeta de Circulación</label>
                             <input
                                 formControlName="doc_tarjcirculacion"
                                 id="doc_tarjcirculacion"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.doc_tarjcirculacion.touched && f.doc_tarjcirculacion.invalid" class="alert alert-danger">
                                 <div *ngIf="f.doc_tarjcirculacion.errors.required">*Año is required.</div>
                                 <div *ngIf="f.doc_tarjcirculacion.errors.pattern">*The año must only contain letters.</div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Carta Porte</label>
+                            <label class="form-control-label" for="input-marca">Carta Porte</label>
                             <input
                               formControlName="doc_cartaporte"
                               id="doc_cartaporte"
                               type="text"
                               class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                               <div *ngIf="f.doc_cartaporte.touched && f.doc_cartaporte.invalid" class="alert alert-danger">
                                   <div *ngIf="f.doc_cartaporte.errors.required">*Marca is required.</div>
                                   <div *ngIf="f.doc_cartaporte.errors.pattern">*The marca must only contain letters.</div>
                               </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Poliza Seguro</label>
+                            <label class="form-control-label" for="input-marca">Póliza de Seguro</label>
                             <input
                                 formControlName="doc_polizaseguro"
                                 id="doc_polizaseguro"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.doc_polizaseguro.touched && f.doc_polizaseguro.invalid" class="alert alert-danger">
                                 <div *ngIf="f.doc_polizaseguro.errors.required">*Año is required.</div>
                                 <div *ngIf="f.doc_polizaseguro.errors.pattern">*The año must only contain letters.</div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Factura</label>
+                            <label class="form-control-label" for="input-marca">Factura</label>
                             <input
                               formControlName="doc_factura"
                               id="doc_factura"
                               type="text"
                               class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                               <div *ngIf="f.doc_factura.touched && f.doc_factura.invalid" class="alert alert-danger">
                                   <div *ngIf="f.doc_factura.errors.required">*Marca is required.</div>
                                   <div *ngIf="f.doc_factura.errors.pattern">*The marca must only contain letters.</div>
                               </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Consecion</label>
+                            <label class="form-control-label" for="input-marca">Conseción</label>
                             <input
                                 formControlName="doc_consecion"
                                 id="doc_consecion"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.doc_consecion.touched && f.doc_consecion.invalid" class="alert alert-danger">
                                 <div *ngIf="f.doc_consecion.errors.required">*Año is required.</div>
                                 <div *ngIf="f.doc_consecion.errors.pattern">*The año must only contain letters.</div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Inclusion</label>
+                            <label class="form-control-label" for="input-marca">Inclusión</label>
                             <input
                               formControlName="doc_inclusion"
                               id="doc_inclusion"
                               type="text"
                               class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                               <div *ngIf="f.doc_inclusion.touched && f.doc_inclusion.invalid" class="alert alert-danger">
                                   <div *ngIf="f.doc_inclusion.errors.required">*Marca is required.</div>
                                   <div *ngIf="f.doc_inclusion.errors.pattern">*The marca must only contain letters.</div>
                               </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Permiso Fisicomec</label>
+                            <label class="form-control-label" for="input-marca">Permiso Físico-mecánico</label>
                             <input
                                 formControlName="doc_permiso_fisicomec"
                                 id="doc_permiso_fisicomec"
                                 type="text"
                                 class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                             <div *ngIf="f.doc_permiso_fisicomec.touched && f.doc_permiso_fisicomec.invalid" class="alert alert-danger">
                                 <div *ngIf="f.doc_permiso_fisicomec.errors.required">*Año is required.</div>
                                 <div *ngIf="f.doc_permiso_fisicomec.errors.pattern">*The año must only contain letters.</div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="form-control-label" for="input-marca">Documento Anticontaminantes</label>
+                            <label class="form-control-label" for="input-marca">Anticontaminantes</label>
                             <input
                               formControlName="doc_anticontaminantes"
                               id="doc_anticontaminantes"
                               type="text"
                               class="form-control form-control-alternative" 
-                            placeholder="Ej: Chevrolet">
+                            >
                               <div *ngIf="f.doc_anticontaminantes.touched && f.doc_anticontaminantes.invalid" class="alert alert-danger">
                                   <div *ngIf="f.doc_anticontaminantes.errors.required">*Marca is required.</div>
                                   <div *ngIf="f.doc_anticontaminantes.errors.pattern">*The marca must only contain letters.</div>

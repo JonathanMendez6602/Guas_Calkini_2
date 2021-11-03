@@ -23,6 +23,11 @@ import { CreateGruaComponent } from 'src/app/pages/grua/create-grua/create-grua.
 import { EditGruaComponent } from 'src/app/pages/grua/edit-grua/edit-grua.component';
 import { ViewGruaComponent } from 'src/app/pages/grua/view-grua/view-grua.component';
 
+import { IndexChoferComponent } from 'src/app/pages/chofer/index-chofer/index-chofer.component';
+import { CreateChoferComponent } from 'src/app/pages/chofer/create-chofer/create-chofer.component';
+import { EditChoferComponent } from 'src/app/pages/chofer/edit-chofer/edit-chofer.component';
+import { ViewChoferComponent } from 'src/app/pages/chofer/view-chofer/view-chofer.component';
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent },
@@ -40,5 +45,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'grua/indexGrua', component: IndexGruaComponent },
     { path: 'grua/createGrua', component: CreateGruaComponent },
     { path: 'grua/editGrua/:idGrua', component: EditGruaComponent },
-    { path: 'grua/viewGrua/:idGrua', component: ViewGruaComponent }
+    { path: 'grua/viewGrua/:idGrua', component: ViewGruaComponent },
+
+    { path: 'chofer/indexChofer', component: IndexChoferComponent },
+    { path: 'chofer/createChofer', component: CreateChoferComponent },
+    { path: 'chofer/editChofer/:idChofer', component: EditChoferComponent },
+    { path: 'chofer/viewChofer/:idChofer', component: ViewChoferComponent }
 ];
