@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ChoferRoutingModule } from './chofer-routing.module';
 import { IndexChoferComponent } from './index-chofer/index-chofer.component';
 import { CreateChoferComponent } from './create-chofer/create-chofer.component';
@@ -12,7 +14,10 @@ import { ViewChoferComponent } from './view-chofer/view-chofer.component';
   declarations: [IndexChoferComponent, CreateChoferComponent, EditChoferComponent, ViewChoferComponent],
   imports: [
     CommonModule,
-    ChoferRoutingModule
+    ChoferRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
   ]
 })
 export class ChoferModule { }
