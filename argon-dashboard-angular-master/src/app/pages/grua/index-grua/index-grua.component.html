@@ -8,8 +8,14 @@
       <div class="col">
         <div class="card shadow">
           <div class="card-header border-0">
+            <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/grua/createGrua">
+              <span class="btn-inner--icon"><i class="ni ni-settings"></i></span>
+              <span class="btn-inner--text">NUEVA GRUA</span>
+            </button>
+          </div>
+          <div class="card-header border-0">
             <div class="card-header border-0">
-                <h3>LISTA DE Gruas</h3>
+                <h3>LISTA DE GRUAS</h3>
             </div>
             <div class="table-responsive">
                 <table class="table align-items-center table-flush">
@@ -66,7 +72,22 @@
                       <td>{{ grua.modelo }}</td>
                       <td>{{ grua.num_serie }}</td>
                       <td>{{ grua.placas }}</td>
+                      <td>
+                        <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/grua/', 'viewGrua', grua.id  ]">
+                          <span class="btn-inner--icon"><i class="ni ni-zoom-split-in"></i></span>
+                          <span class="btn-inner--text">Ver</span>
+                        </button>
+                        <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/grua/', 'editGrua', grua.id  ]">
+                          <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+                          <span class="btn-inner--text">Editar</span>
+                        </button>
+                        <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(grua.id)">
+                          <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                          <span class="btn-inner--text">Borrar</span>
+                        </button>
+                      </td>
                     </tr>
+                  </tbody>
                 </table>
             </div>
           </div>

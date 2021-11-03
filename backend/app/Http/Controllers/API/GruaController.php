@@ -24,7 +24,7 @@ class GruaController extends Controller
         $data['anio'] = $request['anio'];
         $data['num_motor'] = $request['num_motor'];
         $data['tipo_est_o_fed'] = $request['tipo_est_o_fed'];
-        $data['doc_tarjcisculacion'] = $request['doc_tarjcisculacion'];
+        $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
         $data['doc_cartaporte'] = $request['doc_cartaporte'];
         $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
         $data['doc_factura'] = $request['doc_factura'];
@@ -61,7 +61,7 @@ class GruaController extends Controller
         $data['anio'] = $request['anio'];
         $data['num_motor'] = $request['num_motor'];
         $data['tipo_est_o_fed'] = $request['tipo_est_o_fed'];
-        $data['doc_tarjcisculacion'] = $request['doc_tarjcisculacion'];
+        $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
         $data['doc_cartaporte'] = $request['doc_cartaporte'];
         $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
         $data['doc_factura'] = $request['doc_factura'];

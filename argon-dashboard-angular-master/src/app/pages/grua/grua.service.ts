@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Grua } from './Grua';
+import { Grua } from './grua';
 
 @Injectable({
   providedIn: 'root'
