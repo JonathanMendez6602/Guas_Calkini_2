@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, VERSION, OnInit } from '@angular/core';
 import { CorralonService } from '../corralon.service';
 import { Corralon } from '../corralon';
 import { Vehiculo } from '../vehiculo';
@@ -20,6 +20,8 @@ export class AgregarCorralonComponent implements OnInit {
     this.corralonService.getAllMostrar().subscribe((data: Vehiculo[])=>{
       this.vehiculos = data;
       console.log(this.vehiculos);
+
+      
     })
   }
 
@@ -29,5 +31,5 @@ export class AgregarCorralonComponent implements OnInit {
          console.log('Corralon deleted successfully!');
     })
   }
-
+    
 }

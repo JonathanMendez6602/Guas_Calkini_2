@@ -43,22 +43,24 @@
                     </div>
                   </div>
                 </div>
-
               </div>
 
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="display: none">
                   <div class="form-group">
                     <label class="form-control-label" for="input-dias_pension">Días de pensión</label>
-                    <input formControlName="dias_pension" [(ngModel)]="corralon.dias_pension" id="dias_pension"
-                      type="text" class="form-control form-control-alternative">
-                    <div *ngIf="f.dias_pension.touched && f.dias_pension.invalid" class="alert alert-danger">
-                      <div *ngIf="f.dias_pension.errors.required">*dias_pension is required.</div>
-                      <div *ngIf="f.dias_pension.errors.pattern">*The dias_pension must only contain numbers.</div>
-                    </div>
+                    <input
+                      formControlName="dias_pension"
+                      [(ngModel)]="corralon.id_vehiculo"
+                      id="dias_pension"
+                      type="text"
+                      class="form-control form-control-alternative">
+                      <div *ngIf="f.dias_pension.touched && f.dias_pension.invalid" class="alert alert-danger">
+                          <div *ngIf="f.dias_pension.errors.required">*dias_pension is required.</div>
+                          <div *ngIf="f.dias_pension.errors.pattern">*The dias_pension must only contain numbers.</div>
+                      </div>
                   </div>
                 </div>
-
 
                 <div class="col-lg-6">
                   <div class="form-group">

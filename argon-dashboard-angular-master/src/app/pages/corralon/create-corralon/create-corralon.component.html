@@ -28,6 +28,9 @@
                       </div>
                   </div>
 
+
+                 
+
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-pension_c">Pensión en el corralón</label>
@@ -49,11 +52,12 @@
                 </div>
   
                 <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg-6" style="display: none">
                     <div class="form-group">
                       <label class="form-control-label" for="input-dias_pension">Días de pensión</label>
                       <input
                         formControlName="dias_pension"
+                        [(ngModel)]="vehiculo.id"
                         id="dias_pension"
                         type="text"
                         class="form-control form-control-alternative">

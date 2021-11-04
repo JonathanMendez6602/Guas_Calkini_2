@@ -23,7 +23,14 @@ class CorralonController extends Controller
   {
     $data['fecha_entrada'] = $request['fecha_entrada'];
     $data['pension_c'] = $request['pension_c'];
-    $data['dias_pension'] = $request['dias_pension'];
+    if ($data['pension_c']=='Si'){
+      $dias = (strtotime( $request['fecha_entrada'])-strtotime($request['fecha_entrega']))/86400;
+      $dias = abs($dias);
+      $dias=floor($dias);
+      $data['dias_pension'] = $dias;
+    }else{
+      $data['dias_pension']=0;
+    }
     $data['status_entrega'] = $request['status_entrega'];
     $data['fecha_entrega'] = $request['fecha_entrega'];
     $data['otro_asunto'] = $request['otro_asunto'];
@@ -35,7 +42,11 @@ class CorralonController extends Controller
       'message' => "Successfully created",
       'success' => true
     ], 200);
+
   }
+
+
+
 
   public function delete($id)
   {
