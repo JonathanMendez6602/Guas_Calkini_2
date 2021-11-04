@@ -1,1 +1,149 @@
-<p>view-chofer works!</p>
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/chofer.jpg); background-size: cover; background-position: center top;">
+      <span class="mask bg-gradient-info opacity-8"></span>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <h3>DATOS COMPLETOS</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="media-body">
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">ID</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Nombre</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Apellido Paterno</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Apellido Materno</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Edad</span>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ chofer.id }}</td>
+                    <td>{{ chofer.nombre }}</td>
+                    <td>{{ chofer.apellido_p }}</td>
+                    <td>{{ chofer.apellido_m }}</td>
+                    <td>{{ chofer.edad }}</td>
+                  </tr>
+                </tbody>
+                <thead class="media-body">
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Licencia Federal</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Fecha licencia federal</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Número licencia federal</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Licencia estatal</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Fecha licencia estatal</span>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ chofer.doc_lic_fed }}</td>
+                    <td>{{ chofer.fecha_lic_fed }}</td>
+                    <td>{{ chofer.num_lic_fed }}</td>
+                    <td>{{ chofer.doc_lic_est }}</td>
+                    <td>{{ chofer.fecha_lic_est }}</td>
+                  </tr>
+                </tbody>
+                <thead class="media-body">
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">Número licencia estatal</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">INE</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">CURP</span>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ chofer.num_lic_est }}</td>
+                    <td>{{ chofer.doc_ine }}</td>
+                    <td>{{ chofer.doc_curp }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> 
+          </div>
+        </div>
+      </div>
+  </div>

@@ -1,1 +1,95 @@
-<p>index-chofer works!</p>
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/chofer.jpg); background-size: cover; background-position: center top;">
+      <span class="mask bg-gradient-info opacity-8"></span>
+  </div>
+  
+  <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/chofer/createChofer">
+                <span class="btn-inner--icon"><i class="ni ni-single-02"></i></span>
+                <span class="btn-inner--text">AGREGAR CHOFER</span>
+              </button>
+            </div>
+            <div class="card-header border-0">
+                  <h3>LISTA DE CHOFERES</h3>
+            </div>
+            <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="media-body">
+                      <tr>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
+                              <span class="mb-0 text-sm">ID</span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
+                              <span class="mb-0 text-sm">Nombre</span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
+                              <span class="mb-0 text-sm">Apellido Paterno</span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
+                              <span class="mb-0 text-sm">Apellido Materno</span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
+                              <span class="mb-0 text-sm">Edad</span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
+                              <span class="mb-0 text-sm"></span>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let chofer of chofer">
+                        <td>{{ chofer.id }}</td>
+                        <td>{{ chofer.nombre }}</td>
+                        <td>{{ chofer.apellido_p }}</td>
+                        <td>{{ chofer.apellido_m }}</td>
+                        <td>{{ chofer.edad }}</td>
+                        <td>
+                          <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/chofer/', 'viewChofer', chofer.id  ]">
+                            <span class="btn-inner--icon"><i class="ni ni-zoom-split-in"></i></span>
+                            <span class="btn-inner--text">Ver</span>
+                          </button>
+                          <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/chofer/', 'editChofer', chofer.id  ]">
+                            <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+                            <span class="btn-inner--text">Editar</span>
+                          </button>
+                          <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(chofer.id)">
+                            <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                            <span class="btn-inner--text">Borrar</span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
