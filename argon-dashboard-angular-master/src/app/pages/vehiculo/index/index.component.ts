@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { VehiculoService } from '../vehiculo.service';
 import { Vehiculo } from '../vehiculo';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-index',
@@ -12,8 +13,11 @@ export class IndexComponent implements OnInit {
 
   vehiculos: Vehiculo[] = [];
   filterModelo = "";
+  id: number;
+  vehiculo: Vehiculo;
   // constructor() { }
-  constructor(public VehiculoService: VehiculoService) { }
+  constructor(public VehiculoService: VehiculoService,
+    public modal:NgbModal) { }
 
   ngOnInit(): void {
     this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
@@ -27,6 +31,15 @@ export class IndexComponent implements OnInit {
          this.vehiculos = this.vehiculos.filter(item => item.id !== id);
          console.log('Vehiculo deleted successfully!');
     })
+  }
+
+  openScroll(contenido, id){
+    
+    this.VehiculoService.find(id).subscribe((data: Vehiculo)=>{
+      this.vehiculo = data;
+      console.log(this.vehiculo);
+    });
+    this.modal.open(contenido,{scrollable:true});
   }
 
 }

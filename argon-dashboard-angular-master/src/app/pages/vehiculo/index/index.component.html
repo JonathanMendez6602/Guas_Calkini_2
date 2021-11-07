@@ -2,6 +2,67 @@
   <span class="mask bg-gradient-info opacity-8"></span>
 </div>
 
+
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h4 class="modal-tilte">Datos del servicio</h4>
+    <button class="close" aria-label="close" type="button" (click)="modal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <div class="modal-body">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.component.scss"/>
+  
+
+   <table class="tablex">
+     <thead>
+     	<tr>
+     	  <th>ID</th>
+        <th scope="row">Marca</th>
+        <th scope="row">Modelo</th>
+        <th scope="row">Foto del vehículo</th>
+        <th scope="row">Color</th>
+        <th scope="row">Placas</th>
+        <th scope="row">Inventario</th>
+        <th scope="row">Foto del inventario</th>
+        <th scope="row">Llaves</th>
+        <th scope="row">Tipo de servicio</th>
+        <th scope="row">Lugar del siniestro</th>
+        <th scope="row">Descripción</th>
+        <th scope="row">Cliente</th>
+        <th scope="row">Sucursal</th>
+     	</tr>
+     </thead>
+     <tbody>
+     	  <tr>
+          <td data-label="ID">{{ vehiculo.id }}</td>
+          <td data-label="Marca">{{ vehiculo.marca }}</td>
+          <td data-label="Modelo">{{ vehiculo.modelo }}</td>
+          <td data-label="Foto vehiculo">{{ vehiculo.foto_vehiculo }}</td>
+          <td data-label="Color">{{ vehiculo.color }}</td>
+          <td data-label="Placas">{{ vehiculo.placas }}</td>
+          <td data-label="Inventario">{{ vehiculo.inventario }}</td>
+          <td data-label="Foto inventario">{{ vehiculo.foto_inventario }}</td>
+          <td data-label="Llaves">{{ vehiculo.llaves }}</td>
+          <td data-label="Tipo de Servicio">{{ vehiculo.tipo_servicio }}</td>
+          <td data-label="Lugar siniestro">{{ vehiculo.lugar_siniestro }}</td>
+          <td data-label="Descripción">{{ vehiculo.descripcion }}</td>
+          <td data-label="Nombre">{{ vehiculo.nombre }}</td>
+          <td data-label="Sucursal">{{ vehiculo.sucursal }}</td>
+     	  </tr>
+
+     </tbody>
+   </table>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn ni ni-check-bold  btn-success" (click)="modal.close()"></button>
+  </div>
+</ng-template>
+
 <!-- Page content -->
 <div class="container-fluid mt--7">
   <!-- Table -->
@@ -81,7 +142,7 @@
                 <td>{{ vehiculo.placas }}</td>
                 <td>{{ vehiculo.descripcion }}</td>
                 <td>
-                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]">
+                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="openScroll(contenido, vehiculo.id)">
                     <span class="btn-inner--icon"><i class="ni ni-zoom-split-in"></i></span>
                     <span class="btn-inner--text">Ver</span>
                   </button>
