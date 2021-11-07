@@ -8,10 +8,18 @@ import { IndexChoferComponent } from './index-chofer/index-chofer.component';
 import { CreateChoferComponent } from './create-chofer/create-chofer.component';
 import { EditChoferComponent } from './edit-chofer/edit-chofer.component';
 import { ViewChoferComponent } from './view-chofer/view-chofer.component';
+import { FilterChoferPipe } from './pipe_chofer/filter-chofer.pipe';
+
 
 
 @NgModule({
-  declarations: [IndexChoferComponent, CreateChoferComponent, EditChoferComponent, ViewChoferComponent],
+  declarations: [
+    IndexChoferComponent, 
+    CreateChoferComponent, 
+    EditChoferComponent, 
+    ViewChoferComponent,
+    FilterChoferPipe
+  ],
   imports: [
     CommonModule,
     ChoferRoutingModule,

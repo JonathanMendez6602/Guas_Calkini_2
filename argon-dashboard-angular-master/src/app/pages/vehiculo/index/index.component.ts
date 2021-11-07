@@ -6,12 +6,12 @@ import { Vehiculo } from '../vehiculo';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
 
   vehiculos: Vehiculo[] = [];
-
+  filterModelo = "";
   // constructor() { }
   constructor(public VehiculoService: VehiculoService) { }
 

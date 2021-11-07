@@ -6,12 +6,12 @@ import { Grua } from '../Grua';
 @Component({
   selector: 'app-index-grua',
   templateUrl: './index-grua.component.html',
-  styleUrls: ['./index-grua.component.css']
+  styleUrls: ['./index-grua.component.scss']
 })
 export class IndexGruaComponent implements OnInit {
 
   gruas: Grua[] = [];
-
+  filterModelo = "";
   // constructor() { }
   constructor(public GruaService: GruaService) { }
 

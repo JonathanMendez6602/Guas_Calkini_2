@@ -12,6 +12,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
+import { IndexComponent } from './ser/index/index.component';
+import { IndexChoferComponent } from './ser/index-chofer/index-chofer.component';
+import { IndexGruaComponent } from './ser/index-grua/index-grua.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { ComponentsModule } from './components/components.module';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    IndexComponent,
+    IndexChoferComponent,
+    IndexGruaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

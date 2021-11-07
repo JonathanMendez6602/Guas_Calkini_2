@@ -9,6 +9,7 @@ import { Corralon } from '../corralon';
 })
 export class IndexCorralonComponent implements OnInit {
   corralons: Corralon[]=[];
+  filterModelo = "";
   constructor(public corralonService: CorralonService) { }
 
   ngOnInit(): void {

@@ -7,10 +7,17 @@ import { IndexGruaComponent } from './index-grua/index-grua.component';
 import { CreateGruaComponent } from './create-grua/create-grua.component';
 import { EditGruaComponent } from './edit-grua/edit-grua.component';
 import { ViewGruaComponent } from './view-grua/view-grua.component';
+import { FilterGruaPipe } from './pipe_grua/filter-grua.pipe';
 
 
 @NgModule({
-  declarations: [IndexGruaComponent, CreateGruaComponent, EditGruaComponent, ViewGruaComponent],
+  declarations: [
+    IndexGruaComponent, 
+    CreateGruaComponent, 
+    EditGruaComponent, 
+    ViewGruaComponent,
+    FilterGruaPipe
+  ],
   imports: [
     CommonModule,
     GruaRoutingModule,

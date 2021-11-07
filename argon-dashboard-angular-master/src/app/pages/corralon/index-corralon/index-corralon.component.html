@@ -8,6 +8,14 @@
   <div class="row">
     <div class="col">
       <div class="card shadow">
+        <div class="col">
+          <div class="d-flex justify-content-left">
+            <div class="searchbar">
+              <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... " [(ngModel)]="filterModelo">
+              <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+            </div>
+          </div>
+        </div>
         <div class="card-header border-0">
           <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/corralon/agregarCorralon">
             <span class="btn-inner--icon"><i class="ni ni-delivery-fast"></i></span>
@@ -80,7 +88,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let corralon of corralons">
+              <tr *ngFor="let corralon of corralons | filterCorralon:filterModelo">
                 <td>{{ corralon.id_vehiculo }}</td>
                 <td>{{ corralon.fecha_entrada }}</td>
                 <td>{{ corralon.pension_c }}</td>

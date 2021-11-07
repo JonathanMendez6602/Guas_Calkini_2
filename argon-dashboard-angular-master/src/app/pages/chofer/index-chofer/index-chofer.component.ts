@@ -6,11 +6,12 @@ import { Chofer } from '../chofer';
 @Component({
   selector: 'app-index-chofer',
   templateUrl: './index-chofer.component.html',
-  styleUrls: ['./index-chofer.component.css']
+  styleUrls: ['./index-chofer.component.scss']
 })
 export class IndexChoferComponent implements OnInit {
 
   chofer: Chofer[] = [];
+  filterModelo = "";
 
   // constructor() { }
   constructor(public ChoferService: ChoferService) { }
