@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ChoferService } from '../chofer.service';
 import { Chofer } from '../chofer';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-index-chofer',
@@ -10,24 +11,36 @@ import { Chofer } from '../chofer';
 })
 export class IndexChoferComponent implements OnInit {
 
-  chofer: Chofer[] = [];
+  choferes: Chofer[] = [];
   filterModelo = "";
+  id: number;
+  chofer: Chofer;
 
   // constructor() { }
-  constructor(public ChoferService: ChoferService) { }
+  constructor(public ChoferService: ChoferService,
+    public modal:NgbModal) { }
 
   ngOnInit(): void {
     this.ChoferService.getAll().subscribe((data: Chofer[])=>{
-      this.chofer = data;
-      console.log(this.chofer);
+      this.choferes = data;
+      console.log(this.choferes);
     })
   }
 
   deleteVehiculo(id){
     this.ChoferService.delete(id).subscribe(res => {
-         this.chofer = this.chofer.filter(item => item.id !== id);
+         this.choferes = this.choferes.filter(item => item.id !== id);
          console.log('chofer deleted successfully!');
     })
+  }
+
+  openScroll(contenido, id){
+    
+    this.ChoferService.find(id).subscribe((data: Chofer)=>{
+      this.chofer = data;
+      console.log(this.chofer);
+    });
+    this.modal.open(contenido,{scrollable:true});
   }
 
 }

@@ -2,6 +2,54 @@
       <span class="mask bg-gradient-info opacity-8"></span>
   </div>
   
+  <ng-template #contenido let-modal>
+    <div class="modal-header">
+      <h4 class="modal-tilte">Datos del chofer</h4>
+      <button class="close" aria-label="close" type="button" (click)="modal.close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+    <div class="modal-body">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="index-chofer.component.scss"/>
+    
+  
+     <table class="tablex">
+       <thead>
+         <tr>
+           <th>ID</th>
+         </tr>
+       </thead>
+       <tbody>
+           <tr>
+            <td data-label="ID">{{ chofer.id }}</td>
+            <td data-label="Nombre">{{ chofer.nombre }}</td>
+            <td data-label="Apellido paterno">{{ chofer.apellido_p }}</td>
+            <td data-label="Apellido materno">{{ chofer.apellido_m }}</td>
+            <td data-label="Edad">{{ chofer.edad }}</td>
+            <td data-label="Licencia Federal">{{ chofer.doc_lic_fed }}</td>
+            <td data-label="Fecha licencia Federal">{{ chofer.fecha_lic_fed }}</td>
+            <td data-label="Numero licencia Federal">{{ chofer.num_lic_fed }}</td>
+            <td data-label="Licencia Estatal">{{ chofer.doc_lic_est }}</td>
+            <td data-label="Fecha licencia Estatal">{{ chofer.fecha_lic_est }}</td>
+            <td data-label="Numero licencia Estatal">{{ chofer.num_lic_est }}</td>
+            <td data-label="INE">{{ chofer.doc_ine }}</td>
+            <td data-label="CURP">{{ chofer.doc_curp }}</td>
+           </tr>
+  
+       </tbody>
+     </table>
+    </div>
+  
+    <div class="modal-footer">
+      <button type="button" class="btn ni ni-check-bold  btn-success" (click)="modal.close()"></button>
+    </div>
+  </ng-template>
+  
+  
+
   <div class="container-fluid mt--7">
       <!-- Table -->
       <div class="row">
@@ -73,24 +121,21 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let chofer of chofer | filterChofer:filterModelo">
+                      <tr *ngFor="let chofer of choferes | filterChofer:filterModelo">
                         <td>{{ chofer.id }}</td>
                         <td>{{ chofer.nombre }}</td>
                         <td>{{ chofer.apellido_p }}</td>
                         <td>{{ chofer.apellido_m }}</td>
                         <td>{{ chofer.edad }}</td>
                         <td>
-                          <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/chofer/', 'viewChofer', chofer.id  ]">
-                            <span class="btn-inner--icon"><i class="ni ni-zoom-split-in"></i></span>
-                            <span class="btn-inner--text">Ver</span>
+                          <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="openScroll(contenido, chofer.id)">
+                            <span class="btn-inner--icon"><i class="far fa-eye"></i></span>
                           </button>
                           <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/chofer/', 'editChofer', chofer.id  ]">
-                            <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
-                            <span class="btn-inner--text">Editar</span>
+                            <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
                           </button>
                           <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(chofer.id)">
-                            <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
-                            <span class="btn-inner--text">Borrar</span>
+                            <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                           </button>
                         </td>
                       </tr>
