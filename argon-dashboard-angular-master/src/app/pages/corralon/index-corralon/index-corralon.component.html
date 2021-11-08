@@ -43,20 +43,7 @@
                     </div>
                   </div>
                 </th>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <div class="media-body">
-                      <span class="mb-0 text-sm">Pensión</span>
-                    </div>
-                  </div>
-                </th>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <div class="media-body">
-                      <span class="mb-0 text-sm">Días de pensión</span>
-                    </div>
-                  </div>
-                </th>
+                
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
@@ -71,13 +58,7 @@
                     </div>
                   </div>
                 </th>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <div class="media-body">
-                      <span class="mb-0 text-sm">Otro asunto</span>
-                    </div>
-                  </div>
-                </th>
+                
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
@@ -91,11 +72,8 @@
               <tr *ngFor="let corralon of corralons | filterCorralon:filterModelo">
                 <td>{{ corralon.id_vehiculo }}</td>
                 <td>{{ corralon.fecha_entrada }}</td>
-                <td>{{ corralon.pension_c }}</td>
-                <td>{{ corralon.dias_pension }}</td>
                 <td>{{ corralon.status_entrega }}</td>
                 <td>{{ corralon.fecha_entrega }}</td>
-                <td>{{ corralon.otro_asunto }}</td>
                 <td>
                   <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id ]">
                     <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
