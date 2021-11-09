@@ -18,7 +18,7 @@ export class EditComponent implements OnInit {
   form: FormGroup;
   obtenerValor: String;
   sucursales: Sucursal[] = [];
-
+  cambioLlave:boolean;
   constructor(
     public vehiculoService: VehiculoService,
     private route: ActivatedRoute,
@@ -37,7 +37,13 @@ export class EditComponent implements OnInit {
       this.vehiculo = data;
       console.log(this.vehiculo.sucursal);
       console.log(this.vehiculo.id);
+      if(this.vehiculo.llaves=="si"){
+        this.cambioLlave=true;
+      }else{
+        this.cambioLlave=false;
+      }
     });
+    
 
     this.form = new FormGroup({
       marca:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
@@ -47,7 +53,7 @@ export class EditComponent implements OnInit {
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       foto_inventario:  new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      llaves: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      llaves: new FormControl(''),
       tipo_servicio: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       lugar_siniestro: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       descripcion: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
