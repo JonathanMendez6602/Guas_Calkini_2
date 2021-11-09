@@ -43,7 +43,15 @@
                     </div>
                   </div>
                 </th>
-                
+               
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">Días de pensión</span>
+                    </div>
+                  </div>
+                </th>
+
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
@@ -55,6 +63,14 @@
                   <div class="media align-items-center">
                     <div class="media-body">
                       <span class="mb-0 text-sm">Fecha de entrega</span>
+                    </div>
+                  </div>
+                </th>
+
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">Otro asunto</span>
                     </div>
                   </div>
                 </th>
@@ -72,12 +88,14 @@
               <tr *ngFor="let corralon of corralons | filterCorralon:filterModelo">
                 <td>{{ corralon.id_vehiculo }}</td>
                 <td>{{ corralon.fecha_entrada }}</td>
+                <td>{{ corralon.dias_pension }}</td>
                 <td>{{ corralon.status_entrega }}</td>
                 <td>{{ corralon.fecha_entrega }}</td>
+                <td>{{ corralon.otro_asunto }}</td>
                 <td>
                   <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id ]">
                     <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
-                    <span class="btn-inner--text">Editar</span>
+                    <span class="btn-inner--text">Entregar</span>
                   </button>
                   <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteCorralon(corralon.id)">
                     <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
