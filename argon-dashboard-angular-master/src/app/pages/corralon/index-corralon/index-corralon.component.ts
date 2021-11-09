@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CorralonService } from '../corralon.service';
 import { Corralon } from '../corralon';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-index-corralon',
@@ -10,7 +11,10 @@ import { Corralon } from '../corralon';
 export class IndexCorralonComponent implements OnInit {
   corralons: Corralon[]=[];
   filterModelo = "";
-  constructor(public corralonService: CorralonService) { }
+  id: number;
+  corralon: Corralon;
+  constructor(public corralonService: CorralonService,
+    public modal:NgbModal) { }
 
   ngOnInit(): void {
     this.corralonService.getAll().subscribe((data: Corralon[])=>{
@@ -24,6 +28,15 @@ export class IndexCorralonComponent implements OnInit {
          this.corralons = this.corralons.filter(item => item.id !== id);
          console.log('Corralon deleted successfully!');
     })
+  }
+
+  openScroll(contenido, id){
+    
+    this.corralonService.find(id).subscribe((data: Corralon)=>{
+      this.corralon = data;
+      console.log(this.corralon);
+    });
+    this.modal.open(contenido,{scrollable:true});
   }
 
 }

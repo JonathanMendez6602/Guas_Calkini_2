@@ -14,18 +14,26 @@ export class CreateComponent implements OnInit {
 
   form: FormGroup;
   sucursales: Sucursal[] = [];
+  obtenerValor;
+  replytype;
+  varParticular: boolean;
+  varAseguradora=false;
 
+  selectedValue:any;
   constructor(
     public vehiculoService: VehiculoService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
+    this.varParticular;
 
+    console.log(this.obtenerValor);
     this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
       console.log(this.sucursales);
+      console.log(this.replytype);
       })
 
     this.form = new FormGroup({
@@ -35,7 +43,7 @@ export class CreateComponent implements OnInit {
       color:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      foto_inventario:  new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
+      foto_inventario:  new FormControl(''),
       llaves: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       tipo_servicio: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       lugar_siniestro: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
@@ -43,11 +51,19 @@ export class CreateComponent implements OnInit {
       nombre: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
-
+    
   }
 
   get f(){
     return this.form.controls;
+  }
+
+  cambioParticular(){
+    this.varParticular=true;
+  }
+
+  cambioAseguradora(){
+    this.varParticular=false;
   }
 
   submit(){
