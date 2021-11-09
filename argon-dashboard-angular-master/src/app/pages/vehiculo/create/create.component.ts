@@ -14,18 +14,25 @@ export class CreateComponent implements OnInit {
 
   form: FormGroup;
   sucursales: Sucursal[] = [];
+  obtenerValor;
+  replytype;
+  varParticular: boolean;
+  varAseguradora=false;
 
+  selectedValue:any;
   constructor(
     public vehiculoService: VehiculoService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
-
+    this.varParticular=false;
+    console.log(this.obtenerValor);
     this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
       console.log(this.sucursales);
+      console.log(this.replytype);
       })
 
     this.form = new FormGroup({
@@ -43,11 +50,19 @@ export class CreateComponent implements OnInit {
       nombre: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
-
+    
   }
 
   get f(){
     return this.form.controls;
+  }
+
+  cambioParticular(){
+    this.varParticular=true;
+  }
+
+  cambioAseguradora(){
+    this.varParticular=false;
   }
 
   submit(){

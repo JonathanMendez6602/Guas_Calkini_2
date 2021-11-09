@@ -140,8 +140,6 @@
                       type="checkbox">
                       <span class="custom-toggle-slider rounded-circle"></span>
                     </label>
-                    
-                      
                   </div>
                 </div>
               </div>
@@ -195,19 +193,38 @@
                     </div>
                   </div>
                 </div>
-
+                
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-cliente">Cliente</label>
-                    <input
+                    <button type="button" class="btn btn-success" (click)="cambioParticular()">Particular</button> 
+                    <button type="button" class="btn btn-success" (click)="cambioAseguradora()">Aseguradora</button>
+                    <div *ngIf="varParticular">
+                      <label class="form-control-label" for="input-nombre">Cliente</label>
+                      <input
                       formControlName="nombre"
                       id="nombre"
                       type="text"
                       class="form-control form-control-alternative" 
-                      placeholder="Ej: Alejandro">
-                    <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
-                        <div *ngIf="f.nombre.errors.required">*Cliente is required.</div>
-                        <div *ngIf="f.nombre.errors.pattern">*The Cliente must only contain letters.</div>
+                      placeholder="Descripción a detalle del servicio">
+                      <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
+                        <div *ngIf="f.descripcion.errors.pattern">*The descripcion must only contain letters.</div>
+                      </div>
+                    </div>
+                    <div *ngIf="!varParticular">
+                      <label class="form-control-label" for="input-nombre">Aseguradora</label>
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="nombre" 
+                        id="nombre" 
+                        aria-describedby="nombreFeedback" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>GNP Seguros</option>
+                          <option>AXA Seguros</option>
+                          <option>ABA Seguros</option>
+                      </select>
+                        <div id="nombreFeedback" class="invalid-feedback">
+                          Sucursal is required.
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -253,9 +270,10 @@
               </div>
               <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
             </div>
+
+            
           </form>
         </div>
-        
       </div>
     </div>
   </div>

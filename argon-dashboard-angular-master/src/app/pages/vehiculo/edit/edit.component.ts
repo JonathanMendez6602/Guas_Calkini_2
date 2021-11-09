@@ -9,23 +9,24 @@ import { Sucursal } from '../sucursal';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
 
   id: number;
   vehiculo: Vehiculo;
   form: FormGroup;
+  obtenerValor: String;
   sucursales: Sucursal[] = [];
 
   constructor(
     public vehiculoService: VehiculoService,
     private route: ActivatedRoute,
     private router: Router
+    
   ) { }
 
   ngOnInit(): void {
-    
     this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
       console.log(this.sucursales);
@@ -54,7 +55,14 @@ export class EditComponent implements OnInit {
       sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
 
+    this.obtenerValor = 'tipo_c';
 
+
+
+  }
+
+  onChange($event) {
+    this.obtenerValor = $event.target.value;
   }
 
   get f(){

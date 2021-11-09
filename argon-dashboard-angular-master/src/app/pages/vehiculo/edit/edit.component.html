@@ -143,19 +143,15 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-llaves">Llaves</label>
-                    <select 
-                      class="form-control form-control-alternative" 
-                      formControlName="llaves"
-                      [(ngModel)]="vehiculo.llaves" 
+                    <span class="clearfix"></span>
+                    <label class="custom-toggle">
+                      <input  
+                      formControlName="llaves" 
+                      [(ngModel)]="vehiculo.llaves"
                       id="llaves" 
-                      aria-describedby="llavesFeedback" required>
-                        <option selected disabled value="">Seleccione una opción</option>
-                        <option>Si</option>
-                        <option>No</option>
-                    </select>
-                      <div id="llavesFeedback" class="invalid-feedback">
-                        Llaves is required.
-                      </div>
+                      type="checkbox">
+                      <span class="custom-toggle-slider rounded-circle"></span>
+                    </label>
                   </div>
                 </div>
               </div>

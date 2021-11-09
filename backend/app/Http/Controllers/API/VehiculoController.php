@@ -57,7 +57,11 @@ class VehiculoController extends Controller
     }else{
       $data['foto_inventario'] = $request['foto_inventario'];
     }
-    $data['llaves'] = $request['llaves'];
+    if($request['llaves']==1){
+      $data['llaves']="si";
+    }else{
+      $data['llaves']="no";
+    }
     $data['tipo_servicio'] = $request['tipo_servicio'];
     $data['lugar_siniestro'] = $request['lugar_siniestro'];
     if($request['descripcion']==""){
