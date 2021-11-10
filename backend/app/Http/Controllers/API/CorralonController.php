@@ -23,21 +23,11 @@ class CorralonController extends Controller
   {
     $data['fecha_entrada'] = $request['fecha_entrada'];
     $data['pension_c'] = $request['pension_c'];
-    if ($data['pension_c']=='Si'){
-      $dias = (strtotime( $request['fecha_entrada'])-strtotime($request['fecha_entrega']))/86400;
-      $dias = abs($dias);
-      $dias=floor($dias);
-      $data['dias_pension'] = $dias;
-    }else{
-      $data['dias_pension']=0;
-    }
+    $data['dias_pension'] = 0;
+    $data['status_entrega'] = "No Entregado";
     
-    if($request['status_entrega']=="No Entregado"){
-      $data['status_entrega'] = "No Entregado";
-    }else{
-      $data['status_entrega'] = $request['status_entrega'];
-    }
-    $data['fecha_entrega'] = $request['fecha_entrega'];
+    $data['fecha_entrega'] = '0000-01-01';
+
     $data['otro_asunto'] = $request['otro_asunto'];
     $data['id_vehiculo'] = $request['id_vehiculo'];
     $data_1['corralon']=1;
