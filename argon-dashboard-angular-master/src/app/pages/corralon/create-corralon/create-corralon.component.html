@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-lg-6" style="display: none">
                     <div class="form-group">
                       <label class="form-control-label" for="input-fecha_entrega">Fecha de entrega</label>
                       <input
@@ -91,28 +91,21 @@
                     </div>
                   </div>
           
-                  <div class="col-lg-6">
+                  <div class="col-lg-6" style="display: none">
                     <div class="form-group">
                       <label class="form-control-label" for="input-status_entrega">Estado de entrega</label>
                       <select 
                         class="form-control form-control-alternative" 
                         formControlName="status_entrega" 
-                        id="status_entrega" 
-                        aria-describedby="status_entregaFeedback" required>
+                        id="status_entrega">
                           <option selected disabled value="">Seleccione una opción</option>
                           <option>Entregado</option>
                           <option>No Entregado</option>
                       </select>
-                      <div id="status_entregaFeedback" class="invalid-feedback">
-                        Status is required.
-                      </div>
                     </div>
                   </div>
                 </div>
-  
-                
-                
-  
+              
                 <div class="row" style="display: none"> 
                   <div class="col-lg-6">
                     <div class="form-group">
