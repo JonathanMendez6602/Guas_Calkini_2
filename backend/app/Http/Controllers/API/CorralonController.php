@@ -31,8 +31,12 @@ class CorralonController extends Controller
     }else{
       $data['dias_pension']=0;
     }
-    $data['status_entrega'] = $request['status_entrega'];
     
+    if($request['status_entrega']=="No Entregado"){
+      $data['status_entrega'] = "No Entregado";
+    }else{
+      $data['status_entrega'] = $request['status_entrega'];
+    }
     $data['fecha_entrega'] = $request['fecha_entrega'];
     $data['otro_asunto'] = $request['otro_asunto'];
     $data['id_vehiculo'] = $request['id_vehiculo'];
