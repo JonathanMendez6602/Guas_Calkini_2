@@ -26,9 +26,11 @@
      	  <tr>
           <td data-label="ID vehiculo">{{ corralon.id_vehiculo }}</td>
           <td data-label="Fecha de entrada">{{ corralon.fecha_entrada }}</td>
+          <td data-label="Pensión">{{ corralon.pension_c }}</td>
+          <td data-label="Días de pensión">{{ corralon.dias_pension }}</td>
           <td data-label="Estado de entrega">{{ corralon.status_entrega  }}</td>
           <td data-label="Fecha de entrega">{{ corralon.fecha_entrega }}</td>
-          <td data-label="Pensión">{{ corralon.pension_c }}</td>
+          <td data-label="Otro asunto">{{ corralon.otro_asunto }}</td>
      </tbody>
    </table>
   </div>
@@ -93,7 +95,7 @@
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Estado de entrega</span>
+                      <span class="mb-0 text-sm">Estatus</span>
                     </div>
                   </div>
                 </th>
@@ -105,13 +107,6 @@
                   </div>
                 </th>
 
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <div class="media-body">
-                      <span class="mb-0 text-sm">Otro asunto</span>
-                    </div>
-                  </div>
-                </th>
                 
                 <th scope="row">
                   <div class="media align-items-center">
@@ -129,19 +124,16 @@
                 <td>{{ corralon.dias_pension }}</td>
                 <td>{{ corralon.status_entrega }}</td>
                 <td>{{ corralon.fecha_entrega }}</td>
-                <td>{{ corralon.otro_asunto }}</td>
                 <td>
                   <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="openScroll(contenido, corralon.id)">
                     <span class="btn-inner--icon"><i class="far fa-eye"></i></span>
+                  </button>                 
+                  <button  class="btn btn-icon btn-3 btn-success btn-sm" type="button"  [routerLink]="['/corralon/', 'editCorralon', corralon.id ]">
+                    <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
                   </button>
-                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/corralon/', 'editCorralon', corralon.id ]">
-                    <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
-                    <span class="btn-inner--text">Entregar</span>
-                  </button>
-                  <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteCorralon(corralon.id)">
-                    <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
-                    <span class="btn-inner--text">Borrar</span>
-                  </button>
+                <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteCorralon(corralon.id)">
+                  <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                </button>
                 </td>
               </tr>
             </tbody>
