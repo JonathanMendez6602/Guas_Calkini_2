@@ -28,14 +28,14 @@ export class CreateChoferComponent implements OnInit {
       apellido_p: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       apellido_m: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       edad: new FormControl('', [ Validators.required, Validators.pattern ("^[0-9]*$") ]),
-      doc_lic_fed:  new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      doc_lic_fed:  new FormControl(''),
       fecha_lic_fed: new FormControl(''),
       num_lic_fed: new FormControl('', [ Validators.required, Validators.pattern ("^[0-9]*$") ]),
-      doc_lic_est:  new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      doc_lic_est:  new FormControl(''),
       fecha_lic_est: new FormControl(''),
       num_lic_est: new FormControl('', [ Validators.required, Validators.pattern ("^[0-9]*$") ]),
-      doc_ine: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
-      doc_curp: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      doc_ine: new FormControl(''),
+      doc_curp: new FormControl(''),
     });
 
   }
