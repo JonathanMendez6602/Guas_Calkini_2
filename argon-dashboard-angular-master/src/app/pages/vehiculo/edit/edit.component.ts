@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Vehiculo } from '../vehiculo';
 import { Sucursal } from '../sucursal';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-edit',
@@ -19,10 +21,20 @@ export class EditComponent implements OnInit {
   obtenerValor: String;
   sucursales: Sucursal[] = [];
   cambioLlave:boolean;
+  varParticular: boolean;
+
+  archivos: any = [];
+  previsualizacion: string;
+  previsualizacion2: string;
+  enviar_fotovehiculo: string;
+  enviar_fotoinventario: string;
+  ImagenFile: File=null;
   constructor(
     public vehiculoService: VehiculoService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private http: HttpClient,
+    private sanitizer: DomSanitizer
     
   ) { }
 
@@ -64,8 +76,66 @@ export class EditComponent implements OnInit {
     this.obtenerValor = 'tipo_c';
 
 
+    
 
   }
+
+  cambioParticular(){
+    this.varParticular=true;
+  }
+
+  cambioAseguradora(){
+    this.varParticular=false;
+  }
+
+  capturarFileFotoVehiculo(event): any{
+    console.log(event);
+    const archivoCapturado = event.target.files[0];
+    this.enviar_fotovehiculo = archivoCapturado.name;
+    console.log(this.enviar_fotovehiculo);
+    this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+      this.previsualizacion = imagen.base;
+      console.log(imagen);
+      console.log(archivoCapturado.path);
+    })
+    this.archivos.push(archivoCapturado);
+    console.log(event.target.files);
+  }
+
+  capturarFileFotoInventario(event): any{
+    console.log(event);
+    const archivoCapturado = event.target.files[0];
+    this.enviar_fotoinventario = archivoCapturado.name;
+    console.log(this.enviar_fotovehiculo);
+    this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+      this.previsualizacion2 = imagen.base;
+      console.log(imagen);
+      console.log(archivoCapturado.webkitRelativePath);
+    })
+    this.archivos.push(archivoCapturado);
+    console.log(event.target.files);
+  }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try{
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch(e){
+      return null;
+    }
+  })
 
   onChange($event) {
     this.obtenerValor = $event.target.value;
