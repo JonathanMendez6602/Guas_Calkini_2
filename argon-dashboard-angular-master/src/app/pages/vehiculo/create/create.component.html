@@ -25,8 +25,7 @@
                         formControlName="marca"
                         id="marca"
                         type="text"
-                        class="form-control form-control-alternative" 
-                        placeholder="Ej: Chevrolet">
+                        class="form-control form-control-alternative">
                       <div *ngIf="f.marca.touched && f.marca.invalid" class="alert alert-danger">
                           <div *ngIf="f.marca.errors.required">*Marca is required.</div>
                           <div *ngIf="f.marca.errors.pattern">*The marca must only contain letters.</div>
@@ -41,8 +40,7 @@
                       formControlName="modelo"
                       id="modelo"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Año 2001">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
                       <div *ngIf="f.modelo.errors.required">*Modelo is required.</div>
                       <div *ngIf="f.modelo.errors.pattern">*The modelo must only contain letters.</div>
@@ -75,8 +73,7 @@
                       formControlName="color"
                       id="color"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Plateado">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.color.touched && f.color.invalid" class="alert alert-danger">
                         <div *ngIf="f.color.errors.required">*Color is required.</div>
                         <div *ngIf="f.color.errors.pattern">*The color must only contain letters.</div>
@@ -93,8 +90,7 @@
                       formControlName="placas"
                       id="placas"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: AAA-00-00">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.placas.touched && f.placas.invalid" class="alert alert-danger">
                         <div *ngIf="f.placas.errors.required">*Placas is required.</div>
                         <div *ngIf="f.placas.errors.pattern">*The placas must only contain letters.</div>
@@ -109,8 +105,7 @@
                       formControlName="inventario"
                       id="inventario"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Stereo, documentos, botellas, accesorios">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.inventario.touched && f.inventario.invalid" class="alert alert-danger">
                         <div *ngIf="f.inventario.errors.pattern">*The inventario must only contain letters.</div>
                     </div>
@@ -128,8 +123,7 @@
                       type="file"
                       (change)="capturarFileFotoInventario($event)"
                       [(ngModel)]="enviar_fotoinventario"
-                      class="form-control form-control-alternative" 
-                      placeholder="Agregue una foto del inventario si es que tiene">
+                      class="form-control form-control-alternative">
                     <div *ngIf="previsualizacion2">
                       <img width="100px" [src]="previsualizacion2" alt="">
                     </div>
@@ -159,8 +153,7 @@
                       formControlName="tipo_servicio"
                       id="tipo_servicio"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Arrastre">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.tipo_servicio.touched && f.tipo_servicio.invalid" class="alert alert-danger">
                         <div *ngIf="f.tipo_servicio.errors.required">*Tipo Servicio is required.</div>
                         <div *ngIf="f.tipo_servicio.errors.pattern">*The Tipo Servicio must only contain letters.</div>
@@ -175,8 +168,7 @@
                       formControlName="lugar_siniestro"
                       id="lugar_siniestro"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Calle 22-A Col. Kilakán">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.lugar_siniestro.touched && f.lugar_siniestro.invalid" class="alert alert-danger">
                         <div *ngIf="f.lugar_siniestro.errors.required">*Lugar Siniestro is required.</div>
                         <div *ngIf="f.lugar_siniestro.errors.pattern">*The Lugar Siniestro must only contain letters.</div>
@@ -188,30 +180,12 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-descripción">Descripción</label>
-                    <input
-                      formControlName="descripcion"
-                      id="descripcion"
-                      type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Descripción a detalle del servicio">
-                    <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
-                        <div *ngIf="f.descripcion.errors.pattern">*The descripcion must only contain letters.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-6">
-                  <div class="form-group">
                     <label class="form-control-label" for="input-descripción">Cliente</label>
                      <br>
                     <button type="button" class="btn btn-primary btn-sm" (click)="cambioParticular()">Particular</button> 
                     <button type="button" class="btn btn-primary btn-sm" (click)="cambioAseguradora()">Aseguradora</button>
                   </div>
                 </div>
-              </div>
-
-              <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
 
@@ -221,8 +195,7 @@
                       formControlName="nombre"
                       id="nombre"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Jonathan">
+                      class="form-control form-control-alternative">
                       <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
                         <div *ngIf="f.nombre.errors.pattern">*The nombre must only contain letters.</div>
                       </div>
@@ -244,7 +217,22 @@
                           Sucursal is required.
                         </div>
                     </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-descripción">Descripción</label>
+                    <input
+                      formControlName="descripcion"
+                      id="descripcion"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
+                        <div *ngIf="f.descripcion.errors.pattern">*The descripcion must only contain letters.</div>
+                    </div>
                   </div>
                 </div>
                 <!--<div class="col-lg-6">

@@ -39,6 +39,8 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.varParticular = true;
+    
     this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
       console.log(this.sucursales);

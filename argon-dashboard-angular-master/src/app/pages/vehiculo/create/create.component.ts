@@ -18,7 +18,6 @@ export class CreateComponent implements OnInit {
   obtenerValor;
   replytype;
   varParticular: boolean;
-  varAseguradora=false;
   archivos: any = [];
   previsualizacion: string;
   previsualizacion2: string;
@@ -35,6 +34,7 @@ export class CreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.varParticular = true;
     this.varParticular;
 
     console.log(this.obtenerValor);

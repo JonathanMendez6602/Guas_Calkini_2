@@ -26,8 +26,7 @@
                         [(ngModel)]="vehiculo.marca"
                         id="marca"
                         type="text"
-                        class="form-control form-control-alternative" 
-                        placeholder="Ej: Chevrolet">
+                        class="form-control form-control-alternative">
                       <div *ngIf="f.marca.touched && f.marca.invalid" class="alert alert-danger">
                           <div *ngIf="f.marca.errors.required">*Marca is required.</div>
                           <div *ngIf="f.marca.errors.pattern">*The marca must only contain letters.</div>
@@ -43,8 +42,7 @@
                       [(ngModel)]="vehiculo.modelo"
                       id="modelo"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Año 2001">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
                         <div *ngIf="f.modelo.errors.required">*Modelo is required.</div>
                         <div *ngIf="f.modelo.errors.pattern">*The modelo must only contain letters.</div>
@@ -78,8 +76,7 @@
                       [(ngModel)]="vehiculo.color"
                       id="color"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Plateado">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.color.touched && f.color.invalid" class="alert alert-danger">
                         <div *ngIf="f.color.errors.required">*Color is required.</div>
                         <div *ngIf="f.color.errors.pattern">*The color must only contain letters.</div>
@@ -97,8 +94,7 @@
                       [(ngModel)]="vehiculo.placas"
                       id="placas"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: AAA-00-00">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.placas.touched && f.placas.invalid" class="alert alert-danger">
                         <div *ngIf="f.placas.errors.required">*Placas is required.</div>
                         <div *ngIf="f.placas.errors.pattern">*The placas must only contain letters.</div>
@@ -114,8 +110,7 @@
                       [(ngModel)]="vehiculo.inventario"
                       id="inventario"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Stereo, documentos, botellas, accesorios">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.inventario.touched && f.inventario.invalid" class="alert alert-danger">
                         <div *ngIf="f.inventario.errors.pattern">*The inventario must only contain letters.</div>
                     </div>
@@ -133,8 +128,7 @@
                       type="file"
                       (change)="capturarFileFotoInventario($event)"
                       [(ngModel)]="enviar_fotoinventario"
-                      class="form-control form-control-alternative" 
-                      placeholder="Agregue una foto del inventario si es que tiene">
+                      class="form-control form-control-alternative">
                     <div *ngIf="previsualizacion2">
                       <img width="100px" [src]="previsualizacion2" alt="">
                     </div>
@@ -142,24 +136,26 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <div class="form-group" *ngIf="cambioLlave">
+                  <div class="form-group">
                     <label class="form-control-label" for="input-llaves">Llaves</label>
                     <span class="clearfix"></span>
-                    
                     <label class="custom-toggle">
                       <input  
                       formControlName="llaves" 
-                      [(ngModel)]="vehiculo.llaves"
                       id="llaves" 
-                      type="checkbox" checked="">
+                      type="checkbox">
                       <span class="custom-toggle-slider rounded-circle"></span>
                     </label>
                   </div>
 
-                  <div class="form-group" *ngIf="!cambioLlave">
+                  <div class="form-group">
                     <label class="form-control-label" for="input-llaves">Llaves</label>
+                    <span class="clearfix"></span>
                     <label class="custom-toggle">
-                      <input type="checkbox">
+                      <input  
+                      formControlName="llaves" 
+                      id="llaves" 
+                      type="checkbox">
                       <span class="custom-toggle-slider rounded-circle"></span>
                     </label>
                   </div>
@@ -175,8 +171,7 @@
                       [(ngModel)]="vehiculo.tipo_servicio"
                       id="tipo_servicio"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Arrastre">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.tipo_servicio.touched && f.tipo_servicio.invalid" class="alert alert-danger">
                         <div *ngIf="f.tipo_servicio.errors.required">*Tipo Servicio is required.</div>
                         <div *ngIf="f.tipo_servicio.errors.pattern">*The Tipo Servicio must only contain letters.</div>
@@ -192,8 +187,7 @@
                       [(ngModel)]="vehiculo.lugar_siniestro"
                       id="lugar_siniestro"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Ej: Calle 22-A Col. Kilakán">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.lugar_siniestro.touched && f.lugar_siniestro.invalid" class="alert alert-danger">
                         <div *ngIf="f.lugar_siniestro.errors.required">*Lugar Siniestro is required.</div>
                         <div *ngIf="f.lugar_siniestro.errors.pattern">*The Lugar Siniestro must only contain letters.</div>
@@ -212,38 +206,41 @@
                   </div>
                 </div>
 
-                <div *ngIf="varParticular">
-                  <label class="form-control-label" for="input-nombre">Nombre del cliente</label>
-                  <input
-                  formControlName="nombre"
-                  id="nombre"
-                  type="text"
-                  class="form-control form-control-alternative" 
-                  placeholder="Ej: Jonathan">
-                  <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
-                    <div *ngIf="f.nombre.errors.pattern">*The nombre must only contain letters.</div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <div *ngIf="varParticular">
+                      <label class="form-control-label" for="input-nombre">Nombre del cliente</label>
+                      <input
+                      formControlName="nombre"
+                      [(ngModel)]="vehiculo.cliente"
+                      id="nombre"
+                      type="text"
+                      class="form-control form-control-alternative">
+                      <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+                        <div *ngIf="f.nombre.errors.pattern">*The nombre must only contain letters.</div>
+                      </div>
+                    </div>
+
+                    <div *ngIf="!varParticular">
+                      <label class="form-control-label" for="input-nombre">Aseguradora</label>
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="nombre"
+                        [(ngModel)]="vehiculo.cliente" 
+                        id="nombre" 
+                        aria-describedby="nombreFeedback" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>GNP Seguros</option>
+                          <option>AXA Seguros</option>
+                          <option>ABA Seguros</option>
+                      </select>
+                        <div id="nombreFeedback" class="invalid-feedback">
+                          Sucursal is required.
+                        </div>
+                    </div>
                   </div>
                 </div>
-
-                <div *ngIf="!varParticular">
-                  <label class="form-control-label" for="input-nombre">Aseguradora</label>
-                  <select 
-                    class="form-control form-control-alternative" 
-                    formControlName="nombre" 
-                    id="nombre" 
-                    aria-describedby="nombreFeedback" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option>GNP Seguros</option>
-                      <option>AXA Seguros</option>
-                      <option>ABA Seguros</option>
-                  </select>
-                    <div id="nombreFeedback" class="invalid-feedback">
-                      Sucursal is required.
-                    </div>
-                </div>
               </div>
-
-                
 
               <div class="row">
                 <div class="col-lg-6">
@@ -254,8 +251,7 @@
                       [(ngModel)]="vehiculo.descripcion"
                       id="descripcion"
                       type="text"
-                      class="form-control form-control-alternative" 
-                      placeholder="Descripción a detalle del servicio">
+                      class="form-control form-control-alternative">
                     <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
                         <div *ngIf="f.descripcion.errors.pattern">*The descripcion must only contain letters.</div>
                     </div>
@@ -300,6 +296,7 @@
                 </div>
               </div>
               <button class="btn btn-info" type="submit" [disabled]="!form.valid">Guardar Cambios</button>
+              <button class="btn btn-danger" type="submit" a routerLink="/vehiculo/index">Cancelar</button>
             </div>
           </form>
         </div>
