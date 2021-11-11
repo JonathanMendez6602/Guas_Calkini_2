@@ -62,7 +62,6 @@
                       [(ngModel)]="enviar_fotovehiculo"
                       type="file"
                       class="form-control form-control-alternative">
-                    <label class="form-control-label">Imagen Preview</label>
                     <div *ngIf="previsualizacion">
                       <img width="100px" [src]="previsualizacion" alt="">
                     </div>
@@ -131,7 +130,6 @@
                       [(ngModel)]="enviar_fotoinventario"
                       class="form-control form-control-alternative" 
                       placeholder="Agregue una foto del inventario si es que tiene">
-                      <label class="form-control-label">Imagen Preview</label>
                     <div *ngIf="previsualizacion2">
                       <img width="100px" [src]="previsualizacion2" alt="">
                     </div>
