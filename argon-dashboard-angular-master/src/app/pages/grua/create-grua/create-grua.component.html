@@ -136,13 +136,11 @@
                             <input
                                 formControlName="doc_tarjcirculacion"
                                 id="doc_tarjcirculacion"
-                                type="text"
+                                (change)="capturarFileDoc1($event)"
+                                [(ngModel)]="enviar_doc1"
+                                type="file"
                                 class="form-control form-control-alternative" 
                             >
-                            <div *ngIf="f.doc_tarjcirculacion.touched && f.doc_tarjcirculacion.invalid" class="alert alert-danger">
-                                <div *ngIf="f.doc_tarjcirculacion.errors.required">*Año is required.</div>
-                                <div *ngIf="f.doc_tarjcirculacion.errors.pattern">*The año must only contain letters.</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -153,7 +151,9 @@
                             <input
                               formControlName="doc_cartaporte"
                               id="doc_cartaporte"
-                              type="text"
+                              (change)="capturarFileDoc2($event)"
+                              [(ngModel)]="enviar_doc2"
+                              type="file"
                               class="form-control form-control-alternative" 
                             >
                               <div *ngIf="f.doc_cartaporte.touched && f.doc_cartaporte.invalid" class="alert alert-danger">
@@ -168,7 +168,9 @@
                             <input
                                 formControlName="doc_polizaseguro"
                                 id="doc_polizaseguro"
-                                type="text"
+                                (change)="capturarFileDoc3($event)"
+                                [(ngModel)]="enviar_doc3"
+                                type="file"
                                 class="form-control form-control-alternative" 
                             >
                             <div *ngIf="f.doc_polizaseguro.touched && f.doc_polizaseguro.invalid" class="alert alert-danger">
@@ -185,7 +187,9 @@
                             <input
                               formControlName="doc_factura"
                               id="doc_factura"
-                              type="text"
+                              (change)="capturarFileDoc4($event)"
+                                [(ngModel)]="enviar_doc4"
+                                type="file"
                               class="form-control form-control-alternative" 
                             >
                               <div *ngIf="f.doc_factura.touched && f.doc_factura.invalid" class="alert alert-danger">
@@ -200,7 +204,9 @@
                             <input
                                 formControlName="doc_consecion"
                                 id="doc_consecion"
-                                type="text"
+                                (change)="capturarFileDoc5($event)"
+                                [(ngModel)]="enviar_doc5"
+                                type="file"
                                 class="form-control form-control-alternative" 
                             >
                             <div *ngIf="f.doc_consecion.touched && f.doc_consecion.invalid" class="alert alert-danger">
@@ -217,7 +223,9 @@
                             <input
                               formControlName="doc_inclusion"
                               id="doc_inclusion"
-                              type="text"
+                              (change)="capturarFileDoc6($event)"
+                                [(ngModel)]="enviar_doc6"
+                                type="file"
                               class="form-control form-control-alternative" 
                             >
                               <div *ngIf="f.doc_inclusion.touched && f.doc_inclusion.invalid" class="alert alert-danger">
@@ -232,7 +240,9 @@
                             <input
                                 formControlName="doc_permiso_fisicomec"
                                 id="doc_permiso_fisicomec"
-                                type="text"
+                                (change)="capturarFileDoc7($event)"
+                                [(ngModel)]="enviar_doc7"
+                                type="file"
                                 class="form-control form-control-alternative" 
                             >
                             <div *ngIf="f.doc_permiso_fisicomec.touched && f.doc_permiso_fisicomec.invalid" class="alert alert-danger">
@@ -249,7 +259,9 @@
                             <input
                               formControlName="doc_anticontaminantes"
                               id="doc_anticontaminantes"
-                              type="text"
+                              (change)="capturarFileDoc8($event)"
+                                [(ngModel)]="enviar_doc8"
+                                type="file"
                               class="form-control form-control-alternative" 
                             >
                               <div *ngIf="f.doc_anticontaminantes.touched && f.doc_anticontaminantes.invalid" class="alert alert-danger">

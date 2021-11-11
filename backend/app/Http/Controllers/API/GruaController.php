@@ -24,14 +24,57 @@ class GruaController extends Controller
         $data['anio'] = $request['anio'];
         $data['num_motor'] = $request['num_motor'];
         $data['tipo_est_o_fed'] = $request['tipo_est_o_fed'];
-        $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
-        $data['doc_cartaporte'] = $request['doc_cartaporte'];
-        $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
-        $data['doc_factura'] = $request['doc_factura'];
-        $data['doc_consecion'] = $request['doc_consecion'];
-        $data['doc_inclusion'] = $request['doc_inclusion'];
-        $data['doc_permiso_fisicomec'] = $request['doc_permiso_fisicomec'];
-        $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
+
+
+        if($request['doc_tarjcirculacion']==""){
+          $data['doc_tarjcirculacion'] = "";
+        }else{
+          $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
+        }
+
+        if($request['doc_cartaporte']==""){
+          $data['doc_cartaporte'] = "";
+        }else{
+          $data['doc_cartaporte'] = $request['doc_cartaporte'];
+        }
+
+        if($request['doc_polizaseguro']==""){
+          $data['doc_polizaseguro'] = "";
+        }else{
+          $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
+        }
+
+        if($request['doc_factura']==""){
+          $data['doc_factura'] = "";
+        }else{
+          $data['doc_factura'] = $request['doc_factura'];
+        }
+
+        if($request['doc_consecion']==""){
+          $data['doc_consecion'] = "";
+        }else{
+          $data['doc_consecion'] = $request['doc_consecion'];
+        }
+
+        if($request['doc_inclusion']==""){
+          $data['doc_inclusion'] = "";
+        }else{
+          $data['doc_inclusion'] = $request['doc_inclusion'];
+        }
+
+        if($request['doc_permiso_fisicomec']==""){
+          $data['doc_permiso_fisicomec'] = "";
+        }else{
+          $data['doc_permiso_fisicomec'] = $request['doc_permiso_fisicomec'];
+        }
+        
+        if($request['doc_anticontaminantes']==""){
+          $data['doc_anticontaminantes'] = "";
+        }else{
+          $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
+        }
+       
+        
         Grua::create($data);
         return response()->json([
             'message' => "Successfully created",
@@ -61,14 +104,55 @@ class GruaController extends Controller
         $data['anio'] = $request['anio'];
         $data['num_motor'] = $request['num_motor'];
         $data['tipo_est_o_fed'] = $request['tipo_est_o_fed'];
-        $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
-        $data['doc_cartaporte'] = $request['doc_cartaporte'];
-        $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
-        $data['doc_factura'] = $request['doc_factura'];
-        $data['doc_consecion'] = $request['doc_consecion'];
-        $data['doc_inclusion'] = $request['doc_inclusion'];
-        $data['doc_permiso_fisicomec'] = $request['doc_permiso_fisicomec'];
-        $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
+        
+        if($request['doc_tarjcirculacion']==""){
+          $data['doc_tarjcirculacion'] = "";
+        }else{
+          $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
+        }
+
+        if($request['doc_cartaporte']==""){
+          $data['doc_cartaporte'] = "";
+        }else{
+          $data['doc_cartaporte'] = $request['doc_cartaporte'];
+        }
+
+        if($request['doc_polizaseguro']==""){
+          $data['doc_polizaseguro'] = "";
+        }else{
+          $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
+        }
+
+        if($request['doc_factura']==""){
+          $data['doc_factura'] = "";
+        }else{
+          $data['doc_factura'] = $request['doc_factura'];
+        }
+
+        if($request['doc_consecion']==""){
+          $data['doc_consecion'] = "";
+        }else{
+          $data['doc_consecion'] = $request['doc_consecion'];
+        }
+
+        if($request['doc_inclusion']==""){
+          $data['doc_inclusion'] = "";
+        }else{
+          $data['doc_inclusion'] = $request['doc_inclusion'];
+        }
+
+        if($request['doc_permiso_fisicomec']==""){
+          $data['doc_permiso_fisicomec'] = "";
+        }else{
+          $data['doc_permiso_fisicomec'] = $request['doc_permiso_fisicomec'];
+        }
+        
+        if($request['doc_anticontaminantes']==""){
+          $data['doc_anticontaminantes'] = "";
+        }else{
+          $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
+        }
+        
         Grua::find($id)->update($data);
         return response()->json([
             'message' => "Successfully updated",

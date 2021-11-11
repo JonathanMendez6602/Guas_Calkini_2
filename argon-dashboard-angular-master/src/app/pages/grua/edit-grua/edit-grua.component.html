@@ -136,14 +136,17 @@
                             <label class="form-control-label" for="input-marca">Tarjeta de Circulación</label>
                             <input
                                 formControlName="doc_tarjcirculacion"
-                                [(ngModel)]="grua.doc_tarjcirculacion"
                                 id="doc_tarjcirculacion"
+                                (change)="capturarFileDoc1($event)"
+                                [(ngModel)]="enviar_doc1"
+                                type="file"
+                                class="form-control form-control-alternative">
+                                <input 
+                                formControlName="doc_tarjcirculacion"
+                                [(ngModel)]="grua.doc_tarjcirculacion" 
                                 type="text"
-                                class="form-control form-control-alternative">                   
-                            <div *ngIf="f.doc_tarjcirculacion.touched && f.doc_tarjcirculacion.invalid" class="alert alert-danger">
-                                <div *ngIf="f.doc_tarjcirculacion.errors.required">*Año is required.</div>
-                                <div *ngIf="f.doc_tarjcirculacion.errors.pattern">*The año must only contain letters.</div>
-                            </div>
+                                class="form-control form-control-alternative" 
+                                disabled="false">                   
                         </div>
                     </div>
                 </div>
@@ -152,15 +155,18 @@
                         <div class="form-group">
                             <label class="form-control-label" for="input-marca">Carta Porte</label>
                             <input
+                                formControlName="doc_cartaporte"
+                                id="doc_cartaporte"
+                                (change)="capturarFileDoc2($event)"
+                                [(ngModel)]="enviar_doc2"
+                                type="file"
+                                class="form-control form-control-alternative">
+                            <input
                               formControlName="doc_cartaporte"
                               [(ngModel)]="grua.doc_cartaporte"
-                              id="doc_cartaporte"
                               type="text"
-                              class="form-control form-control-alternative">                            
-                              <div *ngIf="f.doc_cartaporte.touched && f.doc_cartaporte.invalid" class="alert alert-danger">
-                                  <div *ngIf="f.doc_cartaporte.errors.required">*Marca is required.</div>
-                                  <div *ngIf="f.doc_cartaporte.errors.pattern">*The marca must only contain letters.</div>
-                              </div>
+                              class="form-control form-control-alternative"
+                              disabled="false">                            
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -168,14 +174,17 @@
                             <label class="form-control-label" for="input-marca">Póliza de Seguro</label>
                             <input
                                 formControlName="doc_polizaseguro"
-                                [(ngModel)]="grua.doc_polizaseguro"
                                 id="doc_polizaseguro"
+                                (change)="capturarFileDoc3($event)"
+                                [(ngModel)]="enviar_doc3 || grua.doc_polizaseguro"
+                                type="file"
+                                class="form-control form-control-alternative">
+                            <input
+                                formControlName="doc_polizaseguro"
+                                [(ngModel)]="grua.doc_polizaseguro"
                                 type="text"
-                                class="form-control form-control-alternative">                            
-                            <div *ngIf="f.doc_polizaseguro.touched && f.doc_polizaseguro.invalid" class="alert alert-danger">
-                                <div *ngIf="f.doc_polizaseguro.errors.required">*Año is required.</div>
-                                <div *ngIf="f.doc_polizaseguro.errors.pattern">*The año must only contain letters.</div>
-                            </div>
+                                class="form-control form-control-alternative"
+                                disabled="false">                            
                         </div>
                     </div>
                 </div>
@@ -183,6 +192,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="input-marca">Factura</label>
+                            
                             <input
                               formControlName="doc_factura"
                               [(ngModel)]="grua.doc_factura"

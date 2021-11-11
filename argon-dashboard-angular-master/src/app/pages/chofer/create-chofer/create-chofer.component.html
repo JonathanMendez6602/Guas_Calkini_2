@@ -76,13 +76,9 @@
                                         <label class="form-control-label" for="input-doc_lic_fed">Licencia
                                             Federal</label>
                                         <input formControlName="doc_lic_fed" id="doc_lic_fed" type="file"
-                                            class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_lic_fed.touched && f.doc_lic_fed.invalid"
-                                            class="alert alert-danger">
-                                            <div *ngIf="f.doc_lic_fed.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_lic_fed.pattern">*The marca must only contain letters.
-                                            </div>
-                                        </div>
+                                            class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc1($event)"
+                                            [(ngModel)]="enviar_doc1">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -114,13 +110,9 @@
                                         <label class="form-control-label" for="input-doc_lic_est">Licencia
                                             Estatal</label>
                                         <input formControlName="doc_lic_est" id="doc_lic_est" type="file"
-                                            class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_lic_est.touched && f.doc_lic_est.invalid"
-                                            class="alert alert-danger">
-                                            <div *ngIf="f.doc_lic_est.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_lic_est.pattern">*The marca must only contain letters.
-                                            </div>
-                                        </div>
+                                            class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc2($event)"
+                                            [(ngModel)]="enviar_doc2">
                                     </div>
                                 </div>
                             </div>
@@ -153,23 +145,18 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_ine">INE</label>
                                         <input formControlName="doc_ine" id="doc_ine" type="file"
-                                            class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_ine.touched && f.doc_ine.invalid" class="alert alert-danger">
-                                            <div *ngIf="f.doc_ine.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_ine.pattern">*The marca must only contain letters.</div>
-                                        </div>
+                                            class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc3($event)"
+                                            [(ngModel)]="enviar_doc3">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_curp">CURP</label>
                                         <input formControlName="doc_curp" id="doc_curp" type="file"
-                                            class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_curp.touched && f.doc_curp.invalid"
-                                            class="alert alert-danger">
-                                            <div *ngIf="f.doc_curp.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_curp.pattern">*The marca must only contain letters.</div>
-                                        </div>
+                                            class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc4($event)"
+                                            [(ngModel)]="enviar_doc4">
                                     </div>
                                 </div>
                             </div>

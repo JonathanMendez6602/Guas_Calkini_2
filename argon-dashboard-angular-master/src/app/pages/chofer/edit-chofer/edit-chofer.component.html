@@ -19,7 +19,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-nombre">Nombre</label>
                                         <input formControlName="nombre" [(ngModel)]="chofer.nombre"
-                                            id="nombre                        " type="file"
+                                            id="nombre                        " type="text"
                                             class="form-control form-control-alternative">
                                         <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
                                             <div *ngIf="f.nombre.errors.required">*Marca is required.</div>
@@ -33,7 +33,7 @@
                                         <label class="form-control-label" for="input-apellido_p">Apellido
                                             Paterno</label>
                                         <input formControlName="apellido_p" [(ngModel)]="chofer.apellido_p"
-                                            id="apellido_p" type="file" class="form-control form-control-alternative">
+                                            id="apellido_p" type="text" class="form-control form-control-alternative">
                                         <div *ngIf="f.apellido_p.touched && f.apellido_p.invalid"
                                             class="alert alert-danger">
                                             <div *ngIf="f.apellido_p.errors.required">*Marca is required.</div>
@@ -49,7 +49,7 @@
                                         <label class="form-control-label" for="input-apellido_m">Apellido
                                             Materno</label>
                                         <input formControlName="apellido_m" [(ngModel)]="chofer.apellido_m" id="nombre"
-                                            type="file" class="form-control form-control-alternative">
+                                            type="text" class="form-control form-control-alternative">
                                         <div *ngIf="f.apellido_m.touched && f.apellido_m.invalid"
                                             class="alert alert-danger">
                                             <div *ngIf="f.apellido_m.errors.required">*Marca is required.</div>
@@ -61,7 +61,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-edad">Edad</label>
-                                        <input formControlName="edad" [(ngModel)]="chofer.edad" id="edad" type="file"
+                                        <input formControlName="edad" [(ngModel)]="chofer.edad" id="edad" type="text"
                                             class="form-control form-control-alternative">
                                         <div *ngIf="f.edad.touched && f.edad.invalid" class="alert alert-danger">
                                             <div *ngIf="f.edad.errors.required">*Marca is required.</div>
@@ -77,13 +77,9 @@
                                         <label class="form-control-label" for="input-doc_lic_fed">Licencia
                                             Federal</label>
                                         <input formControlName="doc_lic_fed" [(ngModel)]="chofer.doc_lic_fed"
-                                            id="doc_lic_fed" type="file" class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_lic_fed.touched && f.doc_lic_fed.invalid"
-                                            class="alert alert-danger">
-                                            <div *ngIf="f.doc_lic_fed.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_lic_fed.pattern">*The marca must only contain letters.
-                                            </div>
-                                        </div>
+                                            id="doc_lic_fed" type="file" class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc1($event)"
+                                            [(ngModel)]="enviar_doc1">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -102,7 +98,7 @@
                                         <label class="form-control-label" for="input-num_lic_fed">Número de licencia
                                             federal</label>
                                         <input formControlName="num_lic_fed" [(ngModel)]="chofer.num_lic_fed"
-                                            id="num_lic_fed" type="file" class="form-control form-control-alternative">
+                                            id="num_lic_fed" type="text" class="form-control form-control-alternative">
                                         <div *ngIf="f.num_lic_fed.touched && f.num_lic_fed.invalid"
                                             class="alert alert-danger">
                                             <div *ngIf="f.num_lic_fed.errors.required">*Marca is required.</div>
@@ -116,13 +112,9 @@
                                         <label class="form-control-label" for="input-doc_lic_est">Licencia
                                             Estatal</label>
                                         <input formControlName="doc_lic_est" [(ngModel)]="chofer.doc_lic_est"
-                                            id="doc_lic_est" type="file" class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_lic_est.touched && f.doc_lic_est.invalid"
-                                            class="alert alert-danger">
-                                            <div *ngIf="f.doc_lic_est.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_lic_est.pattern">*The marca must only contain letters.
-                                            </div>
-                                        </div>
+                                            id="doc_lic_est" type="file" class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc2($event)"
+                                            [(ngModel)]="enviar_doc2">
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +133,7 @@
                                         <label class="form-control-label" for="input-num_lic_est">Número de licencia
                                             estatal</label>
                                         <input formControlName="num_lic_est" [(ngModel)]="chofer.num_lic_est"
-                                            id="num_lic_est" type="file" class="form-control form-control-alternative">
+                                            id="num_lic_est" type="text" class="form-control form-control-alternative">
                                         <div *ngIf="f.num_lic_est.touched && f.num_lic_est.invalid"
                                             class="alert alert-danger">
                                             <div *ngIf="f.num_lic_est.errors.required">*Marca is required.</div>
@@ -156,7 +148,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_ine">INE</label>
                                         <input formControlName="doc_ine" [(ngModel)]="chofer.doc_ine" id="doc_ine"
-                                            type="file" class="form-control form-control-alternative">
+                                            type="file" class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc3($event)"
+                                            [(ngModel)]="enviar_doc3">
                                         <div *ngIf="f.doc_ine.touched && f.doc_ine.invalid" class="alert alert-danger">
                                             <div *ngIf="f.doc_ine.errors.required">*Marca is required.</div>
                                             <div *ngIf="f.doc_ine.pattern">*The marca must only contain letters.</div>
@@ -167,12 +161,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_curp">CURP</label>
                                         <input formControlName="doc_curp" [(ngModel)]="chofer.doc_curp" id="doc_curp"
-                                            type="file" class="form-control form-control-alternative">
-                                        <div *ngIf="f.doc_curp.touched && f.doc_curp.invalid"
-                                            class="alert alert-danger">
-                                            <div *ngIf="f.doc_curp.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_curp.pattern">*The marca must only contain letters.</div>
-                                        </div>
+                                            type="file" class="form-control form-control-alternative"
+                                            (change)="capturarFileDoc4($event)"
+                                            [(ngModel)]="enviar_doc4">
                                     </div>
                                 </div>
                             </div>
