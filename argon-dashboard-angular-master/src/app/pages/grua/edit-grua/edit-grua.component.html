@@ -140,13 +140,7 @@
                                 (change)="capturarFileDoc1($event)"
                                 [(ngModel)]="enviar_doc1"
                                 type="file"
-                                class="form-control form-control-alternative">
-                                <input 
-                                formControlName="doc_tarjcirculacion"
-                                [(ngModel)]="grua.doc_tarjcirculacion" 
-                                type="text"
-                                class="form-control form-control-alternative" 
-                                disabled="false">                   
+                                class="form-control form-control-alternative">                  
                         </div>
                     </div>
                 </div>
@@ -160,13 +154,7 @@
                                 (change)="capturarFileDoc2($event)"
                                 [(ngModel)]="enviar_doc2"
                                 type="file"
-                                class="form-control form-control-alternative">
-                            <input
-                              formControlName="doc_cartaporte"
-                              [(ngModel)]="grua.doc_cartaporte"
-                              type="text"
-                              class="form-control form-control-alternative"
-                              disabled="false">                            
+                                class="form-control form-control-alternative">                         
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -176,15 +164,9 @@
                                 formControlName="doc_polizaseguro"
                                 id="doc_polizaseguro"
                                 (change)="capturarFileDoc3($event)"
-                                [(ngModel)]="enviar_doc3 || grua.doc_polizaseguro"
+                                [(ngModel)]="enviar_doc3"
                                 type="file"
-                                class="form-control form-control-alternative">
-                            <input
-                                formControlName="doc_polizaseguro"
-                                [(ngModel)]="grua.doc_polizaseguro"
-                                type="text"
-                                class="form-control form-control-alternative"
-                                disabled="false">                            
+                                class="form-control form-control-alternative">                          
                         </div>
                     </div>
                 </div>
@@ -197,12 +179,10 @@
                               formControlName="doc_factura"
                               [(ngModel)]="grua.doc_factura"
                               id="doc_factura"
-                              type="text"
+                              (change)="capturarFileDoc4($event)"
+                                [(ngModel)]="enviar_doc4"
+                                type="file"
                               class="form-control form-control-alternative">                            
-                              <div *ngIf="f.doc_factura.touched && f.doc_factura.invalid" class="alert alert-danger">
-                                  <div *ngIf="f.doc_factura.errors.required">*Marca is required.</div>
-                                  <div *ngIf="f.doc_factura.errors.pattern">*The marca must only contain letters.</div>
-                              </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -210,14 +190,11 @@
                             <label class="form-control-label" for="input-marca">Conseción</label>
                             <input
                                 formControlName="doc_consecion"
-                                [(ngModel)]="grua.doc_consecion"
                                 id="doc_consecion"
-                                type="text"
+                                (change)="capturarFileDoc5($event)"
+                                [(ngModel)]="enviar_doc5"
+                                type="file"
                                 class="form-control form-control-alternative">     
-                            <div *ngIf="f.doc_consecion.touched && f.doc_consecion.invalid" class="alert alert-danger">
-                                <div *ngIf="f.doc_consecion.errors.required">*Año is required.</div>
-                                <div *ngIf="f.doc_consecion.errors.pattern">*The año must only contain letters.</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -229,12 +206,10 @@
                               formControlName="doc_inclusion"
                               [(ngModel)]="grua.doc_inclusion"
                               id="doc_inclusion"
-                              type="text"
+                              (change)="capturarFileDoc6($event)"
+                                [(ngModel)]="enviar_doc6"
+                                type="file"
                               class="form-control form-control-alternative">                            
-                              <div *ngIf="f.doc_inclusion.touched && f.doc_inclusion.invalid" class="alert alert-danger">
-                                  <div *ngIf="f.doc_inclusion.errors.required">*Marca is required.</div>
-                                  <div *ngIf="f.doc_inclusion.errors.pattern">*The marca must only contain letters.</div>
-                              </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -244,12 +219,10 @@
                                 formControlName="doc_permiso_fisicomec"
                                 [(ngModel)]="grua.doc_permiso_fisicomec"
                                 id="doc_permiso_fisicomec"
-                                type="text"
+                                (change)="capturarFileDoc7($event)"
+                                [(ngModel)]="enviar_doc7"
+                                type="file"
                                 class="form-control form-control-alternative">                            
-                            <div *ngIf="f.doc_permiso_fisicomec.touched && f.doc_permiso_fisicomec.invalid" class="alert alert-danger">
-                                <div *ngIf="f.doc_permiso_fisicomec.errors.required">*Año is required.</div>
-                                <div *ngIf="f.doc_permiso_fisicomec.errors.pattern">*The año must only contain letters.</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -261,12 +234,10 @@
                               formControlName="doc_anticontaminantes"
                               [(ngModel)]="grua.doc_anticontaminantes"
                               id="doc_anticontaminantes"
-                              type="text"
+                              (change)="capturarFileDoc8($event)"
+                                [(ngModel)]="enviar_doc8"
+                                type="file"
                               class="form-control form-control-alternative">                             
-                              <div *ngIf="f.doc_anticontaminantes.touched && f.doc_anticontaminantes.invalid" class="alert alert-danger">
-                                  <div *ngIf="f.doc_anticontaminantes.errors.required">*Marca is required.</div>
-                                  <div *ngIf="f.doc_anticontaminantes.errors.pattern">*The marca must only contain letters.</div>
-                              </div>
                         </div>
                     </div>
                 </div>

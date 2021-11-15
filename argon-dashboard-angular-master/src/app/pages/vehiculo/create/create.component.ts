@@ -47,7 +47,7 @@ export class CreateComponent implements OnInit {
     this.form = new FormGroup({
       marca:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       modelo: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      foto_vehiculo: new FormControl(''),
+      foto_vehiculo: new FormControl(this.enviar_fotovehiculo),
       color:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
@@ -91,11 +91,13 @@ export class CreateComponent implements OnInit {
   capturarFileFotoInventario(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
+    const valorsito = event.target.files[0].path;
+    console.log(valorsito);
     this.enviar_fotoinventario = archivoCapturado.name;
     console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion2 = imagen.base;
-      console.log(imagen);
+      console.log(imagen.webkitRelativePath);
       console.log(archivoCapturado.webkitRelativePath);
     })
     this.archivos.push(archivoCapturado);

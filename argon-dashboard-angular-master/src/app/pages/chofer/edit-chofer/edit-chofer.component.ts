@@ -33,6 +33,10 @@ export class EditChoferComponent implements OnInit {
     this.id = this.route.snapshot.params['idChofer'];
     this.choferService.find(this.id).subscribe((data: Chofer)=>{
       this.chofer = data;
+      this.enviar_doc1 = this.chofer.doc_lic_fed;
+      this.enviar_doc2 = this.chofer.doc_lic_est;
+      this.enviar_doc3 = this.chofer.doc_ine;
+      this.enviar_doc4 = this.chofer.doc_curp;
       console.log(this.chofer.id);
     });
 

@@ -51,6 +51,10 @@ export class EditComponent implements OnInit {
       this.vehiculo = data;
       console.log(this.vehiculo.sucursal);
       console.log(this.vehiculo.id);
+      this.enviar_fotovehiculo = this.vehiculo.foto_vehiculo;
+      this.enviar_fotoinventario = this.vehiculo.foto_inventario;
+      console.log(this.enviar_fotovehiculo);
+      console.log(this.enviar_fotoinventario);
       if(this.vehiculo.llaves=="si"){
         this.cambioLlave=true;
       }else{

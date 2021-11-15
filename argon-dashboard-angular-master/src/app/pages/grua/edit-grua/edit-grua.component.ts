@@ -16,14 +16,14 @@ export class EditGruaComponent implements OnInit {
   grua: Grua;
   form: FormGroup;
 
-  enviar_doc1: string="";
-  enviar_doc2: string="";
-  enviar_doc3: string="";
-  enviar_doc4: string="";
-  enviar_doc5: string="";
-  enviar_doc6: string="";
-  enviar_doc7: string="";
-  enviar_doc8: string="";
+  enviar_doc1: string;
+  enviar_doc2: string;
+  enviar_doc3: string;
+  enviar_doc4: string;
+  enviar_doc5: string;
+  enviar_doc6: string;
+  enviar_doc7: string;
+  enviar_doc8: string;
   constructor(
     public gruaService: GruaService,
     private route: ActivatedRoute,
@@ -36,6 +36,14 @@ export class EditGruaComponent implements OnInit {
     this.id = this.route.snapshot.params['idGrua'];
     this.gruaService.find(this.id).subscribe((data: Grua)=>{
       this.grua = data;
+      this.enviar_doc1 = this.grua.doc_tarjcirculacion;
+      this.enviar_doc2 = this.grua.doc_cartaporte;
+      this.enviar_doc3 = this.grua.doc_polizaseguro;
+      this.enviar_doc4 = this.grua.doc_factura;
+      this.enviar_doc5 = this.grua.doc_consecion;
+      this.enviar_doc6 = this.grua.doc_inclusion;
+      this.enviar_doc7 = this.grua.doc_permiso_fisicomec;
+      this.enviar_doc8 = this.grua.doc_anticontaminantes;
       console.log(this.grua.id);
     });
 

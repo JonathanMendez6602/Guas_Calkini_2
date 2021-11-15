@@ -76,7 +76,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_lic_fed">Licencia
                                             Federal</label>
-                                        <input formControlName="doc_lic_fed" [(ngModel)]="chofer.doc_lic_fed"
+                                        <input formControlName="doc_lic_fed"
                                             id="doc_lic_fed" type="file" class="form-control form-control-alternative"
                                             (change)="capturarFileDoc1($event)"
                                             [(ngModel)]="enviar_doc1">
@@ -111,7 +111,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_lic_est">Licencia
                                             Estatal</label>
-                                        <input formControlName="doc_lic_est" [(ngModel)]="chofer.doc_lic_est"
+                                        <input formControlName="doc_lic_est"
                                             id="doc_lic_est" type="file" class="form-control form-control-alternative"
                                             (change)="capturarFileDoc2($event)"
                                             [(ngModel)]="enviar_doc2">
@@ -147,20 +147,16 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_ine">INE</label>
-                                        <input formControlName="doc_ine" [(ngModel)]="chofer.doc_ine" id="doc_ine"
+                                        <input formControlName="doc_ine" id="doc_ine"
                                             type="file" class="form-control form-control-alternative"
                                             (change)="capturarFileDoc3($event)"
                                             [(ngModel)]="enviar_doc3">
-                                        <div *ngIf="f.doc_ine.touched && f.doc_ine.invalid" class="alert alert-danger">
-                                            <div *ngIf="f.doc_ine.errors.required">*Marca is required.</div>
-                                            <div *ngIf="f.doc_ine.pattern">*The marca must only contain letters.</div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-doc_curp">CURP</label>
-                                        <input formControlName="doc_curp" [(ngModel)]="chofer.doc_curp" id="doc_curp"
+                                        <input formControlName="doc_curp" id="doc_curp"
                                             type="file" class="form-control form-control-alternative"
                                             (change)="capturarFileDoc4($event)"
                                             [(ngModel)]="enviar_doc4">
