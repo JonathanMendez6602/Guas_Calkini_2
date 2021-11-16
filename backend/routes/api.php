@@ -74,5 +74,7 @@ Route::prefix('chofer')->group(function () {
     Route::delete('/{id}',[ ChoferController::class, 'delete']);
     Route::get('/{id}',[ ChoferController::class, 'get']);
     Route::put('/{id}',[ ChoferController::class, 'update']);
+    Route::get('/cambiob/{id}',[ ChoferController::class, 'getbaja']);
+    Route::delete('/cambio/{id}',[ ChoferController::class, 'baja']);
 });
 

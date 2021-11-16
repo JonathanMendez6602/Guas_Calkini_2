@@ -57,6 +57,13 @@ export class ChoferService {
    )
  }
 
+ getcambio(id): Observable<Chofer> {
+  return this.httpClient.get<Chofer>(this.apiURL +"/cambiob/"+ id)
+  .pipe(
+    catchError(this.errorHandler)
+  )
+}
+
  errorHandler(error) {
    let errorMessage = '';
    if(error.error instanceof ErrorEvent) {

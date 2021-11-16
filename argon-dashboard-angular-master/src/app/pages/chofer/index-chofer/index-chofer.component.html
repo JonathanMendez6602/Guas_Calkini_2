@@ -87,6 +87,13 @@
                         <th scope="row">
                           <div class="media align-items-center">
                             <div class="media-body">
+                              <span class="mb-0 text-sm">Estado</span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="row">
+                          <div class="media align-items-center">
+                            <div class="media-body">
                               <span class="mb-0 text-sm">Nombre</span>
                             </div>
                           </div>
@@ -124,6 +131,7 @@
                     <tbody>
                       <tr *ngFor="let chofer of choferes | filterChofer:filterModelo">
                         <td>{{ chofer.id }}</td>
+                        <td>{{ chofer.estado }}</td>
                         <td>{{ chofer.nombre }}</td>
                         <td>{{ chofer.apellido_p }}</td>
                         <td>{{ chofer.apellido_m }}</td>
@@ -134,6 +142,9 @@
                           </button>
                           <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/chofer/', 'editChofer', chofer.id  ]">
                             <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
+                          </button>
+                          <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="bajaChofer(chofer.id)">
+                            <span class="btn-inner--icon"><i class="fas fa-minus-circle"></i></span>
                           </button>
                           <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(chofer.id)">
                             <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>

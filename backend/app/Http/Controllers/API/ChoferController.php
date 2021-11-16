@@ -45,6 +45,8 @@ class ChoferController extends Controller
         }else{
           $data['doc_curp'] = $request['doc_curp'];
         }
+
+        $data['estado'] = "Laborando";
         Chofer::create($data);
         return response()->json([
             'message' => "Successfully created",
@@ -95,6 +97,24 @@ class ChoferController extends Controller
         }else{
           $data['doc_curp'] = $request['doc_curp'];
         }
+        Chofer::find($id)->update($data);
+        return response()->json([
+            'message' => "Successfully updated",
+            'success' => true
+        ], 200);
+      }
+
+
+      public function getbaja($id){
+        $data2['estado'] = "Baja";
+        Chofer::find($id)->update($data2);
+        $data = Chofer::find($id);
+        return response()->json($data, 200);
+      }
+      public function baja($id){
+       
+        $data['estado'] = "Baja";
+        
         Chofer::find($id)->update($data);
         return response()->json([
             'message' => "Successfully updated",

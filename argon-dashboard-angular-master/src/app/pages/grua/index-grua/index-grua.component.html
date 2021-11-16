@@ -147,12 +147,13 @@
                         <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/grua/', 'editGrua', grua.id  ]">
                           <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
                         </button>
-                        <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(grua.id)">
-                          <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
-                        </button>
                         <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="bajaGrua(grua.id)">
                           <span class="btn-inner--icon"><i class="fas fa-minus-circle"></i></span>
                         </button>
+                        <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(grua.id)">
+                          <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                        </button>
+                        
                       </td>
                     </tr>
                   </tbody>
