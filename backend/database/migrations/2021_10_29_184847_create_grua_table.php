@@ -30,7 +30,9 @@ class CreateGruaTable extends Migration
             $table->string('doc_inclusion');
             $table->string('doc_permiso_fisicomec');
             $table->string('doc_anticontaminantes');
+            $table->string('estado');
             $table->timestamps();
+            
         });
     }
 

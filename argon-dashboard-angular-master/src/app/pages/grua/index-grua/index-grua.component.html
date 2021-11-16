@@ -31,6 +31,7 @@
           <td data-label="Numero de serie">{{ grua.num_serie }}</td>
           <td data-label="Placas">{{ grua.placas }}</td>
           <td data-label="Año">{{ grua.anio }}</td>
+          <td data-label="Estado">{{ grua.estado}}</td>
           <td data-label="Numero de motor">{{ grua.num_motor }}</td>
           <td data-label="Tipo">{{ grua.tipo_est_o_fed }}</td>
           <td data-label="Tarjeta de Circulación">{{ grua.doc_tarjcirculacion }}</td>
@@ -86,6 +87,14 @@
                           </div>
                         </div>
                       </th>
+
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">Estado</span>
+                          </div>
+                        </div>
+                      </th>
                       <th scope="row">
                         <div class="media align-items-center">
                           <div class="media-body">
@@ -126,6 +135,7 @@
                   <tbody>
                     <tr *ngFor="let grua of gruas  | filterGrua:filterModelo">
                       <td>{{grua.id}}</td>
+                      <td>{{grua.estado}}</td>
                       <td>{{ grua.marca }}</td>
                       <td>{{ grua.modelo }}</td>
                       <td>{{ grua.num_serie }}</td>
@@ -139,6 +149,9 @@
                         </button>
                         <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(grua.id)">
                           <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                        </button>
+                        <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="bajaGrua(grua.id)">
+                          <span class="btn-inner--icon"><i class="fas fa-minus-circle"></i></span>
                         </button>
                       </td>
                     </tr>

@@ -22,6 +22,7 @@ class Chofer extends Model
         'fecha_lic_est',
         'num_lic_est',
         'doc_ine',
-        'doc_curp'
+        'doc_curp',
+        'estado'
     ];
 }

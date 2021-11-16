@@ -27,6 +27,7 @@ class CreateChoferTable extends Migration
             $table->bigInteger('num_lic_est');
             $table->string('doc_ine');
             $table->string('doc_curp');
+            $table->string('estado');
             $table->timestamps();
         });
     }

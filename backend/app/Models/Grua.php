@@ -26,6 +26,7 @@ class Grua extends Model
         'doc_consecion',
         'doc_inclusion',
         'doc_permiso_fisicomec',
-        'doc_anticontaminantes'
+        'doc_anticontaminantes',
+        'estado'
     ];
 }
