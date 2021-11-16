@@ -57,6 +57,13 @@ export class GruaService {
    )
  }
 
+ getcambio(id): Observable<Grua> {
+  return this.httpClient.get<Grua>(this.apiURL +"/cambiob/"+ id)
+  .pipe(
+    catchError(this.errorHandler)
+  )
+}
+
  errorHandler(error) {
    let errorMessage = '';
    if(error.error instanceof ErrorEvent) {

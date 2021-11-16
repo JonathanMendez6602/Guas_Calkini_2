@@ -162,7 +162,13 @@ class GruaController extends Controller
         ], 200);
       }
 
-      public function baja(Request $request,$id){
+      public function getbaja($id){
+        $data2['estado'] = "Baja";
+        Grua::find($id)->update($data2);
+        $data = Grua::find($id);
+        return response()->json($data, 200);
+      }
+      public function baja($id){
        
         $data['estado'] = "Baja";
         

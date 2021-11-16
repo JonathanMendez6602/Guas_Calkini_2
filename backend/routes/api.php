@@ -64,6 +64,8 @@ Route::prefix('grua')->group(function () {
     Route::delete('/{id}',[ GruaController::class, 'delete']);
     Route::get('/{id}',[ GruaController::class, 'get']);
     Route::put('/{id}',[ GruaController::class, 'update']);
+    Route::get('/cambiob/{id}',[ GruaController::class, 'getbaja']);
+    Route::delete('/cambio/{id}',[ GruaController::class, 'baja']);
 });
 
 Route::prefix('chofer')->group(function () {
