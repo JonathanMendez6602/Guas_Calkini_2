@@ -46,6 +46,8 @@ class ChoferController extends Controller
           $data['doc_curp'] = $request['doc_curp'];
         }
 
+        $data['sucursal'] = $request['sucursal'];
+        
         $data['estado'] = "Laborando";
         Chofer::create($data);
         return response()->json([
@@ -97,6 +99,9 @@ class ChoferController extends Controller
         }else{
           $data['doc_curp'] = $request['doc_curp'];
         }
+
+        $data['sucursal'] = $request['sucursal'];
+
         Chofer::find($id)->update($data);
         return response()->json([
             'message' => "Successfully updated",

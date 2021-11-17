@@ -75,6 +75,8 @@ class GruaController extends Controller
         }
        
         $data['estado'] = "Circulando";
+
+        $data['sucursal'] = $request['sucursal'];
         
         Grua::create($data);
         return response()->json([
@@ -153,7 +155,8 @@ class GruaController extends Controller
         }else{
           $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
         }
-
+        
+        $data['sucursal'] = $request['sucursal'];
         
         Grua::find($id)->update($data);
         return response()->json([

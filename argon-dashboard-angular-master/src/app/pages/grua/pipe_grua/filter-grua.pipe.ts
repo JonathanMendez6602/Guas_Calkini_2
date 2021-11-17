@@ -11,7 +11,7 @@ export class FilterGruaPipe implements PipeTransform {
 
     for( const grua of value ){
       val1: false;
-      if( (grua.modelo.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (grua.marca.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (grua.placas.toLowerCase().indexOf(arg.toLowerCase()) > -1) ){
+      if( (grua.modelo.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (grua.marca.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (grua.placas.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (grua.sucursal.toLowerCase().indexOf(arg.toLowerCase()) > -1)){
         console.log("Marca");
         resultVehiculo.push(grua);
         val1: true;
