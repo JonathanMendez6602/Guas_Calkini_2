@@ -271,6 +271,25 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-sucursal">Sucursal</label>
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="sucursal" 
+                        id="sucursal" 
+                        aria-describedby="sucursalFeedback" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>Calkiní</option>
+                          <option>Hopelchén</option>
+                          <option>Xpujil</option>
+                      </select>
+                        <div id="sucursalFeedback" class="invalid-feedback">
+                          Sucursal is required.
+                        </div>
+                    </div>
+                  </div>
                 <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
             </div>
             </form> 

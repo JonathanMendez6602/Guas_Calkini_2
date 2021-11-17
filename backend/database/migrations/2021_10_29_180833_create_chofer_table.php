@@ -28,6 +28,7 @@ class CreateChoferTable extends Migration
             $table->string('doc_ine');
             $table->string('doc_curp');
             $table->string('estado');
+            $table->string('sucursal');
             $table->timestamps();
         });
     }

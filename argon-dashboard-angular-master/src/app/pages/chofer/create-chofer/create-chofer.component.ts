@@ -39,7 +39,8 @@ export class CreateChoferComponent implements OnInit {
       fecha_lic_est: new FormControl(''),
       num_lic_est: new FormControl('', [ Validators.required, Validators.pattern ("^[0-9]*$") ]),
       doc_ine: new FormControl(''),
-      doc_curp: new FormControl('')
+      doc_curp: new FormControl(''),
+      sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
 
   }

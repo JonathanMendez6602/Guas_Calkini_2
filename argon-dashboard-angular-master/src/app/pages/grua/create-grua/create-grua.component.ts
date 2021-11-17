@@ -47,6 +47,7 @@ export class CreateGruaComponent implements OnInit {
       doc_inclusion: new FormControl(''),
       doc_permiso_fisicomec: new FormControl(''),
       doc_anticontaminantes: new FormControl(''),
+      sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
 
   }

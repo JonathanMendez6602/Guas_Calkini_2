@@ -65,6 +65,18 @@
                 <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... " [(ngModel)]="filterModelo">
                 <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
               </div>
+              <div class="card-footer">
+                <td>
+                  <label class="form-control-label">Sucursal</label>
+                  <select class="form-control form-control-alternative" name="filterModelo" [(ngModel)]="filterModelo">
+                    <option selected disabled value="">Seleccione una opción</option>
+                    <option value="">Todos</option>
+                    <option value="Calki">Calkiní</option>
+                    <option value="Hopel">Hopelchén</option>
+                    <option value="Xpuj">Xpujil</option>
+                  </select>
+                </td>
+              </div>
             </div>
           </div>
           <div class="card-header border-0">

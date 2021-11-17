@@ -23,6 +23,7 @@ class Chofer extends Model
         'num_lic_est',
         'doc_ine',
         'doc_curp',
-        'estado'
+        'estado',
+        'sucursal'
     ];
 }
