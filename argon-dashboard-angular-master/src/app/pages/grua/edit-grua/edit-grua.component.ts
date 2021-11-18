@@ -62,7 +62,8 @@ export class EditGruaComponent implements OnInit {
       doc_consecion: new FormControl(''),
       doc_inclusion: new FormControl(''),
       doc_permiso_fisicomec: new FormControl(''),
-      doc_anticontaminantes: new FormControl('')
+      doc_anticontaminantes: new FormControl(''),
+      sucursal: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
 
 

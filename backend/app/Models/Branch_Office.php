@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sucursal extends Model
+class Branch_Office extends Model
 {
     use HasFactory;
 
-    protected $table = 'sucursal';
+    protected $table = 'branch_offices';
 
     protected $fillable = [
         'sucursal'

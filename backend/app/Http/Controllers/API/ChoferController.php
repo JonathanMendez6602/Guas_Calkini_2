@@ -49,6 +49,8 @@ class ChoferController extends Controller
         $data['sucursal'] = $request['sucursal'];
         
         $data['estado'] = "Laborando";
+
+        $data['branch_office_id']=1;
         Chofer::create($data);
         return response()->json([
             'message' => "Successfully created",

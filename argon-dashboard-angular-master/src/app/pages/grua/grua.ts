@@ -15,4 +15,5 @@ export interface Grua {
     doc_inclusion: string;
     doc_permiso_fisicomec: string;
     doc_anticontaminantes: string;
+    sucursal: string;
 }

@@ -18,6 +18,12 @@ class Corralon extends Model
       'status_entrega',
       'fecha_entrega',
       'otro_asunto',
-      'id_vehiculo'
+      'id_vehiculo',
+      'sucursal',
+      'branch_office_id'
     ];
+    public function branch_office()
+    {
+        return $this->hasOne(Branch_Office::class);
+    }
 }

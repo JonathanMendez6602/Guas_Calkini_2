@@ -78,6 +78,7 @@ class GruaController extends Controller
 
         $data['sucursal'] = $request['sucursal'];
         
+        $data['branch_office_id']=1;
         Grua::create($data);
         return response()->json([
             'message' => "Successfully created",

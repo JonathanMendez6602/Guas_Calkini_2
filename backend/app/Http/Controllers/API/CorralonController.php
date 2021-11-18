@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Corralon;
-use App\Models\Vehiculo;
+use App\Models\Vehicle;
 use Log;
 
 class CorralonController extends Controller
@@ -31,7 +31,9 @@ class CorralonController extends Controller
     $data['otro_asunto'] = $request['otro_asunto'];
     $data['id_vehiculo'] = $request['id_vehiculo'];
     $data_1['corralon']=1;
-    Vehiculo::find($data['id_vehiculo'])-> update($data_1);
+    $data['sucursal'] = $request['sucursal'];
+    $data['branch_office_id']=1;
+    Vehicle::find($data['id_vehiculo'])-> update($data_1);
     Corralon::create($data);
     return response()->json([
       'message' => "Successfully created",

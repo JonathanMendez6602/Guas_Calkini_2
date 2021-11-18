@@ -28,6 +28,11 @@ class Grua extends Model
         'doc_permiso_fisicomec',
         'doc_anticontaminantes',
         'estado',
-        'sucursal'
+        'sucursal',
+        'branch_office_id'
     ];
+    public function branch_office()
+    {
+        return $this->hasOne(Branch_Office::class);
+    }
 }

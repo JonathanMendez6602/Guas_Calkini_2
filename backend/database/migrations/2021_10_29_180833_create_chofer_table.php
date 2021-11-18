@@ -29,6 +29,7 @@ class CreateChoferTable extends Migration
             $table->string('doc_curp');
             $table->string('estado');
             $table->string('sucursal');
+            $table->foreignId('branch_office_id')->constrined('branch_offices')->cascadaOnUpdate()->nullOnDelete();
             $table->timestamps();
         });
     }

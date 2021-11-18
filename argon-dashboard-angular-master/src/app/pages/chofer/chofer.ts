@@ -12,4 +12,5 @@ export interface Chofer {
     num_lic_est: number;
     doc_ine: string;
     doc_curp: string;
+    sucursal: string;
 }

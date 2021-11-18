@@ -123,6 +123,23 @@
                     </div>
                   </div>
                 </div>
+                <div class="row" style="display: none"> 
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-foto_inventario">Sucursal Vehículo</label>
+                      <input
+                        formControlName="sucursal"
+                        [(ngModel)]="vehiculo.sucursal"
+                        id="sucursal"
+                        type="text"
+                        class="form-control">
+                        <div *ngIf="f.sucursal.touched && f.sucursal.invalid" class="alert alert-danger">
+                            <div *ngIf="f.sucursal.errors.required">*id_vehiculo is required.</div>
+                            <div *ngIf="f.sucursal.errors.pattern">*id_vehiculo must only contain numbers.</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
                 <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
               </div>
             </form>

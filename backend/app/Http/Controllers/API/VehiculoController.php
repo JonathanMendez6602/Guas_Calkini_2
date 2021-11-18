@@ -8,9 +8,9 @@ use Illuminate\Http\Requestfilefile;
 use Illuminate\Http\UploadedFileSplFileInfo;
 use Symfony\Component\HttpFoundation\File;
 
-use App\Models\Vehiculo;
+use App\Models\Vehicle;
 use App\Models\Corralon;
-use App\Models\Sucursal;
+use App\Models\Branch_Office;
 use Log;
 use SebastianBergmann\Environment\Console;
 
@@ -20,18 +20,18 @@ class VehiculoController extends Controller
   public function getAll()
   {
 
-    $data = Vehiculo::get();
+    $data = Vehicle::get();
     return response()->json($data, 200);
   }
 
   public function getAllSucursal(){
-    $data = Sucursal::get();
+    $data = Branch_Office::get();
     return response()->json($data, 200);
   }
 
   public function getAllCorralon()
   {
-    $data = Vehiculo::where('corralon', 0)->get();
+    $data = Vehicle::where('corralon', 0)->get();
     return response()->json($data, 200);
   }
 
@@ -70,10 +70,12 @@ class VehiculoController extends Controller
       $data['descripcion'] = $request['descripcion'];
     }
     $data['nombre'] = $request['nombre'];
+
     $data['sucursal'] = $request['sucursal'];
     $data['corralon'] = 0;
+    $data['branch_office_id']=1;
 
-    Vehiculo::create($data);
+    Vehicle::create($data);
     return response()->json([
       'message' => "Successfully created",
       'success' => true
@@ -83,7 +85,7 @@ class VehiculoController extends Controller
 
   public function delete($id)
   {
-    $res = Vehiculo::find($id)->delete();
+    $res = Vehicle::find($id)->delete();
     return response()->json([
       'message' => "Successfully deleted",
       'success' => true
@@ -92,7 +94,7 @@ class VehiculoController extends Controller
 
   public function get($id)
   {
-    $data = Vehiculo::find($id);
+    $data = Vehicle::find($id);
     return response()->json($data, 200);
   }
 
@@ -131,7 +133,7 @@ class VehiculoController extends Controller
     }
     $data['nombre'] = $request['nombre'];
     $data['sucursal'] = $request['sucursal'];
-    Vehiculo::find($id)->update($data);
+    Vehicle::find($id)->update($data);
     return response()->json([
       'message' => "Successfully updated",
       'success' => true

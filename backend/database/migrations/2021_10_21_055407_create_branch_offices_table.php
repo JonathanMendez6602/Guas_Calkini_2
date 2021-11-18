@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSucursalTable extends Migration
+class CreateBranchOfficesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSucursalTable extends Migration
      */
     public function up()
     {
-        Schema::create('sucursal', function (Blueprint $table) {
+        Schema::create('branch_offices', function (Blueprint $table) {
             $table->id();
             $table->string('sucursal');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateSucursalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sucursal');
+        Schema::dropIfExists('branch_offices');
     }
 }

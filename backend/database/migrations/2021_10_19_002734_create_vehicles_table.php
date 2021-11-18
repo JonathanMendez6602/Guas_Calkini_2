@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVehiculoTable extends Migration
+class CreateVehiclesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateVehiculoTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehiculo', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             //Vehiculo
             $table->string("modelo");
@@ -33,7 +33,10 @@ class CreateVehiculoTable extends Migration
             //Sucursal
             $table->string('sucursal');
             $table->boolean('corralon');
+            $table->foreignId('branch_office_id')->constrined('branch_offices')->cascadaOnUpdate()->nullOnDelete();
             $table->timestamps();
+            
+            
         });
     }
 
@@ -44,6 +47,6 @@ class CreateVehiculoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehiculo');
+        Schema::dropIfExists('vehicles');
     }
 }

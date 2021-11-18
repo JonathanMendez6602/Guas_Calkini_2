@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vehiculo extends Model
+class Vehicle extends Model
 {
     use HasFactory;
 
-    protected $table = "vehiculo";
+    protected $table = "vehicles";
 
     protected $fillable = [
       'marca',
@@ -25,6 +25,12 @@ class Vehiculo extends Model
       'descripcion',
       'nombre',
       'sucursal',
-      'corralon'
+      'corralon',
+      'branch_office_id'
     ];
+
+    public function branch_office()
+    {
+        return $this->hasOne(Branch_Office::class);
+    }
 }

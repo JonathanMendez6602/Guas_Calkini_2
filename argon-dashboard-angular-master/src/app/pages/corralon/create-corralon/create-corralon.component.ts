@@ -37,7 +37,8 @@ export class CreateCorralonComponent implements OnInit {
       status_entrega: new FormControl('', [Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       fecha_entrega: new FormControl(''),
       otro_asunto: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
-      id_vehiculo: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ])
+      id_vehiculo: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ]),
+      sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
   }
 

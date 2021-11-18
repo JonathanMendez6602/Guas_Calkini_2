@@ -9,4 +9,5 @@ export interface Corralon {
     fecha_entrega: Date;
     otro_asunto: string;
     id_vehiculo: number;
+    sucursal: string;
 }

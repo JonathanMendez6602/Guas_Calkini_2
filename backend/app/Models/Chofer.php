@@ -24,6 +24,11 @@ class Chofer extends Model
         'doc_ine',
         'doc_curp',
         'estado',
-        'sucursal'
+        'sucursal',
+        'branch_office_id'
     ];
+    public function branch_office()
+    {
+        return $this->hasOne(Branch_Office::class);
+    }
 }
