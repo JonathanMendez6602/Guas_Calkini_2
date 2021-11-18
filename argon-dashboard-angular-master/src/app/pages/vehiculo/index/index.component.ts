@@ -13,6 +13,7 @@ export class IndexComponent implements OnInit {
 
   vehiculos: Vehiculo[] = [];
   filterModelo = "";
+  filterModelo2 = "";
   id: number;
   vehiculo: Vehiculo;
   // constructor() { }

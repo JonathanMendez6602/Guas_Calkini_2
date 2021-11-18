@@ -69,7 +69,7 @@
               <div class="card-footer">
                 <td>
                   <label class="form-control-label">Sucursal</label>
-                  <select class="form-control form-control-alternative" name="filterModelo" [(ngModel)]="filterModelo">
+                  <select class="form-control form-control-alternative" name="filterModelo2" [(ngModel)]="filterModelo2">
                     <option selected disabled value="">Seleccione una opción</option>
                     <option value="">Todos</option>
                     <option value="Calki">Calkiní</option>
@@ -146,7 +146,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let grua of gruas  | filterGrua:filterModelo">
+                    <tr *ngFor="let grua of gruas  | filterGrua:filterModelo | filterGrua:filterModelo2">
                       <td>{{grua.id}}</td>
                       <td>{{grua.estado}}</td>
                       <td>{{ grua.marca }}</td>

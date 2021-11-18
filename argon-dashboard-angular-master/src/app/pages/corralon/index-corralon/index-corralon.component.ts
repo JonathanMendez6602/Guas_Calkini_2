@@ -11,6 +11,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 export class IndexCorralonComponent implements OnInit {
   corralons: Corralon[]=[];
   filterModelo = "";
+  filterModelo2 = "";
   id: number;
   corralon: Corralon;
   constructor(public corralonService: CorralonService,

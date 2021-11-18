@@ -15,6 +15,7 @@ export class IndexGruaComponent implements OnInit {
   gruas: Grua[] = [];
   valorg: Grua;
   filterModelo = "";
+  filterModelo2 = "";
   id: number;
   grua: Grua;
   // constructor() { }

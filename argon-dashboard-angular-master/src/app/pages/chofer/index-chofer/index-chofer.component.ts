@@ -15,6 +15,7 @@ export class IndexChoferComponent implements OnInit {
   choferes: Chofer[] = [];
   valorg: Chofer;
   filterModelo = "";
+  filterModelo2 = ""; 
   id: number;
   chofer: Chofer;
 

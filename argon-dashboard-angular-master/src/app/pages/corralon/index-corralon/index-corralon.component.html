@@ -25,6 +25,7 @@
      <tbody>
      	  <tr>
           <td data-label="ID vehiculo">{{ corralon.id_vehiculo }}</td>
+          <td data-label="Sucursal">{{ corralon.sucursal }}</td>
           <td data-label="Fecha de entrada">{{ corralon.fecha_entrada }}</td>
           <td data-label="Pensión">{{ corralon.pension_c }}</td>
           <td data-label="Días de pensión">{{ corralon.dias_pension }}</td>
@@ -57,7 +58,7 @@
             <div class="card-footer">
               <td>
                 <label class="form-control-label">Sucursal</label>
-                <select class="form-control form-control-alternative" name="filterModelo" [(ngModel)]="filterModelo">
+                <select class="form-control form-control-alternative" name="filterModelo2" [(ngModel)]="filterModelo2">
                   <option selected disabled value="">Seleccione una opción</option>
                   <option value="">Todos</option>
                   <option value="Calki">Calkiní</option>
@@ -130,7 +131,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let corralon of corralons | filterCorralon:filterModelo">
+              <tr *ngFor="let corralon of corralons | filterCorralon:filterModelo | filterCorralon:filterModelo2">
                 <td>{{ corralon.id_vehiculo }}</td>
                 <td>{{ corralon.fecha_entrada }}</td>
                 <td>{{ corralon.dias_pension }}</td>
