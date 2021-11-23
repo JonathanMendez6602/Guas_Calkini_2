@@ -30,19 +30,28 @@
 
                   <div class="col-lg-6">
                     <div class="form-group">
+                      <label class="form-control-label" for="input-otro_asunto">Otro asunto</label>
+                      <input
+                        formControlName="otro_asunto"
+                        id="otro_asunto"
+                        type="text"
+                        class="form-control form-control-alternative">
+                        <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
+                            <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
+                            <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
                       <label class="form-control-label" for="input-pension_c">Pensión en el corralón</label>
-                      <select 
-                        class="form-control form-control-alternative" 
-                        formControlName="pension_c" 
-                        id="pension_c" 
-                        aria-describedby="pension_cFeedback" required>
-                          <option selected disabled value="">Seleccione una opción</option>
-                          <option>Si</option>
-                          <option>No</option>
-                      </select>
-                      <div id="pension_cFeedback" class="invalid-feedback">
-                        Pension is required.
-                      </div>
+                      <input
+                        formControlName="pension_c"
+                        [(ngModel)]="p"
+                        id="pension_c"
+                        type="text"
+                        class="form-control form-control-alternative">
                     </div>
                   </div>
                 </div>
@@ -56,20 +65,6 @@
                         id="fecha_entrega"
                         type="date"
                         class="form-control form-control-alternative">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-otro_asunto">Otro asunto</label>
-                      <input
-                        formControlName="otro_asunto"
-                        id="otro_asunto"
-                        type="text"
-                        class="form-control form-control-alternative">
-                        <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
-                            <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
-                            <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
-                        </div>
                     </div>
                   </div>
                 </div>

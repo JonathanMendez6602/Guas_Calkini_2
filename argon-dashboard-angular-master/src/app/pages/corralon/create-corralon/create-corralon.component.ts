@@ -14,6 +14,7 @@ export class CreateCorralonComponent implements OnInit {
   form: FormGroup;
   id: number;
   vehiculo: Vehiculo;
+  p: string = "Si";
 
   constructor(
     public corralonService: CorralonService,
@@ -32,7 +33,7 @@ export class CreateCorralonComponent implements OnInit {
     });
     this.form = new FormGroup({
       fecha_entrada: new FormControl(''),
-      pension_c: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      pension_c: new FormControl(''),
       dias_pension: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ]),
       status_entrega: new FormControl('', [Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       fecha_entrega: new FormControl(''),
