@@ -136,19 +136,17 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <div class="form-group" *ngIf="cambioLlave">
+                  <div class="form-group" *ngIf="cambioLlave == true">
                     <label class="form-control-label" for="input-llaves">Llaves</label>
                     <span class="clearfix"></span>
                     <label class="custom-toggle">
                       <input  
-                      formControlName="llaves" 
-                      id="llaves" 
-                      type="checkbox">
+                      type="checkbox" checked="">
                       <span class="custom-toggle-slider rounded-circle"></span>
                     </label>
                   </div>
 
-                  <div class="form-group" *ngIf="!cambioLlave">
+                  <div class="form-group" *ngIf="cambioLlave == false">
                     <label class="form-control-label" for="input-llaves">Llaves</label>
                     <span class="clearfix"></span>
                     <label class="custom-toggle">
