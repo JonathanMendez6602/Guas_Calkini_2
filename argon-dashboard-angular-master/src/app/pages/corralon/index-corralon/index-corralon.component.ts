@@ -39,5 +39,4 @@ export class IndexCorralonComponent implements OnInit {
     });
     this.modal.open(contenido,{scrollable:true});
   }
-
 }
