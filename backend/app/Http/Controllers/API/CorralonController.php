@@ -49,7 +49,7 @@ class CorralonController extends Controller
   {
     $data = Corralon::find($id);
     $data_1['corralon']=0;
-    Vehiculo::find($data['id_vehiculo'])-> update($data_1);
+    Vehicle::find($data['id_vehiculo'])-> update($data_1);
     $res = Corralon::find($id)->delete();
     return response()->json([
       'message' => "Successfully deleted",
