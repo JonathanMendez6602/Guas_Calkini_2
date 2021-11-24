@@ -62,8 +62,8 @@
                       [(ngModel)]="enviar_fotovehiculo"
                       type="file"
                       class="form-control form-control-alternative">
-                    <div *ngIf="previsualizacion">
-                      <img width="100px" [src]="previsualizacion" alt="">
+                    <div *ngIf="enviar_fotovehiculo">
+                      <img width="100px" [src]="enviar_fotovehiculo" alt="">
                     </div>
                   </div>
                 </div>
@@ -129,8 +129,8 @@
                       (change)="capturarFileFotoInventario($event)"
                       [(ngModel)]="enviar_fotoinventario"
                       class="form-control form-control-alternative">
-                    <div *ngIf="previsualizacion2">
-                      <img width="100px" [src]="previsualizacion2" alt="">
+                    <div *ngIf="enviar_fotoinventario">
+                      <img width="100px" [src]="enviar_fotoinventario" alt="">
                     </div>
                   </div>
                 </div>

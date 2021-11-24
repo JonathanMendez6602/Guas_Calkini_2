@@ -14,6 +14,8 @@ export class IndexComponent implements OnInit {
   vehiculos: Vehiculo[] = [];
   filterModelo = "";
   filterModelo2 = "";
+  previsualizacion: string;
+  previsualizacion2: string;
   id: number;
   vehiculo: Vehiculo;
   // constructor() { }
@@ -38,6 +40,9 @@ export class IndexComponent implements OnInit {
     
     this.VehiculoService.find(id).subscribe((data: Vehiculo)=>{
       this.vehiculo = data;
+      this.previsualizacion = this.vehiculo.foto_vehiculo;
+      this.previsualizacion2 = this.vehiculo.foto_inventario;
+      
       console.log(this.vehiculo);
     });
     this.modal.open(contenido,{scrollable:true});

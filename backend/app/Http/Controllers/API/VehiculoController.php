@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Requestfilefile;
 use Illuminate\Http\UploadedFileSplFileInfo;
+use Iluminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\File;
+use Symfony\Component\HttpFoundation\Response; 
 
 use App\Models\Vehicle;
 use App\Models\Corralon;
@@ -37,11 +39,10 @@ class VehiculoController extends Controller
 
   public function create(Request $request)
   {
-
     $data['modelo'] = $request['modelo'];
     $data['marca'] = $request['marca'];
     if($request['foto_vehiculo']==""){
-      $data['foto_vehiculo'] = "";
+      $data['foto_vehiculo']="";
     }else{
       $data['foto_vehiculo']=$request['foto_vehiculo'];
     }
@@ -53,9 +54,9 @@ class VehiculoController extends Controller
       $data['inventario'] = $request['inventario'];
     }
     if($request['foto_inventario']==""){
-      $data['foto_inventario'] = "";
+      $data['foto_inventario']="";
     }else{
-      $data['foto_inventario'] = $request['foto_inventario'];
+      $data['foto_inventario']=$request['foto_inventario'];
     }
     if($request['llaves']==1){
       $data['llaves']="si";

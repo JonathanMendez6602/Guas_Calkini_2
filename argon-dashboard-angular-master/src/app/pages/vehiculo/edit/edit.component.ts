@@ -69,7 +69,7 @@ export class EditComponent implements OnInit {
       foto_vehiculo: new FormControl(''),
       color:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
+      inventario: new FormControl(''),
       foto_inventario:  new FormControl(''),
       llaves: new FormControl(''),
       tipo_servicio: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
@@ -97,10 +97,10 @@ export class EditComponent implements OnInit {
   capturarFileFotoVehiculo(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_fotovehiculo = archivoCapturado.name;
     console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion = imagen.base;
+      this.enviar_fotovehiculo = this.previsualizacion;
       console.log(imagen);
       console.log(archivoCapturado.path);
     })
@@ -111,10 +111,10 @@ export class EditComponent implements OnInit {
   capturarFileFotoInventario(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_fotoinventario = archivoCapturado.name;
     console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion2 = imagen.base;
+      this.enviar_fotoinventario = this.previsualizacion2
       console.log(imagen);
       console.log(archivoCapturado.webkitRelativePath);
     })

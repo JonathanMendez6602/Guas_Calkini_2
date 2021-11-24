@@ -41,11 +41,15 @@
           <td data-label="ID">{{ vehiculo.id }}</td>
           <td data-label="Marca">{{ vehiculo.marca }}</td>
           <td data-label="Modelo">{{ vehiculo.modelo }}</td>
-          <td data-label="Foto vehiculo">{{ vehiculo.foto_vehiculo }}</td>
+          <td data-label="Foto vehiculo" *ngIf="previsualizacion">
+            <img width="100px" [src]="previsualizacion" alt="">
+          </td>
           <td data-label="Color">{{ vehiculo.color }}</td>
           <td data-label="Placas">{{ vehiculo.placas }}</td>
           <td data-label="Inventario">{{ vehiculo.inventario }}</td>
-          <td data-label="Foto inventario">{{ vehiculo.foto_inventario }}</td>
+          <td data-label="Foto inventario" *ngIf="previsualizacion2">
+            <img width="100px" [src]="previsualizacion2" alt="">
+          </td>
           <td data-label="Llaves">{{ vehiculo.llaves }}</td>
           <td data-label="Tipo de Servicio">{{ vehiculo.tipo_servicio }}</td>
           <td data-label="Lugar siniestro">{{ vehiculo.lugar_siniestro }}</td>

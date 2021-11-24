@@ -47,7 +47,7 @@ export class CreateComponent implements OnInit {
     this.form = new FormGroup({
       marca:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       modelo: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      foto_vehiculo: new FormControl(this.enviar_fotovehiculo),
+      foto_vehiculo: new FormControl(''),
       color:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
@@ -77,30 +77,24 @@ export class CreateComponent implements OnInit {
   capturarFileFotoVehiculo(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_fotovehiculo = archivoCapturado.name;
     console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion = imagen.base;
+      this.enviar_fotovehiculo = this.previsualizacion;
       console.log(imagen);
-      console.log(archivoCapturado.path);
     })
-    this.archivos.push(archivoCapturado);
     console.log(event.target.files);
   }
 
   capturarFileFotoInventario(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    const valorsito = event.target.files[0].path;
-    console.log(valorsito);
-    this.enviar_fotoinventario = archivoCapturado.name;
     console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion2 = imagen.base;
-      console.log(imagen.webkitRelativePath);
-      console.log(archivoCapturado.webkitRelativePath);
+      this.enviar_fotoinventario = this.previsualizacion2;
+      console.log(this.previsualizacion);
     })
-    this.archivos.push(archivoCapturado);
     console.log(event.target.files);
   }
 
