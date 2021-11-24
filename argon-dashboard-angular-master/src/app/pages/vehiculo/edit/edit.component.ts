@@ -53,8 +53,6 @@ export class EditComponent implements OnInit {
       console.log(this.vehiculo.id);
       this.enviar_fotovehiculo = this.vehiculo.foto_vehiculo;
       this.enviar_fotoinventario = this.vehiculo.foto_inventario;
-      console.log(this.enviar_fotovehiculo);
-      console.log(this.enviar_fotoinventario);
       if(this.vehiculo.llaves=="si"){
         this.cambioLlave=true;
       }else{
@@ -69,17 +67,15 @@ export class EditComponent implements OnInit {
       foto_vehiculo: new FormControl(''),
       color:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      inventario: new FormControl(''),
+      inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       foto_inventario:  new FormControl(''),
-      llaves: new FormControl(''),
+      llaves: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       tipo_servicio: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       lugar_siniestro: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       descripcion: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
       nombre: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
-
-    this.obtenerValor = 'tipo_c';
 
 
     
@@ -97,29 +93,19 @@ export class EditComponent implements OnInit {
   capturarFileFotoVehiculo(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion = imagen.base;
       this.enviar_fotovehiculo = this.previsualizacion;
-      console.log(imagen);
-      console.log(archivoCapturado.path);
     })
-    this.archivos.push(archivoCapturado);
-    console.log(event.target.files);
   }
 
   capturarFileFotoInventario(event): any{
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log(this.enviar_fotovehiculo);
     this.extraerBase64(archivoCapturado).then((imagen: any) =>{
       this.previsualizacion2 = imagen.base;
       this.enviar_fotoinventario = this.previsualizacion2
-      console.log(imagen);
-      console.log(archivoCapturado.webkitRelativePath);
     })
-    this.archivos.push(archivoCapturado);
-    console.log(event.target.files);
   }
 
   extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
@@ -142,10 +128,6 @@ export class EditComponent implements OnInit {
       return null;
     }
   })
-
-  onChange($event) {
-    this.obtenerValor = $event.target.value;
-  }
 
   get f(){
     return this.form.controls;
