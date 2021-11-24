@@ -25,7 +25,6 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
       this.vehiculos = data;
-      console.log(this.vehiculos);
     })
   }
 
@@ -42,8 +41,6 @@ export class IndexComponent implements OnInit {
       this.vehiculo = data;
       this.previsualizacion = this.vehiculo.foto_vehiculo;
       this.previsualizacion2 = this.vehiculo.foto_inventario;
-      
-      console.log(this.vehiculo);
     });
     this.modal.open(contenido,{scrollable:true});
   }

@@ -12,7 +12,6 @@ export class FilterCorralonPipe implements PipeTransform {
     for( const corralon of value ){
       val1: false;
       if( (corralon.pension_c.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (corralon.status_entrega.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (corralon.otro_asunto.toLowerCase().indexOf(arg.toLowerCase()) > -1) || (corralon.fecha_entrada.toLowerCase().indexOf(arg.toLowerCase()) > -1) ){
-        console.log("Marca");
         resultVehiculo.push(corralon);
         val1: true;
       };

@@ -43,14 +43,11 @@ export class EditComponent implements OnInit {
     
     this.vehiculoService.getAllSucursal().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
     
     this.id = this.route.snapshot.params['idVehiculo'];
     this.vehiculoService.find(this.id).subscribe((data: Vehiculo)=>{
       this.vehiculo = data;
-      console.log(this.vehiculo.sucursal);
-      console.log(this.vehiculo.id);
       this.enviar_fotovehiculo = this.vehiculo.foto_vehiculo;
       this.enviar_fotoinventario = this.vehiculo.foto_inventario;
       if(this.vehiculo.llaves=="si"){
