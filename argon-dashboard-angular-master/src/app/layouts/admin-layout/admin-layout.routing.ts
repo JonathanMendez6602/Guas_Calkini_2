@@ -28,6 +28,10 @@ import { CreateChoferComponent } from 'src/app/pages/chofer/create-chofer/create
 import { EditChoferComponent } from 'src/app/pages/chofer/edit-chofer/edit-chofer.component';
 import { ViewChoferComponent } from 'src/app/pages/chofer/view-chofer/view-chofer.component';
 
+import { IndexInventarioComponent } from 'src/app/pages/inventario/index-inventario/index-inventario.component';
+import { CreateInventarioComponent } from 'src/app/pages/inventario/create-inventario/create-inventario.component';
+import { EditInventarioComponent } from 'src/app/pages/inventario/edit-inventario/edit-inventario.component';
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent },
@@ -50,5 +54,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'chofer/indexChofer', component: IndexChoferComponent },
     { path: 'chofer/createChofer', component: CreateChoferComponent },
     { path: 'chofer/editChofer/:idChofer', component: EditChoferComponent },
-    { path: 'chofer/viewChofer/:idChofer', component: ViewChoferComponent }
+    { path: 'chofer/viewChofer/:idChofer', component: ViewChoferComponent },
+
+    { path: 'inventario/indexInventario', component: IndexInventarioComponent },
+    { path: 'inventario/createInventario', component: CreateInventarioComponent },
+    { path: 'inventario/editInventario/:idInventario', component: EditInventarioComponent }
 ];
