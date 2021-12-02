@@ -28,9 +28,13 @@ import { CreateChoferComponent } from 'src/app/pages/chofer/create-chofer/create
 import { EditChoferComponent } from 'src/app/pages/chofer/edit-chofer/edit-chofer.component';
 import { ViewChoferComponent } from 'src/app/pages/chofer/view-chofer/view-chofer.component';
 
-import { IndexInventarioComponent } from 'src/app/pages/inventario/index-inventario/index-inventario.component';
-import { CreateInventarioComponent } from 'src/app/pages/inventario/create-inventario/create-inventario.component';
-import { EditInventarioComponent } from 'src/app/pages/inventario/edit-inventario/edit-inventario.component';
+import { IndexCatalogoComponent } from 'src/app/pages/catalogo/index-catalogo/index-catalogo.component';
+import { CreateCatalogoComponent } from 'src/app/pages/catalogo/create-catalogo/create-catalogo.component';
+import { EditCatalogoComponent } from 'src/app/pages/catalogo/edit-catalogo/edit-catalogo.component';
+import { AgregarCatalogoComponent } from 'src/app/pages/catalogo/agregar-catalogo/agregar-catalogo.component';
+import { AgregarAseguradoraCatalogoComponent } from 'src/app/pages/catalogo/agregar-aseguradora-catalogo/agregar-aseguradora-catalogo.component';
+import { EditSucursalComponent } from 'src/app/pages/catalogo/edit-sucursal/edit-sucursal.component';
+import { EditAseguradoraComponent } from 'src/app/pages/catalogo/edit-aseguradora/edit-aseguradora.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
@@ -56,7 +60,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'chofer/editChofer/:idChofer', component: EditChoferComponent },
     { path: 'chofer/viewChofer/:idChofer', component: ViewChoferComponent },
 
-    { path: 'inventario/indexInventario', component: IndexInventarioComponent },
-    { path: 'inventario/createInventario', component: CreateInventarioComponent },
-    { path: 'inventario/editInventario/:idInventario', component: EditInventarioComponent }
+    { path: 'catalogo/indexCatalogo', component: IndexCatalogoComponent},
+    { path: 'catalogo/createCatalogo', component: CreateCatalogoComponent},
+    { path: 'catalogo/agregarCatalogo', component: AgregarCatalogoComponent},
+    { path: 'catalogo/agregarAseguradoraCatalogo', component: AgregarAseguradoraCatalogoComponent},
+    { path: 'catalogo/editCatalogo/:idCatalogo', component: EditCatalogoComponent},
+    { path: 'catalogo/editAseguradora/:idAseguradora', component: EditAseguradoraComponent},
+    { path: 'catalogo/editSucursal/:idSucursal', component: EditSucursalComponent}
 ];

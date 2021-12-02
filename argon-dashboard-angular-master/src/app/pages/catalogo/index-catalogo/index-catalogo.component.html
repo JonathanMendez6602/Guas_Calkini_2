@@ -1,0 +1,246 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+    style="min-height: 300px; background-image: url(assets/img/theme/Corralon.jpg); background-size: cover; background-position: center top;">
+    <span class="mask bg-gradient-info opacity-8"></span>
+</div>
+
+<div class="container-fluid mt--3">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <br>
+                <div class="col">
+                    <div class="d-flex justify-content-md-end">
+                      <div class="searchbar">
+                        <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... "
+                          >
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class="card-header border-0">
+                    <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/catalogo/agregarAseguradoraCatalogo">
+                        <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                        <span class="btn-inner--text">Agregar</span>
+                    </button>
+                </div>
+                <div class="card-header border-0 text-center">
+                    <h3>LISTA DE ASEGURADORA</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="media-body">
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">ID ASEGURADORA</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">ASEGURADORA</span>
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm"></span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let aseguradora of aseguradoras">
+                                <td>{{ aseguradora.id }}</td>
+                                <td>{{ aseguradora.nombre_aseguradora }}</td>
+                                <td>
+                                    <button class="btn btn-icon btn-3 btn-success btn-sm" type="button"
+                                        [routerLink]="['/catalogo/', 'aseguradora', aseguradora.id ]">
+                                        <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button"
+                                        (click)="deleteAseguradora(aseguradora.id)">
+                                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <br>
+</div>
+
+<div class="container-fluid mt--3">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <br>
+                <div class="col">
+                    <div class="d-flex justify-content-md-end">
+                      <div class="searchbar">
+                        <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... "
+                          >
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class="card-header border-0">
+                    <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/catalogo/agregarCatalogo">
+                        <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                        <span class="btn-inner--text">Agregar</span>
+                    </button>
+                </div>
+                <div class="card-header border-0 text-center">
+                    <h3>LISTA DE SUCURSAL</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="media-body">
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">ID SUCURSAL</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">SUCURSAL</span>
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm"></span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let sucursal of sucurasales">
+                                <td>{{ sucursal.id }}</td>
+                                <td>{{ sucursal.sucursal }}</td>
+                                <td>
+                                    <button class="btn btn-icon btn-3 btn-success btn-sm" type="button"
+                                        [routerLink]="['/catalogo/', 'editSucursal', sucursal.id ]">
+                                        <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button"
+                                        (click)="deleteSucursal(sucursal.id)">
+                                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <br>
+</div>
+
+<div class="container-fluid mt--3">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <br>
+                <div class="col">
+                    <div class="d-flex justify-content-md-end">
+                      <div class="searchbar">
+                        <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... "
+                          >
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class="card-header border-0">
+                    <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/catalogo/createCatalogo">
+                        <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                        <span class="btn-inner--text">Agregar</span>
+                    </button>
+                </div>
+                <div class="card-header border-0 text-center">
+                    <h3>LISTA DE COSTOS</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="media-body">
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">ID Vehiculo</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">Tipo de vehículos</span>
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">Costo</span>
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm"></span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let catalogo of catalogos">
+                                <td>{{ catalogo.id }}</td>
+                                <td>{{ catalogo.tipoVehiculo }}</td>
+                                <td>{{ catalogo.costo }}</td>
+                                <td>
+                                    <button class="btn btn-icon btn-3 btn-success btn-sm" type="button"
+                                        [routerLink]="['/catalogo/', 'editCatalogo', catalogo.id ]">
+                                        <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button"
+                                        (click)="deleteCatalogo(catalogo.id)">
+                                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

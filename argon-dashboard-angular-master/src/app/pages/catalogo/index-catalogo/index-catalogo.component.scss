@@ -1,0 +1,113 @@
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 35px; //tamaño de la barra
+    background-color: rgb(115, 226, 226);
+    border-radius: 30px;
+    padding: 3px;
+}
+
+//texto
+.search_input{
+color: rgb(0, 0, 0);
+border: 0;
+outline: 0;
+text-align: center;
+background: none;
+width: 0;
+caret-color:transparent;
+line-height: 10px;
+transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+width: 450px;
+caret-color: #73B1DD;
+transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+background: none;
+color: white;
+padding: 0 px;
+}
+
+.search_icon{
+height: 30px;
+width: 30px;
+float: right;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+color:white;
+text-decoration:none;
+}
+
+h3
+{
+text-align: center;
+}
+
+body{
+  margin:0;
+  padding:20px;
+  font-family: sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.tablex{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tablex td,.tablex th{
+padding:12px 15px;
+border:1px solid rgb(228, 225, 225);
+text-align: center;
+font-size:16px;
+}
+
+.tablex th{
+  background-color: rgb(154, 154, 236);
+  color:#ffffff;
+}
+
+.tablex tbody tr:nth-child(even){
+  background-color: #9b8c8c;
+}
+
+/*responsive*/
+
+@media(width){
+  .tablex thead{
+      display: none;
+  }
+
+  .tablex, .tablex tbody, .tablex tr, .tablex td{
+      display: block;
+      width: 100%;
+  }
+  .tablex tr{
+      margin-bottom:15px;
+  }
+  .tablex td{
+      text-align: right;
+      padding-left: 50%;
+      text-align: right;
+      position: relative;
+  }
+  .tablex td::before{
+      content: attr(data-label);
+      position: absolute;
+      left:0;
+      width: 50%;
+      padding-left:15px;
+      font-size:15px;
+      font-weight: bold;
+      text-align: left;
+  }
+}
