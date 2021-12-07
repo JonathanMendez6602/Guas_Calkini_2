@@ -8,6 +8,7 @@ use App\Http\Controllers\API\CorralonController;
 use App\Http\Controllers\API\AseguradoraController;
 use App\Http\Controllers\API\GruaController;
 use App\Http\Controllers\API\ChoferController;
+USE App\Http\Controllers\API\CatalogoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,14 @@ Route::prefix('corralon')->group(function () {
     Route::put('/{id}',[ CorralonController::class, 'update']);
 });
 
+Route::prefix('sucursal')->group(function () {
+    Route::get('/',[ SucursalController::class, 'getAll']);
+    Route::post('/',[ SucursalController::class, 'create']);
+    Route::delete('/{id}',[ SucursalController::class, 'delete']);
+    Route::get('/{id}',[ SucursalController::class, 'get']);
+    Route::put('/{id}',[ SucursalController::class, 'update']);
+});
+
 Route::prefix('aseguradora')->group(function () {
     Route::get('/',[ AseguradoraController::class, 'getAll']);
     Route::post('/',[ AseguradoraController::class, 'create']);
@@ -77,4 +86,13 @@ Route::prefix('chofer')->group(function () {
     Route::get('/cambiob/{id}',[ ChoferController::class, 'getbaja']);
     Route::delete('/cambio/{id}',[ ChoferController::class, 'baja']);
 });
+
+Route::prefix('catalogo')->group(function () {
+    Route::get('/',[ CatalogoController::class, 'getAll']);
+    Route::post('/',[ CatalogoController::class, 'create']);
+    Route::delete('/{id}',[ CatalogoController::class, 'delete']);
+    Route::get('/{id}',[ CatalogoController::class, 'get']);
+    Route::put('/{id}',[ CatalogoController::class, 'update']);
+});
+
 
