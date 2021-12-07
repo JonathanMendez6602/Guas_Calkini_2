@@ -18,7 +18,7 @@ class CreateVehiclesTable extends Migration
             //Vehiculo
             $table->string("modelo");
             $table->string("marca");
-            $table->longText("foto_vehiculo", 16,777,215);
+            $table->longText("foto_vehiculo");
             $table->string("color");
             $table->string("placas");
             $table->string("inventario");
