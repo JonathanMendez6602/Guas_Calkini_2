@@ -18,7 +18,7 @@ export class AgregarAseguradoraCatalogoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      aseguradora:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
+      nombre_aseguradora:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
   }
 
@@ -28,7 +28,7 @@ export class AgregarAseguradoraCatalogoComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
-    this.catalogoService.create(this.form.value).subscribe(res => {
+    this.catalogoService.createAseguradora(this.form.value).subscribe(res => {
          console.log('Catalogo created successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
