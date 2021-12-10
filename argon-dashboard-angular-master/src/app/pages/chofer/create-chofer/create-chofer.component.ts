@@ -120,7 +120,7 @@ export class CreateChoferComponent implements OnInit {
       alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
     }
   }
-
+  
   capturarFileDoc3(event): any{
     console.log("AQUI VA EL EVENTO");
     console.log(event);
