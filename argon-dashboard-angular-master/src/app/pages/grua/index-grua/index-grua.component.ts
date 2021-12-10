@@ -5,6 +5,10 @@ import { Grua } from '../Grua';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute, Router } from '@angular/router';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-index-grua',
   templateUrl: './index-grua.component.html',
@@ -18,6 +22,7 @@ export class IndexGruaComponent implements OnInit {
   filterModelo2 = "";
   id: number;
   grua: Grua;
+  gruapdf: Grua;
   // constructor() { }
   constructor(
     public GruaService: GruaService,
@@ -56,4 +61,49 @@ export class IndexGruaComponent implements OnInit {
     });
     this.modal.open(contenido,{scrollable:true});
   }
+
+  createPDF(id){
+    this.GruaService.find(id).subscribe((data: Grua)=>{
+      this.gruapdf = data;
+      console.log(this.gruapdf);
+    });
+    const pdfDefinition: any = {
+      content: [
+        {
+          table: {
+            body: [
+              [
+                'ID',
+                'Marca',
+                'Modelo',
+                'Numero de Motor', 
+                'Numero de Serie',
+                'Placas',
+                'tipo Estatal o Federal',
+                'Año',
+                'Sucursal',       
+              ],
+              [
+                this.gruapdf.id,
+                this.gruapdf.marca,
+                this.gruapdf.modelo,
+                this.gruapdf.num_motor,
+                this.gruapdf.num_serie,
+                this.gruapdf.placas,
+                this.gruapdf.tipo_est_o_fed,
+                this.gruapdf.anio,
+                this.gruapdf.sucursal,
+              ]
+            ]
+          }
+        }
+      ]
+    }
+
+ 
+    const pdf = pdfMake.createPdf(pdfDefinition);
+    pdf.open();
+ 
+  }
+
 }
