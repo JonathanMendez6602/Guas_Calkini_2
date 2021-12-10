@@ -24,60 +24,71 @@ class GruaController extends Controller
         $data['anio'] = $request['anio'];
         $data['num_motor'] = $request['num_motor'];
         $data['tipo_est_o_fed'] = $request['tipo_est_o_fed'];
-
-
         if($request['doc_tarjcirculacion']==""){
           $data['doc_tarjcirculacion'] = "";
+          $data['doc_tarjcirculacion_n'] = "";
         }else{
           $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
+          $data['doc_tarjcirculacion_n'] = $request['doc_tarjcirculacion_n'];
         }
 
         if($request['doc_cartaporte']==""){
           $data['doc_cartaporte'] = "";
+          $data['doc_cartaporte_n'] = "";
         }else{
           $data['doc_cartaporte'] = $request['doc_cartaporte'];
+          $data['doc_cartaporte_n'] = $request['doc_cartaporte_n'];
         }
 
         if($request['doc_polizaseguro']==""){
           $data['doc_polizaseguro'] = "";
+          $data['doc_polizaseguro_n'] = "";
         }else{
           $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
+          $data['doc_polizaseguro_n'] = $request['doc_polizaseguro_n'];
         }
 
         if($request['doc_factura']==""){
           $data['doc_factura'] = "";
+          $data['doc_factura_n'] = "";
         }else{
           $data['doc_factura'] = $request['doc_factura'];
+          $data['doc_factura_n'] = $request['doc_factura_n'];
         }
 
         if($request['doc_consecion']==""){
           $data['doc_consecion'] = "";
+          $data['doc_consecion_n'] = "";
         }else{
           $data['doc_consecion'] = $request['doc_consecion'];
+          $data['doc_consecion_n'] = $request['doc_consecion_n'];
         }
 
         if($request['doc_inclusion']==""){
           $data['doc_inclusion'] = "";
+          $data['doc_inclusion_n'] = "";
         }else{
           $data['doc_inclusion'] = $request['doc_inclusion'];
+          $data['doc_inclusion_n'] = $request['doc_inclusion_n'];
         }
 
         if($request['doc_permiso_fisicomec']==""){
           $data['doc_permiso_fisicomec'] = "";
+          $data['doc_permiso_fisicomec_n'] = "";
         }else{
           $data['doc_permiso_fisicomec'] = $request['doc_permiso_fisicomec'];
+          $data['doc_permiso_fisicomec_n'] = $request['doc_permiso_fisicomec_n'];
         }
         
         if($request['doc_anticontaminantes']==""){
           $data['doc_anticontaminantes'] = "";
+          $data['doc_anticontaminantes_n'] = "";
         }else{
           $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
+          $data['doc_anticontaminantes_n'] = $request['doc_anticontaminantes_n'];
         }
-       
         $data['estado'] = "Circulando";
-
         $data['sucursal'] = $request['sucursal'];
-        
         $data['branch_office_id']=1;
         Grua::create($data);
         return response()->json([
@@ -111,50 +122,66 @@ class GruaController extends Controller
         
         if($request['doc_tarjcirculacion']==""){
           $data['doc_tarjcirculacion'] = "";
+          $data['doc_tarjcirculacion_n'] = "";
         }else{
           $data['doc_tarjcirculacion'] = $request['doc_tarjcirculacion'];
+          $data['doc_tarjcirculacion_n'] = $request['doc_tarjcirculacion_n'];
         }
 
         if($request['doc_cartaporte']==""){
           $data['doc_cartaporte'] = "";
+          $data['doc_cartaporte_n'] = "";
         }else{
           $data['doc_cartaporte'] = $request['doc_cartaporte'];
+          $data['doc_cartaporte_n'] = $request['doc_cartaporte_n'];
         }
 
         if($request['doc_polizaseguro']==""){
           $data['doc_polizaseguro'] = "";
+          $data['doc_polizaseguro_n'] = "";
         }else{
           $data['doc_polizaseguro'] = $request['doc_polizaseguro'];
+          $data['doc_polizaseguro_n'] = $request['doc_polizaseguro_n'];
         }
 
         if($request['doc_factura']==""){
           $data['doc_factura'] = "";
+          $data['doc_factura_n'] = "";
         }else{
           $data['doc_factura'] = $request['doc_factura'];
+          $data['doc_factura_n'] = $request['doc_factura_n'];
         }
 
         if($request['doc_consecion']==""){
           $data['doc_consecion'] = "";
+          $data['doc_consecion_n'] = "";
         }else{
           $data['doc_consecion'] = $request['doc_consecion'];
+          $data['doc_consecion_n'] = $request['doc_consecion_n'];
         }
 
         if($request['doc_inclusion']==""){
           $data['doc_inclusion'] = "";
+          $data['doc_inclusion_n'] = "";
         }else{
           $data['doc_inclusion'] = $request['doc_inclusion'];
+          $data['doc_inclusion_n'] = $request['doc_inclusion_n'];
         }
 
         if($request['doc_permiso_fisicomec']==""){
           $data['doc_permiso_fisicomec'] = "";
+          $data['doc_permiso_fisicomec_n'] = "";
         }else{
           $data['doc_permiso_fisicomec'] = $request['doc_permiso_fisicomec'];
+          $data['doc_permiso_fisicomec_n'] = $request['doc_permiso_fisicomec_n'];
         }
         
         if($request['doc_anticontaminantes']==""){
           $data['doc_anticontaminantes'] = "";
+          $data['doc_anticontaminantes_n'] = "";
         }else{
           $data['doc_anticontaminantes'] = $request['doc_anticontaminantes'];
+          $data['doc_anticontaminantes_n'] = $request['doc_anticontaminantes_n'];
         }
         
         $data['sucursal'] = $request['sucursal'];
