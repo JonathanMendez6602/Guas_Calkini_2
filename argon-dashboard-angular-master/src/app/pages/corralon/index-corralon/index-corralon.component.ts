@@ -32,7 +32,6 @@ export class IndexCorralonComponent implements OnInit {
   }
 
   openScroll(contenido, id){
-    
     this.corralonService.find(id).subscribe((data: Corralon)=>{
       this.corralon = data;
       console.log(this.corralon);

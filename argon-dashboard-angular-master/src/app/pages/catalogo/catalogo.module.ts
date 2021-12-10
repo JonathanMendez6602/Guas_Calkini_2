@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgregarAseguradoraCatalogoComponent } from './agregar-aseguradora-catalogo/agregar-aseguradora-catalogo.component';
 import { EditSucursalComponent } from './edit-sucursal/edit-sucursal.component';
 import { EditAseguradoraComponent } from './edit-aseguradora/edit-aseguradora.component';
+import { CatalogoPipe } from './pipe-catalogo/catalogo.pipe';
 
 
 
@@ -22,7 +23,8 @@ import { EditAseguradoraComponent } from './edit-aseguradora/edit-aseguradora.co
     AgregarCatalogoComponent,
     AgregarAseguradoraCatalogoComponent,
     EditSucursalComponent,
-    EditAseguradoraComponent
+    EditAseguradoraComponent,
+    CatalogoPipe
   ],
   imports: [
     CommonModule,
