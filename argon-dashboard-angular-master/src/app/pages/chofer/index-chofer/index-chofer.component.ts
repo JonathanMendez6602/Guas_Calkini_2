@@ -5,6 +5,10 @@ import { Chofer } from '../chofer';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute, Router } from '@angular/router';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-index-chofer',
   templateUrl: './index-chofer.component.html',
@@ -18,6 +22,9 @@ export class IndexChoferComponent implements OnInit {
   filterModelo2 = ""; 
   id: number;
   chofer: Chofer;
+  choferpdf: Chofer;
+
+  
 
   // constructor() { }
   constructor(
@@ -55,6 +62,46 @@ export class IndexChoferComponent implements OnInit {
       console.log(this.chofer);
     });
     this.modal.open(contenido,{scrollable:true});
+  }
+
+  createPDF(id){
+    this.ChoferService.find(id).subscribe((data: Chofer)=>{
+      this.choferpdf = data;
+      console.log(this.chofer);
+    });
+    const pdfDefinition: any = {
+      content: [
+        {
+          table: {
+            body: [
+              [
+                'ID',
+                'Nombre',
+                'Apellido_p',
+                'Apellido_m', 
+                'Edad',
+                'Sucursal',
+                'Estado',       
+              ],
+              [
+                this.choferpdf.id,
+                this.choferpdf.nombre,
+                this.choferpdf.apellido_p,
+                this.choferpdf.apellido_m,
+                this.choferpdf.edad,
+                this.choferpdf.sucursal,
+                this.choferpdf.estado,
+              ]
+            ]
+          }
+        }
+      ]
+    }
+
+ 
+    const pdf = pdfMake.createPdf(pdfDefinition);
+    pdf.open();
+ 
   }
 
 }

@@ -8,6 +8,8 @@ use App\Http\Controllers\API\CorralonController;
 use App\Http\Controllers\API\AseguradoraController;
 use App\Http\Controllers\API\GruaController;
 use App\Http\Controllers\API\ChoferController;
+USE App\Http\Controllers\API\CatalogoController;
+use App\Http\Controllers\API\BranchOfficeController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -77,4 +79,21 @@ Route::prefix('chofer')->group(function () {
     Route::get('/cambiob/{id}',[ ChoferController::class, 'getbaja']);
     Route::delete('/cambio/{id}',[ ChoferController::class, 'baja']);
 });
+
+Route::prefix('catalogo')->group(function () {
+    Route::get('/',[ CatalogoController::class, 'getAll']);
+    Route::post('/',[ CatalogoController::class, 'create']);
+    Route::delete('/{id}',[ CatalogoController::class, 'delete']);
+    Route::get('/{id}',[ CatalogoController::class, 'get']);
+    Route::put('/{id}',[ CatalogoController::class, 'update']);
+});
+
+Route::prefix('sucursal')->group(function () {
+    Route::get('/',[ BranchOfficeController::class, 'getAll']);
+    Route::post('/',[ BranchOfficeController::class, 'create']);
+    Route::delete('/{id}',[ BranchOfficeController::class, 'delete']);
+    Route::get('/{id}',[ BranchOfficeController::class, 'get']);
+    Route::put('/{id}',[ BranchOfficeController::class, 'update']);
+});
+
 

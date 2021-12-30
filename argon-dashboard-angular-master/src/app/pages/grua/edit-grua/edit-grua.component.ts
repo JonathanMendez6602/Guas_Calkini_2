@@ -4,6 +4,7 @@ import { GruaService } from '../grua.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Grua } from '../grua';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-edit-grua',
@@ -16,18 +17,27 @@ export class EditGruaComponent implements OnInit {
   grua: Grua;
   form: FormGroup;
 
-  enviar_doc1: string;
-  enviar_doc2: string;
-  enviar_doc3: string;
-  enviar_doc4: string;
-  enviar_doc5: string;
-  enviar_doc6: string;
-  enviar_doc7: string;
-  enviar_doc8: string;
+  enviar_doc1: string="";
+  enviar_doc2: string="";
+  enviar_doc3: string="";
+  enviar_doc4: string="";
+  enviar_doc5: string="";
+  enviar_doc6: string="";
+  enviar_doc7: string="";
+  enviar_doc8: string="";
+  enviar_doc1_n: string="";
+  enviar_doc2_n: string="";
+  enviar_doc3_n: string="";
+  enviar_doc4_n: string="";
+  enviar_doc5_n: string="";
+  enviar_doc6_n: string="";
+  enviar_doc7_n: string="";
+  enviar_doc8_n: string="";
   constructor(
     public gruaService: GruaService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +54,15 @@ export class EditGruaComponent implements OnInit {
       this.enviar_doc6 = this.grua.doc_inclusion;
       this.enviar_doc7 = this.grua.doc_permiso_fisicomec;
       this.enviar_doc8 = this.grua.doc_anticontaminantes;
+      this.enviar_doc1_n =this.grua.doc_tarjcirculacion_n;
+      this.enviar_doc2_n =this.grua.doc_cartaporte_n;
+      this.enviar_doc3_n =this.grua.doc_polizaseguro_n;
+      this.enviar_doc4_n =this.grua.doc_factura_n;
+      this.enviar_doc5_n =this.grua.doc_consecion_n;
+      this.enviar_doc6_n =this.grua.doc_inclusion_n;
+      this.enviar_doc7_n =this.grua.doc_permiso_fisicomec_n;
+      this.enviar_doc8_n =this.grua.doc_anticontaminantes_n;
+  
       console.log(this.grua.id);
     });
 
@@ -63,6 +82,14 @@ export class EditGruaComponent implements OnInit {
       doc_inclusion: new FormControl(''),
       doc_permiso_fisicomec: new FormControl(''),
       doc_anticontaminantes: new FormControl(''),
+      doc_tarjcirculacion_n: new FormControl(''),
+      doc_cartaporte_n: new FormControl(''),
+      doc_polizaseguro_n: new FormControl(''),
+      doc_factura_n: new FormControl(''),
+      doc_consecion_n: new FormControl(''),
+      doc_inclusion_n: new FormControl(''),
+      doc_permiso_fisicomec_n: new FormControl(''),
+      doc_anticontaminantes_n: new FormControl(''),
       sucursal: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
 
@@ -82,67 +109,273 @@ export class EditGruaComponent implements OnInit {
   }
 
   capturarFileDoc1(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc1 = archivoCapturado.name;
-    console.log(this.enviar_doc1);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc1_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc1 = imagen.base;
+          console.log(imagen);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc1 = "";
+        this.enviar_doc1_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc1 = "";
+      this.enviar_doc1_n = "";
+      alert('Tipo de archivo no permitido  (PDF)');
+    }
   }
 
   capturarFileDoc2(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc2 = archivoCapturado.name;
-    console.log(this.enviar_doc2);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc2_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc2 = imagen.base;
+          console.log(imagen.base);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc2 = "";
+        this.enviar_doc2_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc2 = "";
+      this.enviar_doc2_n = "";
+      alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
+    }
   }
-
+  
   capturarFileDoc3(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc3 = archivoCapturado.name;
-    console.log(this.enviar_doc3);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc3_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc3 = imagen.base;
+          console.log(imagen);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc3 = "";
+        this.enviar_doc3_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc3 = "";
+      this.enviar_doc3_n = "";
+      alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
+    }
   }
 
   capturarFileDoc4(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc4 = archivoCapturado.name;
-    console.log(this.enviar_doc4);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc4_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc4 = imagen.base;
+          console.log(imagen);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc4 = "";
+        this.enviar_doc4_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc4 = "";
+      this.enviar_doc4_n = "";
+      alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
+    }
   }
 
   capturarFileDoc5(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc5 = archivoCapturado.name;
-    console.log(this.enviar_doc5);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc5_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc5 = imagen.base;
+          console.log(imagen);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc5 = "";
+        this.enviar_doc5_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc5 = "";
+      this.enviar_doc5_n = "";
+      alert('Tipo de archivo no permitido  (PDF)');
+    }
   }
 
   capturarFileDoc6(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc6 = archivoCapturado.name;
-    console.log(this.enviar_doc6);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc6_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc6 = imagen.base;
+          console.log(imagen.base);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc6 = "";
+        this.enviar_doc6_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc6 = "";
+      this.enviar_doc6_n = "";
+      alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
+    }
   }
-
+  
   capturarFileDoc7(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc7 = archivoCapturado.name;
-    console.log(this.enviar_doc7);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc7_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc7 = imagen.base;
+          console.log(imagen);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc7 = "";
+        this.enviar_doc7_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc7 = "";
+      this.enviar_doc7_n = "";
+      alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
+    }
   }
 
   capturarFileDoc8(event): any{
+    console.log("AQUI VA EL EVENTO");
     console.log(event);
     const archivoCapturado = event.target.files[0];
-    this.enviar_doc8 = archivoCapturado.name;
-    console.log(this.enviar_doc8);
-    console.log(event.target.files);
+    console.log("AQUI VA EL ARCH CAPTURADO");
+    console.log(archivoCapturado);
+    const fileSize = event.target.files[0].size;
+    const fileType = event.target.files[0].type;
+    console.log("AQUI VA EL FILE TYPE");
+    console.log(fileType);
+    if(fileType == "application/pdf"){
+      if(fileSize<1000000){
+        console.log(archivoCapturado);
+        this.enviar_doc8_n = archivoCapturado.name;
+        this.extraerBase64(archivoCapturado).then((imagen: any) =>{
+          this.enviar_doc8 = imagen.base;
+          console.log(imagen);
+        })
+        console.log(event.target.files);
+      }else{
+        this.enviar_doc8 = "";
+        this.enviar_doc8_n = "";
+        alert('Excede el tamaño permitido (1 MB)');
+      } 
+    }else{
+      this.enviar_doc8 = "";
+      this.enviar_doc8_n = "";
+      alert('Tipo de archivo no permitido  (jpg, png, jpeg)');
+    }
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try{
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+    } catch(e){
+      return null;
+    }
+  })
+
 
 }

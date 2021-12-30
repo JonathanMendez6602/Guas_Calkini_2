@@ -1,0 +1,42 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/Corralon.jpg); background-size: cover; background-position: center top;">
+    <span class="mask bg-gradient-info opacity-8"></span>
+</div>
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3>NUEVA SUCURSAL</h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <h6 class="heading-small text-muted mb-4">Información de sucursal</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-sucursal">Nombre de sucursal</label>
+                          <input
+                            formControlName="sucursal"
+                            [(ngModel)]="sucursal.sucursal"
+                            id="sucursal"
+                            type="text"
+                            class="form-control form-control-alternative">
+                          <div *ngIf="f.sucursal.touched && f.sucursal.invalid" class="alert alert-danger">
+                              <div *ngIf="f.sucursal.errors.required">*Sucursal is required.</div>
+                              <div *ngIf="f.sucursal.errors.pattern">*The sucursal must only contain letters.</div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>,
+                <button class="btn btn-success" type="submit" [disabled]="!form.valid">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
