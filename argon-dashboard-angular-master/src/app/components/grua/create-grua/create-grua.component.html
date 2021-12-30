@@ -1,0 +1,428 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua.jpg); background-size: cover; background-position: center top;">
+    <span class="mask bg-gradient-info opacity-8"></span>
+</div>
+
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3>AGREGAR NUEVA GRÚA</h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <h6 class="heading-small text-muted mb-4">Información de la grúa</h6>
+              <div class="pl-lg-4">
+  
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Marca</label>
+                            <input
+                                formControlName="marca"
+                                id="marca"
+                                type="text"
+                                class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.marca.touched && f.marca.invalid" class="alert alert-danger">
+                                <div *ngIf="f.marca.errors.required">*Marca is required.</div>
+                                <div *ngIf="f.marca.errors.pattern">*The marca must only contain letters.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Modelo</label>
+                            <input
+                            formControlName="modelo"
+                            id="modelo"
+                            type="text"
+                            class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
+                                <div *ngIf="f.modelo.errors.required">*Marca is required.</div>
+                                <div *ngIf="f.modelo.errors.pattern">*The marca must only contain string.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Número de Serie</label>
+                            <input
+                                formControlName="num_serie"
+                                id="num_serie"
+                                type="text"
+                                class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.num_serie.touched && f.num_serie.invalid" class="alert alert-danger">
+                                <div *ngIf="f.num_serie.errors.required">*Marca is required.</div>
+                                <div *ngIf="f.num_serie.errors.pattern">*The marca must only contain numbers.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Placas</label>
+                            <input
+                              formControlName="placas"
+                              id="placas"
+                              type="text"
+                              class="form-control form-control-alternative" 
+                            >
+                              <div *ngIf="f.placas.touched && f.placas.invalid" class="alert alert-danger">
+                                  <div *ngIf="f.placas.errors.required">*Marca is required.</div>
+                                  <div *ngIf="f.placas.errors.pattern">*The marca must only contain string.</div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Año</label>
+                            <input
+                                formControlName="anio"
+                                id="anio"
+                                type="text"
+                                class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.anio.touched && f.anio.invalid" class="alert alert-danger">
+                                <div *ngIf="f.anio.errors.required">*Año is required.</div>
+                                <div *ngIf="f.anio.errors.pattern">*The año must only contain numbers.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Número de Motor</label>
+                            <input
+                              formControlName="num_motor"
+                              id="num_motor"
+                              type="text"
+                              class="form-control form-control-alternative" 
+                            >
+                              <div *ngIf="f.num_motor.touched && f.num_motor.invalid" class="alert alert-danger">
+                                  <div *ngIf="f.num_motor.errors.required">*Marca is required.</div>
+                                  <div *ngIf="f.num_motor.errors.pattern">*The marca must only contain numbers.</div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Tipo</label>
+                            <select 
+                                class="form-control form-control-alternative" 
+                                formControlName="tipo_est_o_fed" 
+                                id="tipo_est_o_fed" 
+                                type="text"
+                                aria-describedby="tipo_est_o_fedFeedback" required>
+                                <option selected disabled value="">Seleccione una opción</option>
+                                <option>Estatal</option>
+                                <option>Federal</option>
+                            </select>
+                            <div id="tipo_est_o_fedFeedback" class="invalid-feedback">
+                                Tipo estatal o federal is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Tarjeta de Circulación</label>
+                            <input
+                                (change)="capturarFileDoc1($event)"
+                                type="file"
+                                class="form-control form-control-alternative" 
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Carta Porte</label>
+                            <input
+                              (change)="capturarFileDoc2($event)"
+                              type="file"
+                              class="form-control form-control-alternative" 
+                            >
+                              <div *ngIf="f.doc_cartaporte.touched && f.doc_cartaporte.invalid" class="alert alert-danger">
+                                  <div *ngIf="f.doc_cartaporte.errors.required">*Marca is required.</div>
+                                  <div *ngIf="f.doc_cartaporte.errors.pattern">*The marca must only contain letters.</div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Póliza de Seguro</label>
+                            <input
+                                (change)="capturarFileDoc3($event)"
+                                type="file"
+                                class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.doc_polizaseguro.touched && f.doc_polizaseguro.invalid" class="alert alert-danger">
+                                <div *ngIf="f.doc_polizaseguro.errors.required">*Año is required.</div>
+                                <div *ngIf="f.doc_polizaseguro.errors.pattern">*The año must only contain letters.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Factura</label>
+                            <input
+                              (change)="capturarFileDoc4($event)"
+                                type="file"
+                              class="form-control form-control-alternative" 
+                            >
+                              <div *ngIf="f.doc_factura.touched && f.doc_factura.invalid" class="alert alert-danger">
+                                  <div *ngIf="f.doc_factura.errors.required">*Marca is required.</div>
+                                  <div *ngIf="f.doc_factura.errors.pattern">*The marca must only contain letters.</div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Conseción</label>
+                            <input
+                                (change)="capturarFileDoc5($event)"
+                                type="file"
+                                class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.doc_consecion.touched && f.doc_consecion.invalid" class="alert alert-danger">
+                                <div *ngIf="f.doc_consecion.errors.required">*Año is required.</div>
+                                <div *ngIf="f.doc_consecion.errors.pattern">*The año must only contain letters.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Inclusión</label>
+                            <input
+                              (change)="capturarFileDoc6($event)"
+                                type="file"
+                              class="form-control form-control-alternative" 
+                            >
+                              <div *ngIf="f.doc_inclusion.touched && f.doc_inclusion.invalid" class="alert alert-danger">
+                                  <div *ngIf="f.doc_inclusion.errors.required">*Marca is required.</div>
+                                  <div *ngIf="f.doc_inclusion.errors.pattern">*The marca must only contain letters.</div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Permiso Físico-mecánico</label>
+                            <input
+                                (change)="capturarFileDoc7($event)"
+                                type="file"
+                                class="form-control form-control-alternative" 
+                            >
+                            <div *ngIf="f.doc_permiso_fisicomec.touched && f.doc_permiso_fisicomec.invalid" class="alert alert-danger">
+                                <div *ngIf="f.doc_permiso_fisicomec.errors.required">*Año is required.</div>
+                                <div *ngIf="f.doc_permiso_fisicomec.errors.pattern">*The año must only contain letters.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-marca">Anticontaminantes</label>
+                            <input
+                              (change)="capturarFileDoc8($event)"
+                                type="file"
+                              class="form-control form-control-alternative" 
+                            >
+                              <div *ngIf="f.doc_anticontaminantes.touched && f.doc_anticontaminantes.invalid" class="alert alert-danger">
+                                  <div *ngIf="f.doc_anticontaminantes.errors.required">*Marca is required.</div>
+                                  <div *ngIf="f.doc_anticontaminantes.errors.pattern">*The marca must only contain letters.</div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_tarjcirculacion_n" id="doc_tarjcirculacion_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc1_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_tarjcirculacion" id="doc_tarjcirculacion" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc1">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_cartaporte_n" id="doc_cartaporte_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc2_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_cartaporte" id="doc_cartaporte" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc2">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_polizaseguro_n" id="doc_polizaseguro_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc3_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_polizaseguro" id="doc_polizaseguro" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc3">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_factura_n" id="doc_factura_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc4_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_factura" id="doc_factura" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc4">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_consecion_n" id="doc_consecion_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc5_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_consecion" id="doc_consecion" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc5">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_inclusion_n" id="doc_inclusion_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc6_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_inclusion" id="doc_inclusion" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc6">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_permiso_fisicomec_n" id="doc_permiso_fisicomec_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc7_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_permiso_fisicomec" id="doc_permiso_fisicomec" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc7">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_anticontaminantes_n" id="doc_anticontaminantes_n" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc8_n">
+                    </div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                    <div class="form-group">
+                        <label class="form-control-label" for="input-doc_lic_fed">Licencia
+                            Federal</label>
+                        <input formControlName="doc_anticontaminantes" id="doc_anticontaminantes" type="text"
+                            class="form-control form-control-alternative"
+                            [(ngModel)]="enviar_doc8">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-sucursal">Sucursal</label>
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="sucursal" 
+                        id="sucursal" 
+                        aria-describedby="sucursalFeedback" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>Calkiní</option>
+                          <option>Hopelchén</option>
+                          <option>Xpujil</option>
+                      </select>
+                        <div id="sucursalFeedback" class="invalid-feedback">
+                          Sucursal is required.
+                        </div>
+                    </div>
+                  </div>
+                <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
+            </div>
+            </form> 
+        </div>
+      </div>
+    </div>
+</div> 

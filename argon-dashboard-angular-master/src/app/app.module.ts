@@ -5,16 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AdminLayoutComponent } from 'src/app/template/layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from 'src/app/template/layouts/auth-layout/auth-layout.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
-import { IndexComponent } from './ser/index/index.component';
-import { IndexChoferComponent } from './ser/index-chofer/index-chofer.component';
-import { IndexGruaComponent } from './ser/index-grua/index-grua.component';
+import { ComponentsModule } from 'src/app/template/components/components.module';
 
 
 @NgModule({
@@ -30,10 +27,7 @@ import { IndexGruaComponent } from './ser/index-grua/index-grua.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent,
-    IndexComponent,
-    IndexChoferComponent,
-    IndexGruaComponent
+    AuthLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
