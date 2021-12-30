@@ -153,7 +153,7 @@ export class CreateComponent implements OnInit {
   submit(){
     console.log(this.form.value);
     this.vehiculoService.create(this.form.value).subscribe(res => {
-         console.log('Vehiculo created successfully!');
+         console.log('Hola Crack');
          this.router.navigateByUrl('vehiculo/index');
     })
   }
