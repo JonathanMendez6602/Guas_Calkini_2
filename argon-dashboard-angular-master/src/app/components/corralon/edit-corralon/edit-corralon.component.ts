@@ -14,9 +14,24 @@ import { Catalogo } from '../../../../shared/interfaces';
 })
 export class EditCorralonComponent implements OnInit {
   id: number;
-  corralon:Corralon;
+  tvehiculo: string;
+  costos: number;
+  enviar: string="carro";
+  corralon: Corralon={
+    id: 1,
+    fecha_entrada: new Date('0000-01-01'),
+    pension_c: '-',
+    dias_pension: 0,
+    status_entrega: '-',
+    fecha_entrega: new Date('0000-01-01'),
+    otro_asunto: '-',
+    id_vehiculo: 1,
+    tipo_vehiculo: '-',
+    costo_total: 0,
+    sucursal: '-',
+  };
+  catalogo: Catalogo;
   form: FormGroup;
-  catalogos: Catalogo[] = [];
 
   constructor(
     public corralonService: CorralonService,
@@ -27,16 +42,19 @@ export class EditCorralonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.catalogoService.getAll().subscribe((data: Catalogo[])=>{
-      this.catalogos = data;
-      console.log(this.catalogos);
-    })
-    
     this.id = this.route.snapshot.params['idCorralon'];
     this.corralonService.find(this.id).subscribe((data: Corralon)=>{
       this.corralon = data;
+      this.enviar = this.corralon.tipo_vehiculo;
+      this.catalogoService.getValor(this.enviar).subscribe((data: Catalogo)=>{
+        this.catalogo = data;
+        console.log(this.catalogo);
+        this.tvehiculo = this.catalogo[0].tipoVehiculo;
+        this.costos = this.catalogo[0].costo;
+        console.log(this.tvehiculo);
+        console.log(this.costos);
+      })
     })
-
     this.form = new FormGroup({
       fecha_entrada: new FormControl(''),
       pension_c: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
@@ -46,6 +64,7 @@ export class EditCorralonComponent implements OnInit {
       otro_asunto: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       id_vehiculo: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ]),
       tipo_vehiculo: new FormControl(''),
+      costo_total: new FormControl(''),
     });
   }
 

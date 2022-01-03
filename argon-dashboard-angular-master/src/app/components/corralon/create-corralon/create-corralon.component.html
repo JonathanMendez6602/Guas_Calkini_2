@@ -118,8 +118,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="row" style="display: none"> 
-                  <div class="col-lg-6">
+                <div class="row"> 
+                  <div class="col-lg-6" style="display: none">
                     <div class="form-group">
                       <label class="form-control-label" for="input-foto_inventario">Sucursal Vehículo</label>
                       <input
@@ -132,6 +132,26 @@
                             <div *ngIf="f.sucursal.errors.required">*id_vehiculo is required.</div>
                             <div *ngIf="f.sucursal.errors.pattern">*id_vehiculo must only contain numbers.</div>
                         </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-catalogo">Catalogo</label>
+                      <select 
+                        class="form-control form-control-alternative" 
+                        formControlName="tipo_vehiculo" 
+                        id="tipo_vehiculo" 
+                        aria-describedby="tipo_vehiculoFeedback" required>
+                        <option selected disabled value="">Seleccione una opción</option>
+                        <option *ngFor="let catalogo of catalogos">
+                        {{catalogo.tipoVehiculo}}
+                        </option>
+                      </select>
+                      <div id="tipo_vehiculoFeedback" class="invalid-feedback">
+                        Sucursal is required.
+                      </div>
                     </div>
                   </div>
                 </div>

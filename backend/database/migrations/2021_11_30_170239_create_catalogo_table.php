@@ -16,7 +16,7 @@ class CreateCatalogoTable extends Migration
         Schema::create('catalogo', function (Blueprint $table) {
             $table->id();
             $table->string('tipoVehiculo');
-            $table->string('costo');
+            $table->bigInteger('costo');
             $table->timestamps();
         });
     }

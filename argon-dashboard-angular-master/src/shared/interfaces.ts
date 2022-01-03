@@ -82,12 +82,12 @@ export interface Corralon{
     fecha_entrega: Date;
     otro_asunto: string;
     id_vehiculo: number;
-    tipo_vehiculo: String;
+    tipo_vehiculo: string;
     costo_total: number;
     sucursal: string;
 }
 export interface Catalogo{
     id: number;
     tipoVehiculo: string;
-    costo: string;
+    costo: number;
 }

@@ -112,24 +112,30 @@
                 </div>
               </div>
 
-              <div class="col-lg-6">
+              <div class="row" >
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-catalogo">Catalogo</label>
-                    <select 
-                      class="form-control form-control-alternative" 
-                      formControlName="tipo_vehiculo" 
-                      id="tipo_vehiculo" 
-                      aria-describedby="tipo_vehiculoFeedback" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option *ngFor="let catalogo of catalogos">
-                      {{catalogo.tipoVehiculo}}
-                      </option>
-                    </select>
+                    <input formControlName="tipo_vehiculo" [(ngModel)]="tvehiculo" id="tipo_vehiculo" type="text"
+                      class="form-control">
                     <div id="tipo_vehiculoFeedback" class="invalid-feedback">
                       Sucursal is required.
                     </div>
                   </div>
                 </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-catalogo">Catalogo</label>
+                    <input formControlName="costo_total" [(ngModel)]="costos" id="costo_total" type="text"
+                      class="form-control">
+                    <div id="costo_totalFeedback" class="invalid-feedback">
+                      Sucursal is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <button class="btn btn-info" type="submit" [disabled]="!form.valid">Entregar</button>
               <button class="btn btn-danger" type="submit" a routerLink="/corralon/indexCorralon">Cancelar</button>
             </div>

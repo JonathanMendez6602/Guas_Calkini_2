@@ -99,6 +99,24 @@ class VehiculoController extends Controller
     return response()->json($data, 200);
   }
 
+  public function getAseguradoraNombre($aseguradora, $nombre)
+  {
+    if($aseguradora == 'todos' && $nombre == 'todos'){
+      $data = Vehicle::get();
+    }else{
+      if($aseguradora == 'todos' && $nombre != 'todos'){
+        $data = Vehicle::where('nombre', $nombre)->get();
+      }else{
+        if($aseguradora != 'todos' && $nombre == 'todos'){
+          $data = Vehicle::where('aseguradora', $aseguradora)->get();
+        }else{
+          $data = Vehicle::where('nombre', $nombre && 'aseguradora', $aseguradora)->get();
+        }
+      }
+    }
+    return response()->json($data, 200);
+  }
+
   public function update(Request $request, $id)
   {
     $data['modelo'] = $request['modelo'];

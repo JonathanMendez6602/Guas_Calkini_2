@@ -35,14 +35,30 @@
           <td data-label="Sucursal">{{ grua.sucursal }}</td>
           <td data-label="Numero de motor">{{ grua.num_motor }}</td>
           <td data-label="Tipo">{{ grua.tipo_est_o_fed }}</td>
-          <td data-label="Tarjeta de Circulación">{{ grua.doc_tarjcirculacion }}</td>
-          <td data-label="Cartaporte">{{ grua.doc_cartaporte }}</td>
-          <td data-label="Poliza de seguro">{{ grua.doc_polizaseguro }}</td>
-          <td data-label="Factura">{{ grua.doc_factura }}</td>
-          <td data-label="Concesión">{{ grua.doc_consecion }}</td>
-          <td data-label="Inclusón">{{ grua.doc_inclusion }}</td>
-          <td data-label="Fisiomecanico">{{ grua.doc_permiso_fisicomec }}</td>
-          <td data-label="Anticominantes">{{ grua.doc_anticontaminantes }}</td>
+          <td data-label="Tarjeta de Circulación" *ngIf="previsualizacion">
+            <button (click)="createPDFArc1()" >Ver Tarjeta de Circulación</button>
+          </td>
+          <td data-label="Cartaporte" *ngIf="previsualizacion2">
+            <button (click)="createPDFArc2()" >Ver Carta Porte</button>
+          </td>
+          <td data-label="Poliza de seguro" *ngIf="previsualizacion3">
+            <button (click)="createPDFArc3()" >Ver Poliza de seguro</button>
+          </td>
+          <td data-label="Factura" *ngIf="previsualizacion4">
+            <button (click)="createPDFArc4()" >Ver Factura</button>
+          </td>
+          <td data-label="Concesión" *ngIf="previsualizacion5">
+            <button (click)="createPDFArc5()" >Ver Concesión</button>
+          </td>
+          <td data-label="Inclusón" *ngIf="previsualizacion6">
+            <button (click)="createPDFArc6()" >Ver Inclusón</button>
+          </td>
+          <td data-label="Fisiomecanico" *ngIf="previsualizacion7">
+            <button (click)="createPDFArc7()" >Ver Fisiomecanico</button>
+          </td>
+          <td data-label="Anticominantes" *ngIf="previsualizacion8">
+            <button (click)="createPDFArc8()" >Ver Anticominantes</button>
+          </td>
      	  </tr>
 
      </tbody>

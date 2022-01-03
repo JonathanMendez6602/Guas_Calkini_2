@@ -19,6 +19,8 @@ class Corralon extends Model
       'fecha_entrega',
       'otro_asunto',
       'id_vehiculo',
+      'tipo_vehiculo',
+      'costo_total',
       'sucursal',
       'branch_office_id'
     ];

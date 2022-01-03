@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CorralonService } from '../../../services/corralon.service';
 import { VehiculoService } from '../../../services/vehiculo.service';
+import { CatalogoService } from '../../../services/catalogo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Vehiculo } from '../../../../shared/interfaces';
+import { Catalogo } from '../../../../shared/interfaces';
 
 @Component({
   selector: 'app-create',
@@ -17,14 +19,37 @@ export class CreateCorralonComponent implements OnInit {
   vehiculo: Vehiculo;
   p: string = "Si";
 
+  catalogos: Catalogo[] = [];
+
   constructor(
     public corralonService: CorralonService,
     public vehiculoService: VehiculoService,
+    public catalogoService: CatalogoService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.catalogoService.getAll().subscribe((data: Catalogo[])=>{
+      this.catalogos = data;
+      console.log(this.catalogos);
+    })
+    this.vehiculo= {
+      id: 1,
+      marca: '-',
+      modelo: '-',
+      foto_vehiculo: '-',
+      color: '-',
+      placas: '-',
+      inventario: '-',
+      foto_inventario: '-',
+      llaves: '-',
+      tipo_servicio: '-',
+      lugar_siniestro: '-',
+      descripcion: '-',
+      nombre: '-',
+      sucursal: '-',
+    };
     this.id = this.route.snapshot.params['idVehiculo'];
     
     this.vehiculoService.find(this.id).subscribe((data: Vehiculo)=>{
@@ -41,6 +66,7 @@ export class CreateCorralonComponent implements OnInit {
       fecha_entrega: new FormControl(''),
       otro_asunto: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       id_vehiculo: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ]),
+      tipo_vehiculo: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       sucursal: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
     });
   }

@@ -22,6 +22,8 @@ class CreateCorralonTable extends Migration
             $table->date('fecha_entrega');
             $table->string('otro_asunto');
             $table->bigInteger('id_vehiculo');
+            $table->string('tipo_vehiculo');
+            $table->bigInteger('costo_total');
             $table->string('sucursal');
             $table->foreignId('branch_office_id')->constrined('branch_offices')->cascadaOnUpdate()->nullOnDelete();
             $table->timestamps();

@@ -20,4 +20,9 @@ httpOptions = {
     })
 }
 
+
+getValor(tipoVehiculo){
+  return this.httpClient.get<Catalogo>(this.uri +"/tipo/"+ tipoVehiculo);
+}
+
 }

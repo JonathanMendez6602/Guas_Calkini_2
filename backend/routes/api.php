@@ -85,6 +85,7 @@ Route::prefix('catalogo')->group(function () {
     Route::post('/',[ CatalogoController::class, 'create']);
     Route::delete('/{id}',[ CatalogoController::class, 'delete']);
     Route::get('/{id}',[ CatalogoController::class, 'get']);
+    Route::get('/tipo/{tipoVehiculo}',[ CatalogoController::class, 'getVehiculo']);
     Route::put('/{id}',[ CatalogoController::class, 'update']);
 });
 

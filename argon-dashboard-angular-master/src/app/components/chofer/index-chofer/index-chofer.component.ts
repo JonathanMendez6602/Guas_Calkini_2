@@ -17,6 +17,10 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class IndexChoferComponent implements OnInit {
 
   choferes: Chofer[] = [];
+  previsualizacion: string;
+  previsualizacion2: string; 
+  previsualizacion3: string;
+  previsualizacion4: string;
   valorg: Chofer={
     id: 1,
     nombre: '-',
@@ -119,9 +123,59 @@ export class IndexChoferComponent implements OnInit {
     
     this.ChoferService.find(id).subscribe((data: Chofer)=>{
       this.chofer = data;
+      this.previsualizacion= this.chofer.doc_lic_fed;
+      this.previsualizacion2= this.chofer.doc_lic_est;
+      this.previsualizacion3= this.chofer.doc_ine;
+      this.previsualizacion4= this.chofer.doc_curp;
+
       console.log(this.chofer);
     });
     this.modal.open(contenido,{scrollable:true});
+  }
+
+
+  createPDFLicFed(){
+    // The Base64 string of a simple PDF file
+    var val = this.chofer.doc_lic_fed.split(',');
+    // Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+    let pdfWindow = window.open("")
+    pdfWindow.document.write(
+    "<iframe title='Hola' download='hola.pdf' width='100%' height='100%' src='data:application/pdf;base64, " +
+    encodeURI(val[1]) + "'></iframe>"
+    )
+  }
+
+  createPDFLicEst(){
+    // The Base64 string of a simple PDF file
+    var val = this.chofer.doc_lic_est.split(',');
+    // Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+    let pdfWindow = window.open("")
+    pdfWindow.document.write(
+    "<iframe title='Hola' download='hola.pdf' width='100%' height='100%' src='data:application/pdf;base64, " +
+    encodeURI(val[1]) + "'></iframe>"
+    )
+  }
+
+  createPDFINE(){
+    // The Base64 string of a simple PDF file
+    var val = this.chofer.doc_ine.split(',');
+    // Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+    let pdfWindow = window.open("")
+    pdfWindow.document.write(
+    "<iframe title='Hola' download='hola.pdf' width='100%' height='100%' src='data:application/pdf;base64, " +
+    encodeURI(val[1]) + "'></iframe>"
+    )
+  }
+
+  createPDFCURP(){
+    // The Base64 string of a simple PDF file
+    var val = this.chofer.doc_curp.split(',');
+    // Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+    let pdfWindow = window.open("")
+    pdfWindow.document.write(
+    "<iframe title='Hola' download='hola.pdf' width='100%' height='100%' src='data:application/pdf;base64, " +
+    encodeURI(val[1]) + "'></iframe>"
+    )
   }
 
   createPDF(id){
@@ -164,4 +218,21 @@ export class IndexChoferComponent implements OnInit {
  
   }
 
+  createReporte(){
+    var column = [];
+    column.push({ text: 'A', style: 'tableHeader'});
+    column.push({ text: 'B', style: 'tableHeader'});
+
+    var value = [];
+    value.push({ text: 'Asda', style: 'tableHeader'});
+    value.push({ text: 'Bsa', style: 'tableHeader'});
+    const pdfDefinition: any = {
+      table: {
+        headerRows: 1,
+          body: [
+            column, value
+          ]
+      }
+    }
+  }
 }

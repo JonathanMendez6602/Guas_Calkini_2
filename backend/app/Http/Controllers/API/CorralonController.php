@@ -25,12 +25,12 @@ class CorralonController extends Controller
     $data['pension_c'] = $request['pension_c'];
     $data['dias_pension'] = 0;
     $data['status_entrega'] = "No Entregado";
-    
     $data['fecha_entrega'] = '0000-01-01';
-
     $data['otro_asunto'] = $request['otro_asunto'];
     $data['id_vehiculo'] = $request['id_vehiculo'];
     $data_1['corralon']=1;
+    $data['tipo_vehiculo'] = $request['tipo_vehiculo'];
+    $data['costo_total'] = 0;
     $data['sucursal'] = $request['sucursal'];
     $data['branch_office_id']=1;
     Vehicle::find($data['id_vehiculo'])-> update($data_1);
@@ -79,6 +79,8 @@ class CorralonController extends Controller
     $data['fecha_entrega'] = $request['fecha_entrega'];
     $data['otro_asunto'] = $request['otro_asunto'];
     $data['id_vehiculo'] = $request['id_vehiculo'];
+    $data['tipo_vehiculo'] = $request['tipo_vehiculo'];
+    $data['costo_total'] = $request['costo_total']*$dias;
     Corralon::find($id)->update($data);
     return response()->json([
       'message' => "Successfully updated",

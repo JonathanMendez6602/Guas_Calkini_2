@@ -30,14 +30,22 @@
             <td data-label="Apellido materno">{{ chofer.apellido_m }}</td>
             <td data-label="Edad">{{ chofer.edad }}</td>
             <td data-label="Sucursal">{{ chofer.sucursal }}</td>
-            <td data-label="Licencia Federal">{{ chofer.doc_lic_fed }}</td>
+            <td data-label="Licencia Federal" *ngIf="previsualizacion">
+              <button (click)="createPDFLicFed()" >Ver Federal</button>
+            </td>
             <td data-label="Fecha licencia Federal">{{ chofer.fecha_lic_fed }}</td>
             <td data-label="Numero licencia Federal">{{ chofer.num_lic_fed }}</td>
-            <td data-label="Licencia Estatal">{{ chofer.doc_lic_est }}</td>
+            <td data-label="Licencia Estatal" *ngIf="previsualizacion2">
+              <button (click)="createPDFLicEst()" >Ver Estatal</button>
+            </td>
             <td data-label="Fecha licencia Estatal">{{ chofer.fecha_lic_est }}</td>
             <td data-label="Numero licencia Estatal">{{ chofer.num_lic_est }}</td>
-            <td data-label="INE">{{ chofer.doc_ine }}</td>
-            <td data-label="CURP">{{ chofer.doc_curp }}</td>
+            <td data-label="INE" *ngIf="previsualizacion3">
+              <button (click)="createPDFINE()" >Ver INE</button>
+            </td>
+            <td data-label="CURP" *ngIf="previsualizacion4">
+              <button (click)="createPDFCURP()" >Ver CURP</button>
+            </td>
            </tr>
   
        </tbody>
@@ -163,6 +171,7 @@
                             <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                           </button>
                           <button (click)="createPDF(chofer.id)">Crear PDF</button>
+                          <button (click)="createReporte()">Crear Reporte</button>
                         </td>
                       </tr>
                     </tbody>
