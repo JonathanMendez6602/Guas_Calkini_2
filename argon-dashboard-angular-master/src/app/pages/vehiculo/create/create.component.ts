@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Sucursal } from '../sucursal';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-create',
@@ -30,7 +31,8 @@ export class CreateComponent implements OnInit {
     public vehiculoService: VehiculoService,
     private router: Router,
     private http: HttpClient,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public modal:NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -50,7 +52,10 @@ export class CreateComponent implements OnInit {
       foto_vehiculo: new FormControl(''),
       color:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       placas: new FormControl('', [ Validators.required, Validators.pattern ('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
-      inventario: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
+      inventario: new FormGroup({
+        m1: new FormControl('')
+      }
+      ),
       foto_inventario:  new FormControl(''),
       llaves: new FormControl('', [ Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       tipo_servicio: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ0-9 \-\']+') ]),
@@ -156,5 +161,9 @@ export class CreateComponent implements OnInit {
          console.log('Vehiculo created successfully!');
          this.router.navigateByUrl('vehiculo/index');
     })
+  }
+
+  openScroll(contenido){
+    this.modal.open(contenido,{scrollable:true});
   }
 }
