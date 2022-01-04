@@ -31,20 +31,32 @@
             <td data-label="Edad">{{ chofer.edad }}</td>
             <td data-label="Sucursal">{{ chofer.sucursal }}</td>
             <td data-label="Licencia Federal" *ngIf="previsualizacion">
-              <button (click)="createPDFLicFed()" >Ver Federal</button>
+              <button class="btn btn-icon btn-3 btn-primary btn-sm" type="button" (click)="createPDFLicFed()">
+                <span class="btn-inner--text">Ver</span>
+                <span class="btn-inner--icon"><i class="fas fa-file"></i></span>
+              </button>
             </td>
             <td data-label="Fecha licencia Federal">{{ chofer.fecha_lic_fed }}</td>
             <td data-label="Numero licencia Federal">{{ chofer.num_lic_fed }}</td>
             <td data-label="Licencia Estatal" *ngIf="previsualizacion2">
-              <button (click)="createPDFLicEst()" >Ver Estatal</button>
+              <button class="btn btn-icon btn-3 btn-primary btn-sm" type="button" (click)="createPDFLicEst()">
+                <span class="btn-inner--text">Ver</span>
+                <span class="btn-inner--icon"><i class="fas fa-file"></i></span>
+              </button>
             </td>
             <td data-label="Fecha licencia Estatal">{{ chofer.fecha_lic_est }}</td>
             <td data-label="Numero licencia Estatal">{{ chofer.num_lic_est }}</td>
             <td data-label="INE" *ngIf="previsualizacion3">
-              <button (click)="createPDFINE()" >Ver INE</button>
+              <button class="btn btn-icon btn-3 btn-primary btn-sm" type="button" (click)="createPDFINE()">
+                <span class="btn-inner--text">Ver</span>
+                <span class="btn-inner--icon"><i class="fas fa-file"></i></span>
+              </button>
             </td>
             <td data-label="CURP" *ngIf="previsualizacion4">
-              <button (click)="createPDFCURP()" >Ver CURP</button>
+              <button class="btn btn-icon btn-3 btn-primary btn-sm" type="button" (click)="createPDFCURP()">
+                <span class="btn-inner--text">Ver</span>
+                <span class="btn-inner--icon"><i class="fas fa-file"></i></span>
+              </button>
             </td>
            </tr>
   
@@ -164,13 +176,15 @@
                           <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/chofer/', 'editChofer', chofer.id  ]">
                             <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
                           </button>
+                          <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="createPDF(chofer.id)">
+                            <span class="btn-inner--icon"><i class="far fa-file-pdf"></i></span>
+                          </button>
                           <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="bajaChofer(chofer.id)">
                             <span class="btn-inner--icon"><i class="fas fa-minus-circle"></i></span>
                           </button>
                           <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(chofer.id)">
                             <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                           </button>
-                          <button (click)="createPDF(chofer.id)">Crear PDF</button>
                           <button (click)="createReporte()">Crear Reporte</button>
                         </td>
                       </tr>
