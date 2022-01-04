@@ -75,7 +75,7 @@
       <div class="card shadow">
         <br>
         <div class="col">
-          <div class="d-flex justify-content-left">
+          <div class="d-flex">
             <div class="searchbar">
               <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... " [(ngModel)]="filterModelo">
               <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
@@ -86,14 +86,13 @@
                 <select class="form-control form-control-alternative" name="filterModelo2" [(ngModel)]="filterModelo2">
                   <option selected disabled value="">Seleccione una opción</option>
                   <option value="">Todos</option>
-                  <option value="Calki">Calkiní</option>
+                  <option value="Calkini">Calkiní</option>
                   <option value="Hopel">Hopelchén</option>
                   <option value="Xpuj">Xpujil</option>
                 </select>
               </td>
             </div>
           </div>
-          
         </div>
         
         <div class="card-header border-0">
@@ -166,12 +165,13 @@
                   </button>
                   <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">
                     <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
-                    
+                  </button>
+                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="createPDF(vehiculo.id)">
+                    <span class="btn-inner--icon"><i class="far fa-file-pdf"></i></span>
                   </button>
                   <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(vehiculo.id)">
                     <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                   </button>
-                  <button (click)="createPDF(vehiculo.id)">Crear PDF</button>
                 </td>
               </tr>
             </tbody>

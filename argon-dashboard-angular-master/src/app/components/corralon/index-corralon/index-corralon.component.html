@@ -140,6 +140,9 @@
                 <td>
                   <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="openScroll(contenido, corralon.id)">
                     <span class="btn-inner--icon"><i class="far fa-eye"></i></span>
+                  </button>
+                  <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="createPDF(corralon.id)">
+                    <span class="btn-inner--icon"><i class="far fa-file-pdf"></i></span>
                   </button>                 
                   <button  class="btn btn-icon btn-3 btn-success btn-sm" type="button"  [routerLink]="['/corralon/', 'editCorralon', corralon.id ]">
                     <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
@@ -147,7 +150,6 @@
                 <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteCorralon(corralon.id)">
                   <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                 </button>
-                <button (click)="createPDF(corralon.id)">Crear PDF</button>
                 </td>
               </tr>
             </tbody>

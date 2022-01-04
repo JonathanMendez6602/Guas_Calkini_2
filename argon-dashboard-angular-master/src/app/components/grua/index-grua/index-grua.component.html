@@ -36,6 +36,10 @@
           <td data-label="Numero de motor">{{ grua.num_motor }}</td>
           <td data-label="Tipo">{{ grua.tipo_est_o_fed }}</td>
           <td data-label="Tarjeta de Circulación" *ngIf="previsualizacion">
+            <button class="btn btn-icon btn-3 btn-primary btn-sm" type="button" (click)="createPDFArc1()">
+              <span class="btn-inner--icon"><i class="fas fa-file"></i></span>
+              <span class="btn-inner--text">Ver</span>
+            </button>
             <button (click)="createPDFArc1()" >Ver Tarjeta de Circulación</button>
           </td>
           <td data-label="Cartaporte" *ngIf="previsualizacion2">
@@ -176,13 +180,15 @@
                         <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/grua/', 'editGrua', grua.id  ]">
                           <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
                         </button>
+                        <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" (click)="createPDF(grua.id)">
+                          <span class="btn-inner--icon"><i class="far fa-file-pdf"></i></span>
+                        </button> 
                         <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="bajaGrua(grua.id)">
                           <span class="btn-inner--icon"><i class="fas fa-minus-circle"></i></span>
                         </button>
                         <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button" (click)="deleteVehiculo(grua.id)">
                           <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                         </button>
-                        <button (click)="createPDF(grua.id)">Crear PDF</button>
                       </td>
                     </tr>
                   </tbody>
