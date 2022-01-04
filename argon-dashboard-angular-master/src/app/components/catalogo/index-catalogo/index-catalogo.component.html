@@ -60,10 +60,9 @@
                                 <td>{{ aseguradora.id }}</td>
                                 <td>{{ aseguradora.nombre_aseguradora }}</td>
                                 <td>
-                                    <button class="btn btn-icon btn-3 btn-success btn-sm" type="button"
-                                        [routerLink]="['/catalogo/', 'aseguradora', aseguradora.id ]">
-                                        <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
-                                    </button>
+                                    <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button" [routerLink]="['/catalogo/', 'editAseguradora', aseguradora.id  ]">
+                                        <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
+                                      </button>                                    
                                     <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button"
                                         (click)="deleteAseguradora(aseguradora.id)">
                                         <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
@@ -139,9 +138,9 @@
                                 <td>{{ sucursal.id }}</td>
                                 <td>{{ sucursal.sucursal }}</td>
                                 <td>
-                                    <button class="btn btn-icon btn-3 btn-success btn-sm" type="button"
+                                    <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button"
                                         [routerLink]="['/catalogo/', 'editSucursal', sucursal.id ]">
-                                        <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
+                                        <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
                                     </button>
                                     <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button"
                                         (click)="deleteSucursal(sucursal.id)">
@@ -227,9 +226,9 @@
                                 <td>{{ catalogo.tipoVehiculo }}</td>
                                 <td>{{ catalogo.costo }}</td>
                                 <td>
-                                    <button class="btn btn-icon btn-3 btn-success btn-sm" type="button"
+                                    <button class="btn btn-icon btn-3 btn-warning btn-sm" type="button"
                                         [routerLink]="['/catalogo/', 'editCatalogo', catalogo.id ]">
-                                        <span class="btn-inner--icon"><i class=" ni ni-check-bold "></i></span>
+                                        <span class="btn-inner--icon"><i class="far fa-edit"></i></span>
                                     </button>
                                     <button class="btn btn-icon btn-3 btn-danger btn-sm" type="button"
                                         (click)="deleteCatalogo(catalogo.id)">

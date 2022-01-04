@@ -22,6 +22,10 @@ export class EditSucursalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.sucursal = {
+      id: 1,
+      sucursal: '-'
+    }
     this.id = this.route.snapshot.params['idSucursal'];
     this.sucursalService.find(this.id).subscribe((data: Sucursal)=>{
       this.sucursal = data;

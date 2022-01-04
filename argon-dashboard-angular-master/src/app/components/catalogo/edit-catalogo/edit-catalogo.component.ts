@@ -24,6 +24,12 @@ export class EditCatalogoComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.catalogo={
+      id: 1,
+      tipoVehiculo: '-',
+      costo: 0
+    };
+
     this.id = this.route.snapshot.params['idCatalogo'];
     this.catalogoService.find(this.id).subscribe((data: Catalogo)=>{
       this.catalogo = data;
@@ -31,7 +37,7 @@ export class EditCatalogoComponent implements OnInit {
 
     this.form = new FormGroup({
       tipoVehiculo:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
-      costo:  new FormControl('', [ Validators.required, Validators.pattern("^[0-9-$]*$") ])
+      costo:  new FormControl('')
     });
     
   }

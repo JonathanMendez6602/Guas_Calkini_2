@@ -39,14 +39,11 @@
                           id="costo"
                           type="text"
                           class="form-control form-control-alternative">
-                        <div *ngIf="f.costo.touched && f.costo.invalid" class="alert alert-danger">
-                          <div *ngIf="f.costo.errors.required">*costo is required.</div>
-                          <div *ngIf="f.costo.errors.pattern">*The costo must only contain letters.</div>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>,
-                <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
+                <button class="btn btn-success" type="submit" [disabled]="!form.valid">Actualizar</button>
               </div>
             </form>
           </div>

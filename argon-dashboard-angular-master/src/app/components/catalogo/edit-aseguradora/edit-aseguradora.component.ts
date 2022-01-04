@@ -22,13 +22,17 @@ export class EditAseguradoraComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.aseguradora = {
+      id: 1,
+      nombre_aseguradora: '-'
+    }
     this.id = this.route.snapshot.params['idAseguradora'];
     this.aseguradoraService.find(this.id).subscribe((data: Aseguradora)=>{
       this.aseguradora = data;
     });
 
     this.form = new FormGroup({
-      Aseguradora:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ])
+      nombre_aseguradora:  new FormControl('')
       
     });
   }

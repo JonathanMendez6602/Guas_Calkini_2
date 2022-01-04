@@ -18,19 +18,16 @@
                         <div class="form-group">
                           <label class="form-control-label" for="input-aseguradora">Nombre de aseguradora</label>
                           <input
-                            formControlName="aseguradora"
+                            formControlName="nombre_aseguradora"
                             [(ngModel)]="aseguradora.nombre_aseguradora"
-                            id="aseguradora"
+                            id="nombre_aseguradora"
                             type="text"
                             class="form-control form-control-alternative">
-                          <div *ngIf="f.aseguradora.touched && f.aseguradora.invalid" class="alert alert-danger">
-                              <div *ngIf="f.aseguradora.errors.required">*aseguradora is required.</div>
-                              <div *ngIf="f.aseguradora.errors.pattern">*The aseguradora must only contain letters.</div>
-                          </div>
+                  
                         </div>
                     </div>
                   </div>,
-                <button class="btn btn-success" type="submit" [disabled]="!form.valid">Guardar</button>
+                <button class="btn btn-success" type="submit" [disabled]="!form.valid">Actualizar</button>
               </div>
             </form>
           </div>
