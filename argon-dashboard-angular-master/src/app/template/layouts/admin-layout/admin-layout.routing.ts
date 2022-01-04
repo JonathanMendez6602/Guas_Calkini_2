@@ -18,6 +18,14 @@ import { AgregarCorralonComponent } from 'src/app/components/corralon/agregar-co
 import { IndexGruaComponent } from 'src/app/components/grua/index-grua/index-grua.component';
 import { CreateGruaComponent } from 'src/app/components/grua/create-grua/create-grua.component';
 import { EditGruaComponent } from 'src/app/components/grua/edit-grua/edit-grua.component';
+import { IndexCatalogoComponent } from 'src/app/components/catalogo/index-catalogo/index-catalogo.component';
+import { CreateCatalogoComponent } from 'src/app/components/catalogo/create-catalogo/create-catalogo.component';
+import { EditCatalogoComponent } from 'src/app/components/catalogo/edit-catalogo/edit-catalogo.component';
+import { CreateSucursalComponent } from 'src/app/components/catalogo/create-sucursal/create-sucursal.component';
+import { EditSucursalComponent } from 'src/app/components/catalogo/edit-sucursal/edit-sucursal.component';
+import { CreateAseguradoraComponent } from 'src/app/components/catalogo/create-aseguradora/create-aseguradora.component';
+import { EditAseguradoraComponent } from 'src/app/components/catalogo/edit-aseguradora/edit-aseguradora.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -39,4 +47,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'grua/indexGrua', component: IndexGruaComponent },
     { path: 'grua/createGrua', component: CreateGruaComponent },
     { path: 'grua/editGrua/:idGrua', component: EditGruaComponent },
+    { path: 'catalogo/indexCatalogo', component: IndexCatalogoComponent},
+    { path: 'catalogo/createCatalogo', component: CreateCatalogoComponent},
+    { path: 'catalogo/editCatalogo/:idCatalogo', component: EditCatalogoComponent},
+    { path: 'catalogo/createSucursal', component: CreateSucursalComponent},
+    { path: 'catalogo/editSucursal/:idSucursal', component: EditSucursalComponent},
+    { path: 'catalogo/createAseguradora', component: CreateAseguradoraComponent},
+    { path: 'catalogo/editAseguradora/:idAseguradora', component: EditAseguradoraComponent}
 ];
