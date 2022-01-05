@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChoferService } from '../../../services/chofer.service';
-import { Chofer } from '../../../../shared/interfaces';
+import { Chofer, Sucursal } from '../../../../shared/interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SucursalService } from 'src/app/services/sucursal.service';
 
 @Component({
   selector: 'app-edit-chofer',
@@ -14,6 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class EditChoferComponent implements OnInit {
 
   id: number;
+  sucursales: Sucursal[] = [];
   chofer: Chofer={
     id: 1,
     nombre: '-',
@@ -48,6 +50,7 @@ export class EditChoferComponent implements OnInit {
 
   constructor(
     public choferService: ChoferService,
+    public sucursalService: SucursalService,
     private route: ActivatedRoute,
     private router: Router,
     private sanitizer: DomSanitizer
@@ -55,7 +58,10 @@ export class EditChoferComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      })
+      
     this.id = this.route.snapshot.params['idChofer'];
     this.choferService.find(this.id).subscribe((data: Chofer)=>{
       this.chofer = data;

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Sucursal } from 'src/shared/interfaces';
+import { SucursalService } from 'src/app/services/sucursal.service';
 
 @Component({
   selector: 'app-create-grua',
@@ -13,6 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class CreateGruaComponent implements OnInit {
 
   form: FormGroup;
+  sucursales: Sucursal[] = [];
   enviar_doc1: string="";
   enviar_doc2: string="";
   enviar_doc3: string="";
@@ -32,6 +35,7 @@ export class CreateGruaComponent implements OnInit {
 
   constructor(
     public gruaService: GruaService,
+    public sucursalService: SucursalService,
     private router: Router,
     private http: HttpClient,
     private sanitizer: DomSanitizer
@@ -39,7 +43,10 @@ export class CreateGruaComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
 
     this.form = new FormGroup({
       marca:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),

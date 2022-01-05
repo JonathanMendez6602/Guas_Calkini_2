@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GruaService } from '../../../services/grua.service';
-import { Grua } from '../../../../shared/interfaces';
+import { Grua, Sucursal } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute, Router } from '@angular/router';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { SucursalService } from 'src/app/services/sucursal.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -26,6 +27,7 @@ export class IndexGruaComponent implements OnInit {
   previsualizacion8: string;
 
   gruas: Grua[] = [];
+  sucursales: Sucursal[] = [];
   valorg: Grua;
   filterModelo = "";
   filterModelo2 = "";
@@ -87,6 +89,7 @@ export class IndexGruaComponent implements OnInit {
   // constructor() { }
   constructor(
     public GruaService: GruaService,
+    public sucursalService: SucursalService,
     public modal:NgbModal,
     private route: ActivatedRoute,
     private router: Router
@@ -97,6 +100,11 @@ export class IndexGruaComponent implements OnInit {
       this.gruas = data;
       console.log(this.gruas);
     })
+
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
   }
 
   deleteVehiculo(id){
