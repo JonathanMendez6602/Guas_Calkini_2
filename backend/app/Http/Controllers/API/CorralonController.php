@@ -26,7 +26,11 @@ class CorralonController extends Controller
     $data['dias_pension'] = 0;
     $data['status_entrega'] = "No Entregado";
     $data['fecha_entrega'] = '0000-01-01';
-    $data['otro_asunto'] = $request['otro_asunto'];
+    if($request['otro_asunto']==""){
+      $data['otro_asunto'] = "";
+    }else{
+      $data['otro_asunto'] = $request['otro_asunto'];
+    }
     $data['id_vehiculo'] = $request['id_vehiculo'];
     $data_1['corralon']=1;
     $data['tipo_vehiculo'] = $request['tipo_vehiculo'];
