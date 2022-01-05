@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CorralonService } from '../../../services/corralon.service';
-import { Corralon } from '../../../../shared/interfaces';
+import { Corralon, Sucursal, Vehiculo } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { VehiculoService } from '../../../services/vehiculo.service';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { SucursalService } from 'src/app/services/sucursal.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -14,6 +16,8 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class IndexCorralonComponent implements OnInit {
   corralons: Corralon[]=[];
+  sucursales: Sucursal[] = [];
+  vehiculos: Vehiculo;
   filterModelo = "";
   filterModelo2 = "";
   id: number;
@@ -44,6 +48,8 @@ export class IndexCorralonComponent implements OnInit {
     sucursal: '-',
   };
   constructor(public corralonService: CorralonService,
+    public VehiculoService: VehiculoService,
+    public sucursalService: SucursalService,
     public modal:NgbModal) { }
 
   ngOnInit(): void {
@@ -51,6 +57,11 @@ export class IndexCorralonComponent implements OnInit {
       this.corralons = data;
       console.log(this.corralons);
     })
+
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
   }
 
   deleteCorralon(id){
@@ -61,7 +72,7 @@ export class IndexCorralonComponent implements OnInit {
   }
 
   openScroll(contenido, id){
-    
+
     this.corralonService.find(id).subscribe((data: Corralon)=>{
       this.corralon = data;
       console.log(this.corralon);

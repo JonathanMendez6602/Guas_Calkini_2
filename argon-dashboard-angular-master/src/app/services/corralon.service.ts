@@ -20,4 +20,8 @@ httpOptions = {
     })
 }
 
+updateSucursal(sucursal,id){
+  return this.httpClient.get<Corralon>(this.uri +"/sucursal/"+sucursal, id)
+}
+
 }

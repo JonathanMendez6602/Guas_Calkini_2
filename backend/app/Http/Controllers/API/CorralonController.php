@@ -42,9 +42,6 @@ class CorralonController extends Controller
 
   }
 
-
-
-
   public function delete($id)
   {
     $data = Corralon::find($id);
@@ -79,6 +76,7 @@ class CorralonController extends Controller
     $data['fecha_entrega'] = $request['fecha_entrega'];
     $data['otro_asunto'] = $request['otro_asunto'];
     $data['id_vehiculo'] = $request['id_vehiculo'];
+    $data['sucursal'] = $request['sucursal'];
     $data['tipo_vehiculo'] = $request['tipo_vehiculo'];
     $data['costo_total'] = $request['costo_total']*$dias;
     Corralon::find($id)->update($data);
@@ -86,5 +84,12 @@ class CorralonController extends Controller
       'message' => "Successfully updated",
       'success' => true
     ], 200);
+  }
+
+  public function updateSucursal($sucursal, $id){
+    $data2['sucursal'] = $sucursal;
+    Corralon::find($id)->update($data2);
+    $data = Corralon::find($id);
+    return response()->json($data, 200);
   }
 }

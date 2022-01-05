@@ -110,6 +110,17 @@
                     </div>
                   </div>
                 </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-foto_inventario">Sucursal</label>
+                    <input formControlName="sucursal" [(ngModel)]="suc" id="sucursal" type="text"
+                      class="form-control">
+                    <div *ngIf="f.id_vehiculo.touched && f.id_vehiculo.invalid" class="alert alert-danger">
+                      <div *ngIf="f.id_vehiculo.errors.required">*id_vehiculo is required.</div>
+                      <div *ngIf="f.id_vehiculo.errors.pattern">*id_vehiculo must only contain numbers.</div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="row" >
