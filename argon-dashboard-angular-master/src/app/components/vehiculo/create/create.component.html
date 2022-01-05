@@ -2014,7 +2014,7 @@
                     </div>
 
                     <div *ngIf="!varParticular">
-                      <label class="form-control-label" for="input-nombre">Aseguradora</label>
+                      <!--<label class="form-control-label" for="input-nombre">Aseguradora</label>
                       <select 
                         class="form-control form-control-alternative" 
                         formControlName="nombre" 
@@ -2024,10 +2024,24 @@
                           <option>GNP Seguros</option>
                           <option>AXA Seguros</option>
                           <option>ABA Seguros</option>
-                      </select>
+                        </select>
                         <div id="nombreFeedback" class="invalid-feedback">
                           Sucursal is required.
-                        </div>
+                        </div>-->
+                            <label class="form-control-label" for="input-sucursal">Aseguradoras</label>
+                            <select 
+                              class="form-control form-control-alternative" 
+                              formControlName="nombre" 
+                              id="nombre" 
+                              aria-describedby="sucursalFeedback" required>
+                              <option selected disabled value="">Seleccione una opción</option>
+                              <option *ngFor="let aseguradora of aseguradoras">
+                              {{aseguradora.nombre_aseguradora}}
+                              </option>
+                            </select>
+                            <div id="sucursalFeedback" class="invalid-feedback">
+                              Sucursal is required.
+                            </div>
                     </div>
                   </div>
                 </div>
@@ -2047,7 +2061,7 @@
                     </div>
                   </div>
                 </div>
-                <!--<div class="col-lg-6">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-sucursal">Sucursal</label>
                     <select 
@@ -2064,9 +2078,9 @@
                       Sucursal is required.
                     </div>
                   </div>
-                </div>-->
+                </div>
 
-                <div class="col-lg-6">
+                <!--<div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-sucursal">Sucursal</label>
                     <select 
@@ -2083,7 +2097,7 @@
                         Sucursal is required.
                       </div>
                   </div>
-                </div>
+                </div>-->
               </div>
               <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
             </div>
