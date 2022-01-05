@@ -12,8 +12,8 @@
                 <div class="col">
                     <div class="d-flex justify-content-left">
                       <div class="searchbar">
-                        <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... "
-                        >
+                        <input class="search_input" type="text" name="filterModelo2" placeholder="Buscar... "
+                        [(ngModel)]="filterModelo2">
                         <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
                       </div>
                     </div>
@@ -56,7 +56,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let aseguradora of aseguradoras">
+                            <tr *ngFor="let aseguradora of aseguradoras | filterAseguradora:filterModelo2">
                                 <td>{{ aseguradora.id }}</td>
                                 <td>{{ aseguradora.nombre_aseguradora }}</td>
                                 <td>
@@ -90,7 +90,7 @@
                 <div class="col">
                     <div class="d-flex justify-content-left">
                       <div class="searchbar">
-                        <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... "
+                        <input class="search_input" type="text" name="" placeholder="Buscar... "
                           >
                         <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
                       </div>
@@ -170,7 +170,7 @@
                     <div class="d-flex justify-content-left">
                       <div class="searchbar">
                         <input class="search_input" type="text" name="filterModelo" placeholder="Buscar... "
-                          >
+                        [(ngModel)]="filterModelo">
                         <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
                       </div>
                     </div>
@@ -221,7 +221,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let catalogo of catalogos">
+                            <tr *ngFor="let catalogo of catalogos | filterCatalogo:filterModelo">
                                 <td>{{ catalogo.id }}</td>
                                 <td>{{ catalogo.tipoVehiculo }}</td>
                                 <td>{{ catalogo.costo }}</td>

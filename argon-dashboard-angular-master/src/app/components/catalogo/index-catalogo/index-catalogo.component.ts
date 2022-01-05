@@ -20,6 +20,9 @@ export class IndexCatalogoComponent implements OnInit {
   sucurasales: Sucursal[] = []; 
   aseguradoras: Aseguradora[] = [];
 
+  filterModelo = "";
+  filterModelo2 = "";
+
   constructor(public catalogoService: CatalogoService,
     public aseguradoraService: AseguradoraService,
     public sucursalService: SucursalService) { }
