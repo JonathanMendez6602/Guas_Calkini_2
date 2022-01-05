@@ -22,6 +22,7 @@ export class IndexCatalogoComponent implements OnInit {
 
   filterModelo = "";
   filterModelo2 = "";
+  filterModelo3 = "";
 
   constructor(public catalogoService: CatalogoService,
     public aseguradoraService: AseguradoraService,
