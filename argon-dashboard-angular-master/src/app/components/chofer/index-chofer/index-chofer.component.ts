@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChoferService } from '../../../services/chofer.service';
-import { Chofer } from '../../../../shared/interfaces';
+import { Chofer, Sucursal } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute, Router } from '@angular/router';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { SucursalService } from 'src/app/services/sucursal.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -17,6 +18,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class IndexChoferComponent implements OnInit {
 
   choferes: Chofer[] = [];
+  sucursales: Sucursal[] = [];
   previsualizacion: string;
   previsualizacion2: string; 
   previsualizacion3: string;
@@ -93,6 +95,7 @@ export class IndexChoferComponent implements OnInit {
   // constructor() { }
   constructor(
     public ChoferService: ChoferService,
+    public sucursalService: SucursalService,
     public modal:NgbModal,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -102,6 +105,11 @@ export class IndexChoferComponent implements OnInit {
       this.choferes = data;
       console.log(this.choferes);
     })
+
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
   }
 
   deleteVehiculo(id){
