@@ -91,3 +91,9 @@ export interface Catalogo{
     tipoVehiculo: string;
     costo: number;
 }
+
+export interface User{
+    id: number;
+    email: string;
+    contraseña: string;
+}
