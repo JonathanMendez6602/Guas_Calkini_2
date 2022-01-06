@@ -88,7 +88,7 @@ export class CreateChoferComponent implements OnInit {
       }else{
         this.enviar_doc1 = "";
         this.enviar_doc1_n = "";
-        alert('Excede el tamaño permitido (1 MB)');
+        alert('Excede el tamaño permitido (1 MB) ¡Reducelo!');
       } 
     }else{
       this.enviar_doc1 = "";

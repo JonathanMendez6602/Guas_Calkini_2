@@ -63,7 +63,6 @@ class ChoferController extends Controller
             'success' => true
         ], 200);
       }
-
   
       public function delete($id){
         $res = Chofer::find($id)->delete();
