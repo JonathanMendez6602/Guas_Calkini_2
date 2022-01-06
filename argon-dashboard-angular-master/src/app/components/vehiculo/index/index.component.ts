@@ -7,6 +7,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { AseguradoraService } from 'src/app/services/aseguradora.service';
+import { FormControl, FormGroup } from '@angular/forms';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -19,6 +20,7 @@ export class IndexComponent implements OnInit {
   vehiculos: Vehiculo[] = [];
   sucursales: Sucursal[] = [];
   aseguradoras: Aseguradora[] = [];
+  formReporte: FormGroup;
   filterModelo = "";
   filterModelo2 = "";
   previsualizacion: string;
@@ -99,8 +101,13 @@ export class IndexComponent implements OnInit {
 
       this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
         this.aseguradoras = data;
-        console.log("EXITO");
         })
+
+        this.formReporte = new FormGroup({
+          m1: new FormControl(''),
+          m2: new FormControl(''),
+          });
+
     this.modalPDF.open(contenido,{scrollable:true});
   }
 
