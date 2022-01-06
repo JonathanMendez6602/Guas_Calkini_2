@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SucursalService } from '../../../services/sucursal.service';
 import { VehiculoService } from '../../../services/vehiculo.service';
-import { Sucursal, Vehiculo } from '../../../../shared/interfaces';
+import { Aseguradora, Sucursal, Vehiculo } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { AseguradoraService } from 'src/app/services/aseguradora.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -17,6 +18,7 @@ export class IndexComponent implements OnInit {
 
   vehiculos: Vehiculo[] = [];
   sucursales: Sucursal[] = [];
+  aseguradoras: Aseguradora[] = [];
   filterModelo = "";
   filterModelo2 = "";
   previsualizacion: string;
@@ -57,7 +59,9 @@ export class IndexComponent implements OnInit {
   // constructor() { }
   constructor(public VehiculoService: VehiculoService,
     public sucursalService: SucursalService,
-    public modal:NgbModal) { }
+    public aseguradoraService: AseguradoraService,
+    public modal:NgbModal,
+    public modalPDF:NgbModal) { }
 
   ngOnInit(): void {
     this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
@@ -85,6 +89,19 @@ export class IndexComponent implements OnInit {
       this.previsualizacion2 = this.vehiculo.foto_inventario;
     });
     this.modal.open(contenido,{scrollable:true});
+  }
+
+  openScrollPDF(contenido){
+    
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      })
+
+      this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
+        this.aseguradoras = data;
+        console.log("EXITO");
+        })
+    this.modalPDF.open(contenido,{scrollable:true});
   }
 
   createPDF(id){

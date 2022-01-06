@@ -67,6 +67,25 @@
   </div>
 </ng-template>
 
+<ng-template #contenidoPDF let-modalPDF>
+  <div class="modal-header">
+    <h4 class="modal-tilte">Datos del reporte</h4>
+    <button class="close" aria-label="close" type="button" (click)="modalPDF.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+  <div class="modal-body">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.component.scss"/>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn ni ni-check-bold  btn-success" (click)="modalPDF.close()"></button>
+  </div>
+</ng-template>
+
 <!-- Page content -->
 <div class="container-fluid mt--7">
   <!-- Table -->
@@ -88,11 +107,6 @@
                       <option *ngFor="let sucursal of sucursales">
                       {{sucursal.sucursal}}
                   </option>
-                  <!--<option selected disabled value="">Seleccione una opción</option>
-                  <option value="">Todos</option>
-                  <option value="Calki">Calkiní</option>
-                  <option value="Hopel">Hopelchén</option>
-                  <option value="Xpuj">Xpujil</option>-->
                 </select>
               </td>
             </div>
@@ -103,6 +117,10 @@
           <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/vehiculo/create">
             <span class="btn-inner--icon"><i class="ni ni-delivery-fast"></i></span>
             <span class="btn-inner--text">NUEVO SERVICIO</span>
+          </button>
+          <button class="btn btn-icon btn-3 btn-info" type="button" (click)="openScrollPDF(contenidoPDF)">
+            <span class="btn-inner--icon"><i class="fas fa-file-pdf"></i></span>
+            <span class="btn-inner--text">REPORTE</span>
           </button>
         </div>
         <div class="card-header border-0">
