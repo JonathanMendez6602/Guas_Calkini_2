@@ -50,6 +50,7 @@ Route::prefix('corralon')->group(function () {
     Route::delete('/{id}',[ CorralonController::class, 'delete']);
     Route::get('/{id}',[ CorralonController::class, 'get']);
     Route::put('/{id}',[ CorralonController::class, 'update']);
+    Route::get('/sucursal/{sucursal,id}',[ CorralonController::class, 'updateSucursal']);
 });
 
 Route::prefix('aseguradora')->group(function () {

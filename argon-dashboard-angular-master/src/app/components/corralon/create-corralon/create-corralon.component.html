@@ -36,10 +36,6 @@
                         id="otro_asunto"
                         type="text"
                         class="form-control form-control-alternative">
-                        <div *ngIf="f.otro_asunto.touched && f.otro_asunto.invalid" class="alert alert-danger">
-                            <div *ngIf="f.otro_asunto.errors.required">*otro_asunto is required.</div>
-                            <div *ngIf="f.otro_asunto.errors.pattern">*The otro_asunto must only contain letters.</div>
-                        </div>
                     </div>
                   </div>
 
@@ -138,7 +134,7 @@
                 <div class="row" >
                   <div class="col-lg-6" >
                     <div class="form-group" >
-                      <label class="form-control-label" for="input-catalogo" >Catalogo</label>
+                      <label class="form-control-label" for="input-catalogo" >Tipo de vehiculo</label>
                       <select 
                         class="form-control form-control-alternative" 
                         formControlName="tipo_vehiculo" 

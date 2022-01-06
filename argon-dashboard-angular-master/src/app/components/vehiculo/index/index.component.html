@@ -54,7 +54,7 @@
           <td data-label="Tipo de Servicio">{{ vehiculo.tipo_servicio }}</td>
           <td data-label="Lugar de siniestro">{{ vehiculo.lugar_siniestro }}</td>
           <td data-label="Descripción">{{ vehiculo.descripcion }}</td>
-          <td data-label="Nombre">{{ vehiculo.nombre }}</td>
+          <td data-label="Cliente">{{ vehiculo.nombre }}</td>
           <td data-label="Sucursal">{{ vehiculo.sucursal }}</td>
      	  </tr>
 
@@ -85,10 +85,14 @@
                 <label class="form-control-label">Sucursal</label>
                 <select class="form-control form-control-alternative" name="filterModelo2" [(ngModel)]="filterModelo2">
                   <option selected disabled value="">Seleccione una opción</option>
+                      <option *ngFor="let sucursal of sucursales">
+                      {{sucursal.sucursal}}
+                  </option>
+                  <!--<option selected disabled value="">Seleccione una opción</option>
                   <option value="">Todos</option>
-                  <option value="Calkini">Calkiní</option>
+                  <option value="Calki">Calkiní</option>
                   <option value="Hopel">Hopelchén</option>
-                  <option value="Xpuj">Xpujil</option>
+                  <option value="Xpuj">Xpujil</option>-->
                 </select>
               </td>
             </div>

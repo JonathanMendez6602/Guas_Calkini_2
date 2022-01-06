@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { GruaService } from '../../../services/grua.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { Grua } from '../../../../shared/interfaces';
+import { Grua, Sucursal } from '../../../../shared/interfaces';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SucursalService } from 'src/app/services/sucursal.service';
 
 @Component({
   selector: 'app-edit-grua',
@@ -14,6 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class EditGruaComponent implements OnInit {
 
   id: number;
+  sucursales: Sucursal[] = [];
   grua: Grua={
     id: 1,
     marca: '-',
@@ -61,6 +63,7 @@ export class EditGruaComponent implements OnInit {
   enviar_doc8_n: string="";
   constructor(
     public gruaService: GruaService,
+    public sucursalService: SucursalService,
     private route: ActivatedRoute,
     private router: Router,
     private sanitizer: DomSanitizer
@@ -68,6 +71,9 @@ export class EditGruaComponent implements OnInit {
 
   ngOnInit(): void {
     
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      })
     
     this.id = this.route.snapshot.params['idGrua'];
     this.gruaService.find(this.id).subscribe((data: Grua)=>{

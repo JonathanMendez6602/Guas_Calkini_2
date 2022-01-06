@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChoferService } from '../../../services/chofer.service';
-import { Chofer } from '../../../../shared/interfaces';
+import { Chofer, Sucursal } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute, Router } from '@angular/router';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { SucursalService } from 'src/app/services/sucursal.service';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -17,6 +18,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class IndexChoferComponent implements OnInit {
 
   choferes: Chofer[] = [];
+  sucursales: Sucursal[] = [];
   previsualizacion: string;
   previsualizacion2: string; 
   previsualizacion3: string;
@@ -93,6 +95,7 @@ export class IndexChoferComponent implements OnInit {
   // constructor() { }
   constructor(
     public ChoferService: ChoferService,
+    public sucursalService: SucursalService,
     public modal:NgbModal,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -102,6 +105,11 @@ export class IndexChoferComponent implements OnInit {
       this.choferes = data;
       console.log(this.choferes);
     })
+
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
   }
 
   deleteVehiculo(id){
@@ -219,20 +227,50 @@ export class IndexChoferComponent implements OnInit {
   }
 
   createReporte(){
-    var column = [];
-    column.push({ text: 'A', style: 'tableHeader'});
-    column.push({ text: 'B', style: 'tableHeader'});
-
-    var value = [];
-    value.push({ text: 'Asda', style: 'tableHeader'});
-    value.push({ text: 'Bsa', style: 'tableHeader'});
-    const pdfDefinition: any = {
-      table: {
-        headerRows: 1,
-          body: [
-            column, value
-          ]
+    pdfMake.tableLayouts = {
+      exampleLayout: {
+        hLineWidth: function (i, node) {
+          if (i === 0 || i === node.table.body.length) {
+            return 0;
+          }
+          return (i === node.table.headerRows) ? 2 : 1;
+        },
+        vLineWidth: function (i) {
+          return 0;
+        },
+        hLineColor: function (i) {
+          return i === 1 ? 'black' : '#aaa';
+        },
+        paddingLeft: function (i) {
+          return i === 0 ? 0 : 8;
+        },
+        paddingRight: function (i, node) {
+          return (i === node.table.widths.length - 1) ? 0 : 8;
+        }
       }
-    }
+    };
+    var docDefinition = {
+      content: [
+        {
+          layout: 'lightHorizontalLines', // optional
+          table: {
+            // headers are automatically repeated if the table spans over multiple pages
+            // you can declare how many rows should be treated as headers
+            headerRows: 2,
+            widths: [ '*', 'auto', 100, '*' ],
+    
+            body: [
+              [ 'First', 'Second', 'Third', 'The last one' ],
+              [ 'Value 1', 'Value 2', 'Value 3', 'Value 4' ],
+              [ { text: 'Bold value', bold: true }, 'Val 2', 'Val 3', 'Val 4' ]
+            ]
+          }
+        }
+      ]
+    };
+    const pdf = pdfMake.createPdf(docDefinition);
+    pdf.open();
+    // download the PDF
+    pdfMake.createPdf(docDefinition).download();
   }
 }

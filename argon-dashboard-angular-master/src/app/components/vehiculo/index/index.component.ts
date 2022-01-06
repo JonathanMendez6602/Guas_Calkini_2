@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SucursalService } from '../../../services/sucursal.service';
 import { VehiculoService } from '../../../services/vehiculo.service';
-import { Vehiculo } from '../../../../shared/interfaces';
+import { Sucursal, Vehiculo } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -16,6 +16,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class IndexComponent implements OnInit {
 
   vehiculos: Vehiculo[] = [];
+  sucursales: Sucursal[] = [];
   filterModelo = "";
   filterModelo2 = "";
   previsualizacion: string;
@@ -55,12 +56,18 @@ export class IndexComponent implements OnInit {
   };
   // constructor() { }
   constructor(public VehiculoService: VehiculoService,
+    public sucursalService: SucursalService,
     public modal:NgbModal) { }
 
   ngOnInit(): void {
     this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
       this.vehiculos = data;
     })
+
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
   }
 
   deleteVehiculo(id){

@@ -4,8 +4,9 @@ import { CorralonService } from '../../../services/corralon.service';
 import { CatalogoService } from '../../../services/catalogo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { Corralon } from '../../../../shared/interfaces';
+import { Corralon, Vehiculo } from '../../../../shared/interfaces';
 import { Catalogo } from '../../../../shared/interfaces';
+import { VehiculoService } from 'src/app/services/vehiculo.service';
 
 @Component({
   selector: 'app-edit-corralon',
@@ -14,7 +15,9 @@ import { Catalogo } from '../../../../shared/interfaces';
 })
 export class EditCorralonComponent implements OnInit {
   id: number;
+  suc: string;
   tvehiculo: string;
+  vehiculos: Vehiculo;
   costos: number;
   enviar: string="carro";
   corralon: Corralon={
@@ -36,6 +39,7 @@ export class EditCorralonComponent implements OnInit {
   constructor(
     public corralonService: CorralonService,
     public catalogoService: CatalogoService,
+    public vehiculoService: VehiculoService,
     private route: ActivatedRoute,
     private router: Router
 
@@ -45,6 +49,13 @@ export class EditCorralonComponent implements OnInit {
     this.id = this.route.snapshot.params['idCorralon'];
     this.corralonService.find(this.id).subscribe((data: Corralon)=>{
       this.corralon = data;
+
+      this.vehiculoService.find(this.corralon.id_vehiculo).subscribe((data: Vehiculo)=>{
+      this.vehiculos = data;
+      this.suc = this.vehiculos.sucursal;
+      console.log("esta es laaa" + this.suc);
+      });
+
       this.enviar = this.corralon.tipo_vehiculo;
       this.catalogoService.getValor(this.enviar).subscribe((data: Catalogo)=>{
         this.catalogo = data;
@@ -63,6 +74,7 @@ export class EditCorralonComponent implements OnInit {
       fecha_entrega: new FormControl(''),
       otro_asunto: new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       id_vehiculo: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ]),
+      sucursal: new FormControl(''),
       tipo_vehiculo: new FormControl(''),
       costo_total: new FormControl(''),
     });

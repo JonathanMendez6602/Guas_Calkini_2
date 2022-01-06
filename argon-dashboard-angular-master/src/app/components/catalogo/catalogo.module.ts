@@ -11,6 +11,10 @@ import { CreateCatalogoComponent } from './create-catalogo/create-catalogo.compo
 import { EditCatalogoComponent } from './edit-catalogo/edit-catalogo.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterCatalogoPipe } from './pipe/filter-catalogo.pipe';
+import { FilterSucursalPipe } from './pipe_sucursal/filter-sucursal.pipe';
+import { FilterAseguradoraPipe } from './pipe_aseguradora/filter-aseguradora.pipe';
+
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateSucursalComponent,
     EditSucursalComponent,
     CreateCatalogoComponent,
-    EditCatalogoComponent
+    EditCatalogoComponent,
+    FilterCatalogoPipe,
+    FilterSucursalPipe,
+    FilterAseguradoraPipe,
+    
   ],
   imports: [
     CommonModule,

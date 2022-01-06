@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Sucursal } from 'src/shared/interfaces';
+import { SucursalService } from 'src/app/services/sucursal.service';
 
 @Component({
   selector: 'app-create-chofer',
@@ -13,6 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class CreateChoferComponent implements OnInit {
 
   form: FormGroup;
+  sucursales: Sucursal[] = [];
   enviar_doc1: string="";
   enviar_doc2: string="";
   enviar_doc3: string="";
@@ -24,6 +27,7 @@ export class CreateChoferComponent implements OnInit {
 
   constructor(
     public choferService: ChoferService,
+    public sucursalService: SucursalService,
     private router: Router,
     private http: HttpClient,
     private sanitizer: DomSanitizer
@@ -31,7 +35,10 @@ export class CreateChoferComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
+      this.sucursales = data;
+      console.log(this.sucursales);
+      })
 
     this.form = new FormGroup({
       nombre:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
@@ -81,7 +88,7 @@ export class CreateChoferComponent implements OnInit {
       }else{
         this.enviar_doc1 = "";
         this.enviar_doc1_n = "";
-        alert('Excede el tamaño permitido (1 MB)');
+        alert('Excede el tamaño permitido (1 MB) ¡Reducelo!');
       } 
     }else{
       this.enviar_doc1 = "";
