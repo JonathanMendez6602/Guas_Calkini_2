@@ -79,6 +79,50 @@
   <div class="modal-body">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.component.scss"/>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <label class="form-control-label" for="input-sucursal">Sucursal</label>
+          <select 
+            class="form-control form-control-alternative" 
+            formControlName="sucursal" 
+            id="sucursal" 
+            aria-describedby="sucursalFeedback" required>
+            <option selected disabled value="">Seleccione una opción</option>
+            <option value="">Todos</option>
+            <option *ngFor="let sucursal of sucursales">
+            {{sucursal.sucursal}}
+            </option>
+          </select>
+          <div id="sucursalFeedback" class="invalid-feedback">
+            Sucursal is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+                  <label class="form-control-label" for="input-sucursal">Aseguradoras</label>
+                  <select 
+                    class="form-control form-control-alternative" 
+                    formControlName="nombre" 
+                    id="nombre" 
+                    aria-describedby="sucursalFeedback" required>
+                    <option selected disabled value="">Seleccione una opción</option>
+                    <option value="">Todos</option>
+                    <option *ngFor="let aseguradora of aseguradoras">
+                    {{aseguradora.nombre_aseguradora}}
+                    </option>
+                  </select>
+                  <div id="sucursalFeedback" class="invalid-feedback">
+                    Sucursal is required.
+                  </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="modal-footer">
