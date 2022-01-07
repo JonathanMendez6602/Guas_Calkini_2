@@ -55,19 +55,16 @@ export class IndexCorralonComponent implements OnInit {
   ngOnInit(): void {
     this.corralonService.getAll().subscribe((data: Corralon[])=>{
       this.corralons = data;
-      console.log(this.corralons);
     })
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
   }
 
   deleteCorralon(id){
     this.corralonService.delete(id).subscribe(res => {
          this.corralons = this.corralons.filter(item => item.id !== id);
-         console.log('Corralon deleted successfully!');
     })
   }
 
@@ -75,7 +72,6 @@ export class IndexCorralonComponent implements OnInit {
 
     this.corralonService.find(id).subscribe((data: Corralon)=>{
       this.corralon = data;
-      console.log(this.corralon);
     });
     this.modal.open(contenido,{scrollable:true});
   }
@@ -83,7 +79,6 @@ export class IndexCorralonComponent implements OnInit {
   createPDF(id){
     this.corralonService.find(id).subscribe((data: Corralon)=>{
       this.corralonpdf = data;
-      console.log(this.corralonpdf);
     });
     const pdfDefinition: any = {
       content: [

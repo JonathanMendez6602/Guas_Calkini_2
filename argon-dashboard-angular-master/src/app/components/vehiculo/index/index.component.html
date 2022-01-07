@@ -2,7 +2,6 @@
   <span class="mask bg-gradient-info opacity-8"></span>
 </div>
 
-
 <ng-template #contenido let-modal>
   <div class="modal-header">
     <h4 class="modal-tilte">Datos del servicio</h4>
@@ -11,12 +10,10 @@
     </button>
   </div>
 
-
   <div class="modal-body">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.component.scss"/>
   
-
    <table class="tablex">
      <thead>
      	<tr>
@@ -57,7 +54,6 @@
           <td data-label="Cliente">{{ vehiculo.nombre }}</td>
           <td data-label="Sucursal">{{ vehiculo.sucursal }}</td>
      	  </tr>
-
      </tbody>
    </table>
   </div>
@@ -67,6 +63,7 @@
   </div>
 </ng-template>
 
+<<<<<<< HEAD
 <ng-template #contenidoPDF let-modalPDF>
   <div class="modal-header">
     <h4 class="modal-tilte">Datos del reporte</h4>
@@ -132,6 +129,8 @@
   </div>
 </ng-template>-->
 
+=======
+>>>>>>> 3b49a811207edc5e8731c6dc395aee66b7636a35
 <!-- Page content -->
 <div class="container-fluid mt--7">
   <!-- Table -->
@@ -163,10 +162,6 @@
           <button class="btn btn-icon btn-3 btn-info" type="button" a routerLink="/vehiculo/create">
             <span class="btn-inner--icon"><i class="ni ni-delivery-fast"></i></span>
             <span class="btn-inner--text">NUEVO SERVICIO</span>
-          </button>
-          <button class="btn btn-icon btn-3 btn-info" type="button" (click)="openScrollPDF(contenidoPDF)">
-            <span class="btn-inner--icon"><i class="fas fa-file-pdf"></i></span>
-            <span class="btn-inner--text">REPORTE</span>
           </button>
         </div>
         <div class="card-header border-0">
@@ -274,56 +269,3 @@
     </div>
   </div>
 </div>
-
-<!--<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua_1.jpg); background-size: cover; background-position: center top;">
-
-  <span class="mask bg-gradient-info opacity-8"></span>
-
-</div>
-
-<div class="header bg-white pb-8 pt-5 pt-lg-8 d-flex">
-
-    <div class="header-body">
-      <br><br>        
-
-        <div class="container-fluid mt--7">
-          <div class="d-flex justify-content-between">
-            <div _ngcontent-c6="">
-              <i _ngcontent-c6="" class="ni ni-settings text-green" type="button" a routerLink="/vehiculo/create"></i>
-              <span _ngcontent-c6="" type="button" a routerLink="/vehiculo/create">&nbsp;Nuevo Servicio</span>
-              <br><br>
-
-                    <table class="table bg-lighter border-1px-solid-white">
-                      <tr>
-                          <th>|ID|</th>
-                          <th>Marca</th>
-                          <th>Modelo</th>
-                          <th>Placas</th>
-                          <th>Descripcion</th>
-                          <th>Actions</th>
-                      </tr>
-                      <tr *ngFor="let vehiculo of vehiculos">
-                  
-                          <td>{{vehiculo.id}}</td>
-                          <td>{{ vehiculo.marca }}</td>
-                          <td>{{ vehiculo.modelo }}</td>
-                          <td>{{ vehiculo.placas }}</td>
-                          <td>{{ vehiculo.descripcion }}</td>
-                          <td>
-                            <div _ngcontent-c6="" type="button">
-                              <i _ngcontent-c6="" class="ni ni-zoom-split-in" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]"></i>
-                              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'view', vehiculo.id  ]">&nbsp;Ver</span>
-                              &nbsp;
-                              <i _ngcontent-c6="" class="ni ni-settings-gear-65" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]"></i>
-                              <span _ngcontent-c6="" [routerLink]="['/vehiculo/', 'edit', vehiculo.id  ]">&nbsp;Editar</span>
-                            </div>
-                          </td>
-                      </tr>
-                    </table>
-            </div>
-          </div>
-        </div>
-
-    </div>
-  </div>
-</div>-->

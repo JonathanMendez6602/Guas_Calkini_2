@@ -24,16 +24,12 @@ export class AgregarCorralonComponent implements OnInit {
   ngOnInit(): void {
     this.vehiculoService.getAllMostrar().subscribe((data: Vehiculo[])=>{
       this.vehiculos = data;
-      console.log(this.vehiculos);
-
-      
     })
   }
 
   deleteCorralon(id){
     this.corralonService.delete(id).subscribe(res => {
          this.corralons = this.corralons.filter(item => item.id !== id);
-         console.log('Corralon deleted successfully!');
     })
   }
     

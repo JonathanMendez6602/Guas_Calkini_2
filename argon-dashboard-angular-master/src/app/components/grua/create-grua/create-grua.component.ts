@@ -45,7 +45,6 @@ export class CreateGruaComponent implements OnInit {
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
 
     this.form = new FormGroup({
@@ -82,32 +81,21 @@ export class CreateGruaComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.gruaService.create(this.form.value).subscribe(res => {
-         console.log('Grua created successfully!');
          this.router.navigateByUrl('grua/indexGrua');
     })
   }
 
   capturarFileDoc1(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc1_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc1 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc1 = "";
         this.enviar_doc1_n = "";
@@ -121,24 +109,15 @@ export class CreateGruaComponent implements OnInit {
   }
 
   capturarFileDoc2(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc2_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc2 = imagen.base;
-          console.log(imagen.base);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc2 = "";
         this.enviar_doc2_n = "";
@@ -152,24 +131,15 @@ export class CreateGruaComponent implements OnInit {
   }
   
   capturarFileDoc3(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc3_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc3 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc3 = "";
         this.enviar_doc3_n = "";
@@ -183,24 +153,15 @@ export class CreateGruaComponent implements OnInit {
   }
 
   capturarFileDoc4(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc4_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc4 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc4 = "";
         this.enviar_doc4_n = "";
@@ -214,24 +175,15 @@ export class CreateGruaComponent implements OnInit {
   }
 
   capturarFileDoc5(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc5_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc5 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc5 = "";
         this.enviar_doc5_n = "";
@@ -245,24 +197,15 @@ export class CreateGruaComponent implements OnInit {
   }
 
   capturarFileDoc6(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc6_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc6 = imagen.base;
-          console.log(imagen.base);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc6 = "";
         this.enviar_doc6_n = "";
@@ -276,24 +219,15 @@ export class CreateGruaComponent implements OnInit {
   }
   
   capturarFileDoc7(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc7_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc7 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc7 = "";
         this.enviar_doc7_n = "";
@@ -307,24 +241,15 @@ export class CreateGruaComponent implements OnInit {
   }
 
   capturarFileDoc8(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc8_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc8 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc8 = "";
         this.enviar_doc8_n = "";

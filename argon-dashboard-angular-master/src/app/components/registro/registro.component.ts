@@ -17,7 +17,5 @@ export class RegistroComponent implements OnInit {
   }
 
   register() {
-    console.log(this.email);
-    console.log(this.password);
   }
 }

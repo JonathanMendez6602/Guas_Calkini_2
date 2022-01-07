@@ -42,9 +42,7 @@ export class EditAseguradoraComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.aseguradoraService.update(this.id, this.form.value).subscribe(res => {
-         console.log('Aseguradora updated successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
   }

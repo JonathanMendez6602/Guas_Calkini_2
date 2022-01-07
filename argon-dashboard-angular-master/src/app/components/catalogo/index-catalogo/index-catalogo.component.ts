@@ -31,16 +31,13 @@ export class IndexCatalogoComponent implements OnInit {
   ngOnInit(): void {
     this.catalogoService.getAll().subscribe((data: Catalogo[])=>{
       this.catalogos = data;
-      console.log(this.catalogos);
     })
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucurasales = data;
-      console.log(this.sucurasales);
     })
 
     this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
       this.aseguradoras = data;
-      console.log(this.aseguradoras);
     })
     
   }
@@ -48,7 +45,6 @@ export class IndexCatalogoComponent implements OnInit {
   deleteCatalogo(id){
     this.catalogoService.delete(id).subscribe(res => {
          this.catalogos = this.catalogos.filter(item => item.id !== id);
-         console.log('catalogos deleted successfully!');
     })
   }
 

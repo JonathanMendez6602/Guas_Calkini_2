@@ -133,7 +133,6 @@ export class EditComponent implements OnInit {
   }
 
   capturarFileFotoInventario(event): any{
-    console.log(event);
     const archivoCapturado2 = event.target.files[0];
     const fileSize2 = event.target.files[0].size;
     const fileType2 = event.target.files[0].type;
@@ -179,9 +178,7 @@ export class EditComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.vehiculoService.update(this.id, this.form.value).subscribe(res => {
-         console.log('vehiculo updated successfully!');
          this.router.navigateByUrl('vehiculo/index');
     })
   }

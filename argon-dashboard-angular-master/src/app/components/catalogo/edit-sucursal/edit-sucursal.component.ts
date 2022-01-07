@@ -42,9 +42,7 @@ export class EditSucursalComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.sucursalService.update(this.id, this.form.value).subscribe(res => {
-         console.log('Sucursal updated successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
   }

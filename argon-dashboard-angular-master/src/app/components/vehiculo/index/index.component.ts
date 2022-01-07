@@ -80,7 +80,6 @@ export class IndexComponent implements OnInit {
   deleteVehiculo(id){
     this.VehiculoService.delete(id).subscribe(res => {
          this.vehiculos = this.vehiculos.filter(item => item.id !== id);
-         console.log('Vehiculo deleted successfully!');
     })
   }
 
@@ -115,7 +114,6 @@ export class IndexComponent implements OnInit {
 
 
   table(data, columns) {
-    console.log("creando tabla 2");
     return {
       table: {
         headerRows: 1,
@@ -127,7 +125,6 @@ export class IndexComponent implements OnInit {
 generateRows(){
   this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
     this.vehiculos = data;
-    console.log(this.vehiculos);
   });
 var tempObj = {}
 var titulos = new Array( 'ID', 'Modelo', 'Marca', 'Color', 'Placas' );
@@ -142,7 +139,6 @@ for(var i=0; i<this.vehiculos.length; i++){
   tempArr.push(this.vehiculos[i].placas);    
   bodys.push(tempArr);
   }
-  console.log( bodys );
   const docDefinition: any = {
     content: [
     {
