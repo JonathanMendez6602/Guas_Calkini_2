@@ -23,4 +23,8 @@ getAllMostrar() {
   return this.httpClient.get<Vehiculo[]>(this.uri+"/corralon")
 }
 
+Obtener(){
+  return this.httpClient.get<Vehiculo[]>(this.uri +"/obtener")
+}
+
 }

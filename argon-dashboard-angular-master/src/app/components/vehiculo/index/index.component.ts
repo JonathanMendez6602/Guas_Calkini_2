@@ -3,11 +3,11 @@ import { SucursalService } from '../../../services/sucursal.service';
 import { VehiculoService } from '../../../services/vehiculo.service';
 import { Aseguradora, Sucursal, Vehiculo } from '../../../../shared/interfaces';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { AseguradoraService } from 'src/app/services/aseguradora.service';
-import { FormControl, FormGroup } from '@angular/forms';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -17,10 +17,12 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class IndexComponent implements OnInit {
 
+  buildTableBody: any;
   vehiculos: Vehiculo[] = [];
+  vehiculosp: Vehiculo[] = [];
+  form: FormGroup;
   sucursales: Sucursal[] = [];
   aseguradoras: Aseguradora[] = [];
-  formReporte: FormGroup;
   filterModelo = "";
   filterModelo2 = "";
   previsualizacion: string;
@@ -97,19 +99,64 @@ export class IndexComponent implements OnInit {
     
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      })
-
-      this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
+      });
+      console.log("Sucursal");
+      /*this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
         this.aseguradoras = data;
-        })
-
-        this.formReporte = new FormGroup({
-          m1: new FormControl(''),
-          m2: new FormControl(''),
-          });
-
+        console.log("Aseguradora");
+        });*/
+        console.log("Form1");
+        /*this.form = new FormGroup({
+          nombre: new FormControl(''),
+          sucursal: new FormControl(''),
+        });*/
+        console.log("Form2");
     this.modalPDF.open(contenido,{scrollable:true});
   }
+
+
+  table(data, columns) {
+    console.log("creando tabla 2");
+    return {
+      table: {
+        headerRows: 1,
+        body: this.buildTableBody(data, columns)
+      }
+    };
+  }
+
+generateRows(){
+  this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
+    this.vehiculos = data;
+    console.log(this.vehiculos);
+  });
+var tempObj = {}
+var titulos = new Array( 'ID', 'Modelo', 'Marca', 'Color', 'Placas' );
+var tempArr = new Array();
+var bodys = [];
+bodys.push(titulos);
+for(var i=0; i<this.vehiculos.length; i++){
+  tempArr.push(this.vehiculos[i].id);
+  tempArr.push(this.vehiculos[i].modelo);
+  tempArr.push(this.vehiculos[i].marca);
+  tempArr.push(this.vehiculos[i].color);
+  tempArr.push(this.vehiculos[i].placas);    
+  bodys.push(tempArr);
+  }
+  console.log( bodys );
+  const docDefinition: any = {
+    content: [
+    {
+      headerRows: 1,
+      widths: [ '*', 'auto', 100, '*' ],
+      table: {
+        body: bodys
+      }
+    }]
+  }
+pdfMake.createPdf(docDefinition).open();
+//pdfMake.createPdf(docDefinition).download();
+}
 
   createPDF(id){
     this.VehiculoService.find(id).subscribe((data: Vehiculo)=>{

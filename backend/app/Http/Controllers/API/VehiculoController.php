@@ -9,6 +9,7 @@ use Illuminate\Http\UploadedFileSplFileInfo;
 use Iluminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\File;
 use Symfony\Component\HttpFoundation\Response; 
+//use App\Http\Controllers\API\FPDF;
 
 use App\Models\Vehicle;
 use App\Models\Corralon;
@@ -35,6 +36,17 @@ class VehiculoController extends Controller
   {
     $data = Vehicle::where('corralon', 0)->get();
     return response()->json($data, 200);
+  }
+
+  public function ObtenerPDF(){
+    require('fpdf/fpdf.php');
+    $consulta= Vehicle::where('sucursal', 'Hopelchen')->get();
+    $pdf = new FPDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','B',16);
+    $pdf->Cell(40,10,'¡Hola, Mundo!');
+    $pdf->Output();
+return response()->json($consulta, 200);
   }
 
   public function create(Request $request)
