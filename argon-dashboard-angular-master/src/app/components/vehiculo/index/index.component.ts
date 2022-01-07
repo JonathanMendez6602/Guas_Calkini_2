@@ -74,14 +74,12 @@ export class IndexComponent implements OnInit {
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
   }
 
   deleteVehiculo(id){
     this.VehiculoService.delete(id).subscribe(res => {
          this.vehiculos = this.vehiculos.filter(item => item.id !== id);
-         console.log('Vehiculo deleted successfully!');
     })
   }
 
@@ -100,23 +98,11 @@ export class IndexComponent implements OnInit {
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
       });
-      console.log("Sucursal");
-      /*this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
-        this.aseguradoras = data;
-        console.log("Aseguradora");
-        });*/
-        console.log("Form1");
-        /*this.form = new FormGroup({
-          nombre: new FormControl(''),
-          sucursal: new FormControl(''),
-        });*/
-        console.log("Form2");
     this.modalPDF.open(contenido,{scrollable:true});
   }
 
 
   table(data, columns) {
-    console.log("creando tabla 2");
     return {
       table: {
         headerRows: 1,
@@ -128,7 +114,6 @@ export class IndexComponent implements OnInit {
 generateRows(){
   this.VehiculoService.getAll().subscribe((data: Vehiculo[])=>{
     this.vehiculos = data;
-    console.log(this.vehiculos);
   });
 var tempObj = {}
 var titulos = new Array( 'ID', 'Modelo', 'Marca', 'Color', 'Placas' );
@@ -143,7 +128,6 @@ for(var i=0; i<this.vehiculos.length; i++){
   tempArr.push(this.vehiculos[i].placas);    
   bodys.push(tempArr);
   }
-  console.log( bodys );
   const docDefinition: any = {
     content: [
     {
@@ -161,7 +145,6 @@ pdfMake.createPdf(docDefinition).open();
   createPDF(id){
     this.VehiculoService.find(id).subscribe((data: Vehiculo)=>{
       this.vehiculopdf = data;
-      console.log(this.vehiculopdf);
     });
     const pdfDefinition: any = {
       content: [

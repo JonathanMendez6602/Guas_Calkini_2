@@ -98,26 +98,22 @@ export class IndexGruaComponent implements OnInit {
   ngOnInit(): void {
     this.GruaService.getAll().subscribe((data: Grua[])=>{
       this.gruas = data;
-      console.log(this.gruas);
     })
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
   }
 
   deleteVehiculo(id){
     this.GruaService.delete(id).subscribe(res => {
          this.gruas = this.gruas.filter(item => item.id !== id);
-         console.log('grua deleted successfully!');
     })
   }
 
   bajaGrua(id){
     this.GruaService.getcambio(id).subscribe((data: Grua)=>{
       this.valorg = data;
-      console.log(this.valorg);
     });
     this.router.navigateByUrl('grua/indexGrua');
   }
@@ -126,7 +122,6 @@ export class IndexGruaComponent implements OnInit {
     
     this.GruaService.find(id).subscribe((data: Grua)=>{
       this.grua = data;
-      console.log(this.grua);
       this.previsualizacion=this.grua.doc_tarjcirculacion;
       this.previsualizacion2=this.grua.doc_cartaporte;
       this.previsualizacion3=this.grua.doc_polizaseguro;
@@ -222,7 +217,6 @@ export class IndexGruaComponent implements OnInit {
   createPDF(id){
     this.GruaService.find(id).subscribe((data: Grua)=>{
       this.gruapdf = data;
-      console.log(this.gruapdf);
     });
     const pdfDefinition: any = {
       content: [

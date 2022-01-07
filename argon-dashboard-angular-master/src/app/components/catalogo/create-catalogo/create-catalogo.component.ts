@@ -28,9 +28,7 @@ export class CreateCatalogoComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.catalogoService.create(this.form.value).subscribe(res => {
-         console.log('Catalogo created successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
   }

@@ -47,9 +47,7 @@ export class EditCatalogoComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.catalogoService.update(this.id, this.form.value).subscribe(res => {
-         console.log('Catalogo updated successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
   }

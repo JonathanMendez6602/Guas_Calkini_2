@@ -53,17 +53,13 @@ export class EditCorralonComponent implements OnInit {
       this.vehiculoService.find(this.corralon.id_vehiculo).subscribe((data: Vehiculo)=>{
       this.vehiculos = data;
       this.suc = this.vehiculos.sucursal;
-      console.log("esta es laaa" + this.suc);
       });
 
       this.enviar = this.corralon.tipo_vehiculo;
       this.catalogoService.getValor(this.enviar).subscribe((data: Catalogo)=>{
         this.catalogo = data;
-        console.log(this.catalogo);
         this.tvehiculo = this.catalogo[0].tipoVehiculo;
         this.costos = this.catalogo[0].costo;
-        console.log(this.tvehiculo);
-        console.log(this.costos);
       })
     })
     this.form = new FormGroup({
@@ -85,9 +81,7 @@ export class EditCorralonComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.corralonService.update(this.id, this.form.value).subscribe(res => {
-      console.log('Corralon update successfully');
       this.router.navigateByUrl('corralon/indexCorralon');
     })
   }

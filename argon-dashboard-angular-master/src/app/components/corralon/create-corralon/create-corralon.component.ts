@@ -32,7 +32,6 @@ export class CreateCorralonComponent implements OnInit {
   ngOnInit(): void {
     this.catalogoService.getAll().subscribe((data: Catalogo[])=>{
       this.catalogos = data;
-      console.log(this.catalogos);
     })
     this.vehiculo= {
       id: 1,
@@ -53,10 +52,7 @@ export class CreateCorralonComponent implements OnInit {
     this.id = this.route.snapshot.params['idVehiculo'];
     
     this.vehiculoService.find(this.id).subscribe((data: Vehiculo)=>{
-
       this.vehiculo = data;
-      console.log(this.vehiculo.sucursal);
-      console.log(this.vehiculo.id);
     });
     this.form = new FormGroup({
       fecha_entrada: new FormControl(''),
@@ -77,9 +73,7 @@ export class CreateCorralonComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.corralonService.create(this.form.value).subscribe(res => {
-         console.log('Corralon created successfully!');
          this.router.navigateByUrl('corralon/indexCorralon');
     })
   }

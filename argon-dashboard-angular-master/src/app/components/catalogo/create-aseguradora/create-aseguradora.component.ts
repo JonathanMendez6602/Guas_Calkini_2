@@ -27,9 +27,7 @@ export class CreateAseguradoraComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.aseguradoraService.create(this.form.value).subscribe(res => {
-         console.log('Aseguradora created successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
   }

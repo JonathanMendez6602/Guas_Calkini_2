@@ -29,9 +29,7 @@ export class CreateSucursalComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
     this.sucursalService.create(this.form.value).subscribe(res => {
-         console.log('Sucursal created successfully!');
          this.router.navigateByUrl('catalogo/indexCatalogo');
     })
   }

@@ -103,26 +103,22 @@ export class IndexChoferComponent implements OnInit {
   ngOnInit(): void {
     this.ChoferService.getAll().subscribe((data: Chofer[])=>{
       this.choferes = data;
-      console.log(this.choferes);
     })
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
   }
 
   deleteVehiculo(id){
     this.ChoferService.delete(id).subscribe(res => {
          this.choferes = this.choferes.filter(item => item.id !== id);
-         console.log('chofer deleted successfully!');
     })
   }
 
   bajaChofer(id){
     this.ChoferService.getcambio(id).subscribe((data: Chofer)=>{
       this.valorg = data;
-      console.log(this.valorg);
     });
     this.router.navigateByUrl('chofer/indexChofer');
   }
@@ -135,8 +131,6 @@ export class IndexChoferComponent implements OnInit {
       this.previsualizacion2= this.chofer.doc_lic_est;
       this.previsualizacion3= this.chofer.doc_ine;
       this.previsualizacion4= this.chofer.doc_curp;
-
-      console.log(this.chofer);
     });
     this.modal.open(contenido,{scrollable:true});
   }
@@ -189,7 +183,6 @@ export class IndexChoferComponent implements OnInit {
   createPDF(id){
     this.ChoferService.find(id).subscribe((data: Chofer)=>{
       this.choferpdf = data;
-      console.log(this.chofer);
     });
     const pdfDefinition: any = {
       content: [

@@ -37,7 +37,6 @@ export class CreateChoferComponent implements OnInit {
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
 
     this.form = new FormGroup({
@@ -67,24 +66,15 @@ export class CreateChoferComponent implements OnInit {
   }
 
   capturarFileDoc1(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc1_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc1 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc1 = "";
         this.enviar_doc1_n = "";
@@ -98,24 +88,15 @@ export class CreateChoferComponent implements OnInit {
   }
 
   capturarFileDoc2(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc2_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc2 = imagen.base;
-          console.log(imagen.base);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc2 = "";
         this.enviar_doc2_n = "";
@@ -129,24 +110,15 @@ export class CreateChoferComponent implements OnInit {
   }
   
   capturarFileDoc3(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc3_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc3 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc3 = "";
         this.enviar_doc3_n = "";
@@ -160,24 +132,15 @@ export class CreateChoferComponent implements OnInit {
   }
 
   capturarFileDoc4(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "application/pdf"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.enviar_doc4_n = archivoCapturado.name;
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.enviar_doc4 = imagen.base;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_doc4 = "";
         this.enviar_doc4_n = "";
@@ -212,9 +175,7 @@ export class CreateChoferComponent implements OnInit {
   })
 
   submit(){
-    console.log(this.form.value);
     this.choferService.create(this.form.value).subscribe(res => {
-         console.log('Chofer created successfully!');
          this.router.navigateByUrl('chofer/indexChofer');
     })
   }
