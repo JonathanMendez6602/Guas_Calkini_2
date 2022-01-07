@@ -42,6 +42,11 @@ class CatalogoController extends Controller
         return response()->json($data, 200);
     }
 
+    public function getVehiculo($tipoVehiculo){
+        $data = Catalogo::where('tipoVehiculo', $tipoVehiculo)->get();
+        return response()->json($data, 200);
+    }
+
     public function update(Request $request, $id)
     {
         $data['tipoVehiculo'] = $request['tipoVehiculo'];

@@ -1,0 +1,2076 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/theme/grua_1.jpg); background-size: cover; background-position: center top;">
+  <span class="mask bg-gradient-info opacity-8"></span>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3>AGREGAR NUEVO SERVICIO</h3>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <h6 class="heading-small text-muted mb-4">Información del Vehículo</h6>
+            <div class="pl-lg-4">
+
+
+              <ng-template #contenido let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-tilte">Datos del inventario</h4>
+                  <button class="close" aria-label="close" type="button" (click)="modal.close()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              
+              
+                <div class="modal-body">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <link rel="stylesheet" href="create.component.scss"/>
+                
+              
+                  <div class="col">
+                    <div class="card shadow">
+                        <div class="card-header border-1">
+                            <h3>INVENTARIO</h3>
+                        </div>
+                        <div class="card-body">
+                          <!--este es el del modal-->
+                            <form [formGroup]="inv" (ngSubmit)="inventario()">
+                                <h6 class="heading-small text-muted mb-4">Inventario del Servicio</h6>
+                                <div class="pl-lg-4">
+                                    <div class="row">                               
+                                        
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Motor</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Bateria</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m1" 
+                                                              id="m1" 
+                                                              aria-describedby="m1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ventilador</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m2" 
+                                                              id="m2" 
+                                                              aria-describedby="m2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Radiador</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m3" 
+                                                              id="m3" 
+                                                              aria-describedby="m3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Radiador de clima</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m4" 
+                                                              id="m4" 
+                                                              aria-describedby="m4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tapon de aceite</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m5" 
+                                                              id="m5" 
+                                                              aria-describedby="m5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cables bujia</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m6" 
+                                                              id="m6" 
+                                                              aria-describedby="m6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bayoneta de aceite</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m7" 
+                                                              id="m7" 
+                                                              aria-describedby="m7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Claxón</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m8" 
+                                                              id="m8" 
+                                                              aria-describedby="m8Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m8Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Alternador</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m9" 
+                                                              id="m9" 
+                                                              aria-describedby="m9Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m9Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Marcha</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m10" 
+                                                              id="m10" 
+                                                              aria-describedby="m10Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m10Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Carter</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="m11" 
+                                                              id="m11" 
+                                                              aria-describedby="m11Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="m11Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+              
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Costados</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Molduras</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c1" 
+                                                              id="c1" 
+                                                              aria-describedby="c1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Espejos</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c2" 
+                                                              id="c2" 
+                                                              aria-describedby="c2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direccionales</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c3" 
+                                                              id="c3" 
+                                                              aria-describedby="c3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mango de puerta</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c4" 
+                                                              id="c4" 
+                                                              aria-describedby="c4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Candado de puertas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c5" 
+                                                              id="c5" 
+                                                              aria-describedby="c5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tapon combustible</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c6" 
+                                                              id="c6" 
+                                                              aria-describedby="c6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tapones</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c7" 
+                                                              id="c7" 
+                                                              aria-describedby="c7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Rines</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c8" 
+                                                              id="c8" 
+                                                              aria-describedby="c8Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c8Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Llantas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="c9" 
+                                                              id="c9" 
+                                                              aria-describedby="c9Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="c9Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>                                        
+                                                </tbody>
+                                            </table>
+                                        </div>
+              
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Cajuela</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Alfombra</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca1" 
+                                                              id="ca1" 
+                                                              aria-describedby="ca1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Llanta refacción</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca2" 
+                                                              id="ca2" 
+                                                              aria-describedby="ca2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Extintor</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca3" 
+                                                              id="ca3" 
+                                                              aria-describedby="ca3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Herramientas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca4" 
+                                                              id="ca4" 
+                                                              aria-describedby="ca4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Gato</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca5" 
+                                                              id="ca5" 
+                                                              aria-describedby="ca5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Señales</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca6" 
+                                                              id="ca6" 
+                                                              aria-describedby="ca6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Equipo de sonido</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca7" 
+                                                              id="ca7" 
+                                                              aria-describedby="ca7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cerradura</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="ca8" 
+                                                              id="ca8" 
+                                                              aria-describedby="ca8Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="ca8Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr> 
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>                                 
+                                                </tbody>
+                                            </table>
+                                        </div>
+              
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Toldo</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Quemacocos</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="t1" 
+                                                              id="t1" 
+                                                              aria-describedby="t1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="t1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Canasbia</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="t2" 
+                                                              id="t2" 
+                                                              aria-describedby="t2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="t2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Torreta</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="t3" 
+                                                              id="t3" 
+                                                              aria-describedby="t3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="t3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>  
+                                                    </tr>  
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>                              
+                                                </tbody>
+                                            </table>
+                                        </div>
+              
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Atras</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Medallón</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a1" 
+                                                              id="a1" 
+                                                              aria-describedby="a1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Limpiador</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a2" 
+                                                              id="a2" 
+                                                              aria-describedby="a2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Rociador</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a3" 
+                                                              id="a3" 
+                                                              aria-describedby="a3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Antena</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a4" 
+                                                              id="a4" 
+                                                              aria-describedby="a4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Calaveras</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a5" 
+                                                              id="a5" 
+                                                              aria-describedby="a5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Emblemas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a6" 
+                                                              id="a6" 
+                                                              aria-describedby="a6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Facia</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a7" 
+                                                              id="a7" 
+                                                              aria-describedby="a7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Luz de placa</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a8" 
+                                                              id="a8" 
+                                                              aria-describedby="a8Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a8Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>placa</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="a9" 
+                                                              id="a9" 
+                                                              aria-describedby="a9Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="a9Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr> 
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>                                  
+                                                </tbody>
+                                            </table>
+                                        </div>
+              
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Otros</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Caseta</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o1" 
+                                                              id="o1" 
+                                                              aria-describedby="o1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Plataforma</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o2" 
+                                                              id="o2" 
+                                                              aria-describedby="o2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Roas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o3" 
+                                                              id="o3" 
+                                                              aria-describedby="o3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Caja</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o4" 
+                                                              id="o4" 
+                                                              aria-describedby="o4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Caja volteo</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o5" 
+                                                              id="o5" 
+                                                              aria-describedby="o5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Equipo hidraulico</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o6" 
+                                                              id="o6" 
+                                                              aria-describedby="o6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Camper</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="o7" 
+                                                              id="o7" 
+                                                              aria-describedby="o7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="o7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>                                  
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                                                        
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Frente</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Carroceria</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f1" 
+                                                              id="f1" 
+                                                              aria-describedby="f1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Parabrisas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f2" 
+                                                              id="f2" 
+                                                              aria-describedby="f2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>le...res</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f3" 
+                                                              id="f3" 
+                                                              aria-describedby="f3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ro..</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f4" 
+                                                              id="f4" 
+                                                              aria-describedby="f4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Parrilla</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f5" 
+                                                              id="f5" 
+                                                              aria-describedby="f5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cofre</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f6" 
+                                                              id="f6" 
+                                                              aria-describedby="f6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Antena</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f7" 
+                                                              id="f7" 
+                                                              aria-describedby="f7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Salpicadera</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f8" 
+                                                              id="f8" 
+                                                              aria-describedby="f8Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f8Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Escudo</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f9" 
+                                                              id="f9" 
+                                                              aria-describedby="f9Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f9Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Faros</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f10" 
+                                                              id="f10" 
+                                                              aria-describedby="f10Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f10Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Faros especiales</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f11" 
+                                                              id="f11" 
+                                                              aria-describedby="f11Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f11Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cuartos</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f12" 
+                                                              id="f12" 
+                                                              aria-describedby="f12Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f12Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bordes</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f13" 
+                                                              id="f13" 
+                                                              aria-describedby="f13Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f13Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Facia</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f14" 
+                                                              id="f14" 
+                                                              aria-describedby="f14Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f14Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Placa</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="f15" 
+                                                              id="f15" 
+                                                              aria-describedby="f15Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="f15Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <div>
+                                                            <label for=" "></label>
+                                                        </div>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+              
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center table-flush">
+                                                <thead class="media-body">
+                                                    <tr>
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Interior</span>
+                                                            </div>
+                                                           </div>  
+                                                        </th>
+              
+                                                        <th scope="row">
+                                                          <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                              <span class="mb-0 text-sm">Estado</span>
+                                                            </div>
+                                                          </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Volante</td>
+                                                        <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i1" 
+                                                              id="i1" 
+                                                              aria-describedby="i1Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i1Feedback" class="invalid-feedback">
+                                                                Carroceria is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Espejo Retrovisor</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i2" 
+                                                              id="i2" 
+                                                              aria-describedby="i2Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i2Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Visores</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i3" 
+                                                              id="i3" 
+                                                              aria-describedby="i3Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i3Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Luz de cortesia</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i4" 
+                                                              id="i4" 
+                                                              aria-describedby="f4Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i4Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>A...</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i5" 
+                                                              id="i5" 
+                                                              aria-describedby="i5Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i5Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vestiduras</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i6" 
+                                                              id="i6" 
+                                                              aria-describedby="i6Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i6Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mangas Interiores</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i7" 
+                                                              id="i7" 
+                                                              aria-describedby="i7Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i7Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Elev cristales</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i8" 
+                                                              id="i8" 
+                                                              aria-describedby="i8Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i8Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tablero</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i9" 
+                                                              id="i9" 
+                                                              aria-describedby="i9Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i9Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ceniceros</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i10" 
+                                                              id="i10" 
+                                                              aria-describedby="i10Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i10Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Encendedor</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i11" 
+                                                              id="i11" 
+                                                              aria-describedby="i11Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i11Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Estereo</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i12" 
+                                                              id="i12" 
+                                                              aria-describedby="i12Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i12Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bocinas</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i13" 
+                                                              id="i13" 
+                                                              aria-describedby="i13Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i13Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ecualizador</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i14" 
+                                                              id="i14" 
+                                                              aria-describedby="i14Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i14Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tapa guantera</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i15" 
+                                                              id="i15" 
+                                                              aria-describedby="i15Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i15Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tapetes</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i16" 
+                                                              id="i16" 
+                                                              aria-describedby="i16Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i16Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cinturones</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i17" 
+                                                              id="i17" 
+                                                              aria-describedby="i17Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i17Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Circulación</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i18" 
+                                                              id="i18" 
+                                                              aria-describedby="i18Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i18Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Llavero</td>
+                                                          <div class="form-group">
+                                                            <select 
+                                                              class="form-control form-control-alternative" 
+                                                              formControlName="i19" 
+                                                              id="i19" 
+                                                              aria-describedby="i19Feedback" required>
+                                                                <option selected disabled value="">Seleccione una opción</option>
+                                                                <option>Bien</option>
+                                                                <option>Mal</option>
+                                                                <option>No tiene</option>
+                                                            </select>
+                                                              <div id="i19Feedback" class="invalid-feedback">
+                                                                Parabrisas is required.
+                                                              </div>
+                                                          </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Otros (especifique)</td>
+                                                    </tr>
+                                                </tbody>
+                                                <div class="col-lg-15">
+                                                    <div class="form-group">
+                                                      <textarea
+                                                        formControlName="i20"
+                                                        id="i20"
+                                                        type="text"
+                                                        class="form-control form-control-alternative"></textarea>
+                                                    </div>
+                                                </div>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success" type="submit" >Agregar</button>
+                                </div>
+                            </form>
+                        </div>
+              
+                    </div>
+                </div>
+              
+                </div>
+              
+                <div class="modal-footer">
+                  <button type="button" class="btn ni ni-check-bold  btn-success" (click)="modal.close()"></button>
+                </div>
+              </ng-template>
+
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-marca">Marca</label>
+                      <input
+                        formControlName="marca"
+                        id="marca"
+                        type="text"
+                        class="form-control form-control-alternative">
+                      <div *ngIf="f.marca.touched && f.marca.invalid" class="alert alert-danger">
+                          <div *ngIf="f.marca.errors.required">*Marca is required.</div>
+                          <div *ngIf="f.marca.errors.pattern">*The marca must only contain letters.</div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-modelo">Modelo</label>
+                    <input
+                      formControlName="modelo"
+                      id="modelo"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.modelo.touched && f.modelo.invalid" class="alert alert-danger">
+                      <div *ngIf="f.modelo.errors.required">*Modelo is required.</div>
+                      <div *ngIf="f.modelo.errors.pattern">*The modelo must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6" style="display: none">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-foto_vehiculo">Foto del vehículo</label>
+                    <input
+                      formControlName="foto_vehiculo"
+                      id="foto_vehiculo"
+                      [(ngModel)]="enviar_fotovehiculo"
+                      type="text"
+                      class="form-control form-control-alternative">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-foto_vehiculo">Foto del vehículo</label>
+                    <input
+                      (change)="capturarFileFotoVehiculo($event)"
+                      type="file"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="previsualizacion">
+                      <img width="100px" [src]="previsualizacion" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-color">Color</label>
+                    <input
+                      formControlName="color"
+                      id="color"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.color.touched && f.color.invalid" class="alert alert-danger">
+                        <div *ngIf="f.color.errors.required">*Color is required.</div>
+                        <div *ngIf="f.color.errors.pattern">*The color must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-placas">Placas</label>
+                    <input
+                      formControlName="placas"
+                      id="placas"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.placas.touched && f.placas.invalid" class="alert alert-danger">
+                        <div *ngIf="f.placas.errors.required">*Placas is required.</div>
+                        <div *ngIf="f.placas.errors.pattern">*The placas must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-inventario">Inventario</label>
+                    <br>
+                    <button class="btn btn-primary btn-sm" type="button" (click)="openScroll(contenido)">Agregar
+                    </button>
+                    
+                    <input
+                      [(ngModel)]="datosinv"
+                      formControlName="inventario"
+                      id="inventario"
+                      type="text"
+                      
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.inventario.touched && f.inventario.invalid" class="alert alert-danger">
+                        <div *ngIf="f.inventario.errors.pattern">*The inventario must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6" style="display: none">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-foto_vehiculo">Foto del vehículo</label>
+                    <input
+                      formControlName="foto_inventario"
+                      id="foto_inventario"
+                      [(ngModel)]="enviar_fotoinventario"
+                      type="text"
+                      class="form-control form-control-alternative">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-foto_inventario">Foto del inventario</label>
+                    <input
+                      type="file"
+                      (change)="capturarFileFotoInventario($event)"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="previsualizacion2">
+                      <img width="100px" [src]="previsualizacion2" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-llaves">Llaves</label>
+                    <span class="clearfix"></span>
+                    <label class="custom-toggle">
+                      <input  
+                      formControlName="llaves" 
+                      id="llaves" 
+                      type="checkbox">
+                      <span class="custom-toggle-slider rounded-circle"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-tipo_servicio">Tipo de Servicio</label>
+                    <input
+                      formControlName="tipo_servicio"
+                      id="tipo_servicio"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.tipo_servicio.touched && f.tipo_servicio.invalid" class="alert alert-danger">
+                        <div *ngIf="f.tipo_servicio.errors.required">*Tipo Servicio is required.</div>
+                        <div *ngIf="f.tipo_servicio.errors.pattern">*The Tipo Servicio must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-lugar_siniestro">Lugar del siniestro</label>
+                    <input
+                      formControlName="lugar_siniestro"
+                      id="lugar_siniestro"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.lugar_siniestro.touched && f.lugar_siniestro.invalid" class="alert alert-danger">
+                        <div *ngIf="f.lugar_siniestro.errors.required">*Lugar Siniestro is required.</div>
+                        <div *ngIf="f.lugar_siniestro.errors.pattern">*The Lugar Siniestro must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-descripción">Cliente</label>
+                     <br>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="cambioParticular()">Particular</button> 
+                    <button type="button" class="btn btn-primary btn-sm" (click)="cambioAseguradora()">Aseguradora</button>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+
+                    <div *ngIf="varParticular">
+                      <label class="form-control-label" for="input-nombre">Nombre del cliente</label>
+                      <input
+                      formControlName="nombre"
+                      id="nombre"
+                      type="text"
+                      class="form-control form-control-alternative">
+                      <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+                        <div *ngIf="f.nombre.errors.pattern">*The nombre must only contain letters.</div>
+                      </div>
+                    </div>
+
+                    <div *ngIf="!varParticular">
+                            <label class="form-control-label" for="input-sucursal">Aseguradoras</label>
+                            <select 
+                              class="form-control form-control-alternative" 
+                              formControlName="nombre" 
+                              id="nombre" 
+                              aria-describedby="sucursalFeedback" required>
+                              <option selected disabled value="">Seleccione una opción</option>
+                              <option *ngFor="let aseguradora of aseguradoras">
+                              {{aseguradora.nombre_aseguradora}}
+                              </option>
+                            </select>
+                            <div id="sucursalFeedback" class="invalid-feedback">
+                              Sucursal is required.
+                            </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-descripción">Descripción</label>
+                    <input
+                      formControlName="descripcion"
+                      id="descripcion"
+                      type="text"
+                      class="form-control form-control-alternative">
+                    <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
+                        <div *ngIf="f.descripcion.errors.pattern">*The descripcion must only contain letters.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-sucursal">Sucursal</label>
+                    <select 
+                      class="form-control form-control-alternative" 
+                      formControlName="sucursal" 
+                      id="sucursal" 
+                      aria-describedby="sucursalFeedback" required>
+                      <option selected disabled value="">Seleccione una opción</option>
+                      <option *ngFor="let sucursal of sucursales">
+                      {{sucursal.sucursal}}
+                      </option>
+                    </select>
+                    <div id="sucursalFeedback" class="invalid-feedback">
+                      Sucursal is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-success" type="submit" [disabled]="!form.valid">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

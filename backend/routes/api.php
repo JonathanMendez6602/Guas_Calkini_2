@@ -38,6 +38,7 @@ Route::prefix('vehiculo')->group(function () {
     Route::get('/',[ VehiculoController::class, 'getAll']);
     Route::get('/sucursal',[ VehiculoController::class, 'getAllSucursal']);
     Route::get('/corralon',[VehiculoController::class,'getAllCorralon']);
+    Route::get('/obtener',[ VehiculoController::class, 'ObtenerPDF']);
     Route::post('/',[ VehiculoController::class, 'create']);
     Route::delete('/{id}',[ VehiculoController::class, 'delete']);
     Route::get('/{id}',[ VehiculoController::class, 'get']);
@@ -50,6 +51,7 @@ Route::prefix('corralon')->group(function () {
     Route::delete('/{id}',[ CorralonController::class, 'delete']);
     Route::get('/{id}',[ CorralonController::class, 'get']);
     Route::put('/{id}',[ CorralonController::class, 'update']);
+    Route::get('/sucursal/{sucursal,id}',[ CorralonController::class, 'updateSucursal']);
 });
 
 Route::prefix('aseguradora')->group(function () {
@@ -85,6 +87,7 @@ Route::prefix('catalogo')->group(function () {
     Route::post('/',[ CatalogoController::class, 'create']);
     Route::delete('/{id}',[ CatalogoController::class, 'delete']);
     Route::get('/{id}',[ CatalogoController::class, 'get']);
+    Route::get('/tipo/{tipoVehiculo}',[ CatalogoController::class, 'getVehiculo']);
     Route::put('/{id}',[ CatalogoController::class, 'update']);
 });
 

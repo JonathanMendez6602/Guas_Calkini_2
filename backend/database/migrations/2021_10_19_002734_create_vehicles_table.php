@@ -21,7 +21,11 @@ class CreateVehiclesTable extends Migration
             $table->longText("foto_vehiculo");
             $table->string("color");
             $table->string("placas");
+<<<<<<< HEAD
             $table->longText("inventario");
+=======
+            $table->LongText("inventario");
+>>>>>>> Jonathan
             $table->longText("foto_inventario");
             $table->string("llaves");
             //Servicios
