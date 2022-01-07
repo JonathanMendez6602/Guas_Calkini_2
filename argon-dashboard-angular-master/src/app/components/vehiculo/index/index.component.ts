@@ -74,7 +74,6 @@ export class IndexComponent implements OnInit {
 
     this.sucursalService.getAll().subscribe((data: Sucursal[])=>{
       this.sucursales = data;
-      console.log(this.sucursales);
       })
   }
 
@@ -101,15 +100,15 @@ export class IndexComponent implements OnInit {
       this.sucursales = data;
       });
       console.log("Sucursal");
-      /*this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
+      this.aseguradoraService.getAll().subscribe((data: Aseguradora[])=>{
         this.aseguradoras = data;
         console.log("Aseguradora");
-        });*/
+        });
         console.log("Form1");
-        /*this.form = new FormGroup({
+        this.form = new FormGroup({
           nombre: new FormControl(''),
           sucursal: new FormControl(''),
-        });*/
+        });
         console.log("Form2");
     this.modalPDF.open(contenido,{scrollable:true});
   }
@@ -159,12 +158,19 @@ pdfMake.createPdf(docDefinition).open();
 }
 
   createPDF(id){
+    var ruta="../../../../assets/img/brand/logo.png";
     this.VehiculoService.find(id).subscribe((data: Vehiculo)=>{
       this.vehiculopdf = data;
-      console.log(this.vehiculopdf);
     });
     const pdfDefinition: any = {
       content: [
+        {
+          text: 'PDF Generated with Image from external URL',
+          fontSize : 20
+        },
+        {
+          image: 'ruta'
+        },    
         {
           table: {
             body: [

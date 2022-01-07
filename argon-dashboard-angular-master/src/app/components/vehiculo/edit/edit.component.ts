@@ -113,24 +113,15 @@ export class EditComponent implements OnInit {
   }
 
   capturarFileFotoVehiculo(event): any{
-    console.log("AQUI VA EL EVENTO");
-    console.log(event);
     const archivoCapturado = event.target.files[0];
-    console.log("AQUI VA EL ARCH CAPTURADO");
-    console.log(archivoCapturado);
     const fileSize = event.target.files[0].size;
     const fileType = event.target.files[0].type;
-    console.log("AQUI VA EL FILE TYPE");
-    console.log(fileType);
     if(fileType == "image/jpeg" || fileType == "image/png" || fileType == "image/jpg"){
       if(fileSize<1000000){
-        console.log(archivoCapturado);
         this.extraerBase64(archivoCapturado).then((imagen: any) =>{
           this.previsualizacion = imagen.base;
           this.enviar_fotovehiculo = this.previsualizacion;
-          console.log(imagen);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_fotovehiculo = "";
         alert('Excede el tamaño permitido (1 MB)');
@@ -148,13 +139,10 @@ export class EditComponent implements OnInit {
     const fileType2 = event.target.files[0].type;
     if(fileType2 == "image/jpeg" || fileType2 == "image/png" || fileType2 == "image/jpg"){
       if(fileSize2<1000000){
-        console.log(this.enviar_fotovehiculo);
         this.extraerBase64(archivoCapturado2).then((imagen: any) =>{
           this.previsualizacion2 = imagen.base;
           this.enviar_fotoinventario = this.previsualizacion2;
-          console.log(this.previsualizacion);
         })
-        console.log(event.target.files);
       }else{
         this.enviar_fotoinventario = "";
         alert('Excede el tamaño permitido (1 MB)');
